@@ -146,6 +146,9 @@ function gen_llm_random_tree(
 )::AbstractExpressionNode{T} where {T<:DATA_TYPE}
     # Note that this base tree is just a placeholder; it will be replaced.
     N = 5
+    
+    println("[GENERATE_MONITOR] 🎲 Starting LLM Random Tree Generation: target nodes = $(node_count)")
+    
     if isnothing(idea_database)
         assumptions = []
     else
@@ -194,41 +197,79 @@ function gen_llm_random_tree(
                     verbose=false,
                     )
     catch e
+        println("[GENERATE_MONITOR] ❌ LLM API call failed: $(e)")
         llm_recorder(options.llm_options, "None", "gen_random|failed")
         return gen_random_tree_fixed_size(node_count, options, nfeatures, T)
     end
     # print type of message and message itself
+    println("[GENERATE_MONITOR] 📨 LLM Response received: $(length(string(msg.content))) characters")
     llm_recorder(options.llm_options, string(msg.content), "llm_output|gen_random")
 
     gen_tree_options = parse_msg_content(String(msg.content))
 
     N = min(size(gen_tree_options)[1], N)
+    
+    println("[GENERATE_MONITOR] 🔍 Parsed $(N) candidate expressions from LLM output")
 
     if N == 0
+        println("[GENERATE_MONITOR] ❌ No valid expressions parsed, falling back to random generation")
         llm_recorder(options.llm_options, "None", "gen_random|failed")
         return gen_random_tree_fixed_size(node_count, options, nfeatures, T)
     end
 
+    # Try to parse candidates and collect valid ones
+    valid_candidates = []
     for i in 1:N
-        l = rand(1:N)
-        t = expr_to_tree(T, String(strip(gen_tree_options[l], [' ', '\n', '"', ',', '.', '[', ']'])), options)
-        if t.val == 1 && t.constant
-            continue
+        raw_expr = gen_tree_options[i]
+        cleaned_expr = clean_expression_string(raw_expr)
+        
+        println("[GENERATE_MONITOR] 🧽 Candidate $(i): \"$(raw_expr)\" -> \"$(cleaned_expr)\"")
+        
+        try
+            t = expr_to_tree(T, cleaned_expr, options)
+            if !(t.val == 1 && t.constant)  # Not a trivial constant
+                push!(valid_candidates, (t, cleaned_expr))
+                println("[GENERATE_MONITOR] ✅ Candidate $(i): Successfully parsed")
+            else
+                println("[GENERATE_MONITOR] ⚠️  Candidate $(i): Parsed to trivial constant, skipped")
+            end
+        catch e
+            println("[GENERATE_MONITOR] ❌ Candidate $(i): Parse error - $(e)")
         end
-        llm_recorder(options.llm_options, tree_to_expr(t, options), "gen_random")
-
-        return t
     end
 
-    out = expr_to_tree(T, String(strip(gen_tree_options[1], [' ', '\n', '"', ',', '.', '[', ']'])), options)
-
-    llm_recorder(options.llm_options, tree_to_expr(out, options), "gen_random")
-
-    if out.val == 1 && out.constant
+    if length(valid_candidates) == 0
+        println("[GENERATE_MONITOR] ❌ No valid candidates after cleaning and parsing")
+        # Try fallback with the first raw expression
+        try
+            fallback_expr = clean_expression_string(gen_tree_options[1])
+            out = expr_to_tree(T, fallback_expr, options)
+            if !(out.val == 1 && out.constant)
+                println("[GENERATE_MONITOR] 🔄 Fallback successful: \"$(fallback_expr)\"")
+                llm_recorder(options.llm_options, tree_to_expr(out, options), "gen_random")
+                return out
+            else
+                println("[GENERATE_MONITOR] ⚠️  Fallback produced trivial constant")
+            end
+        catch e
+            println("[GENERATE_MONITOR] ❌ Fallback also failed: $(e)")
+        end
+        
+        println("[GENERATE_MONITOR] 🔄 Using traditional random generation as final fallback")
+        llm_recorder(options.llm_options, "None", "gen_random|failed")
         return gen_random_tree_fixed_size(node_count, options, nfeatures, T)
     end
 
-    return out
+    # Select a random valid candidate
+    selected_idx = rand(1:length(valid_candidates))
+    selected_tree, selected_expr = valid_candidates[selected_idx]
+    
+    println("[GENERATE_MONITOR] 🎯 Selected candidate $(selected_idx): \"$(selected_expr)\"")
+    println("[GENERATE_MONITOR] ✅ Generation successful: $(tree_to_expr(selected_tree, options))")
+
+    llm_recorder(options.llm_options, tree_to_expr(selected_tree, options), "gen_random")
+
+    return selected_tree
 end
 
 
@@ -416,11 +457,23 @@ end
 function sample_context(idea_database, N, idea_threshold)::Vector{String}
     assumptions = Vector{String}()
     if isnothing(idea_database)
+        println("[IDEA_MONITOR] ⚠️  Context Sampling: No idea database available")
         for _ in 1:N
             push!(assumptions, "None")
         end
         return assumptions
     end
+
+    database_size = size(idea_database)[1]
+    if database_size == 0
+        println("[IDEA_MONITOR] ⚠️  Context Sampling: Idea database is empty")
+        for _ in 1:N
+            push!(assumptions, "None")
+        end
+        return assumptions
+    end
+
+    println("[IDEA_MONITOR] 🎯 Context Sampling: Sampling $(N) ideas from database of $(database_size) ideas (threshold: $(idea_threshold))")
 
     if size(idea_database)[1] < N
         for i in 1:(size(idea_database)[1])
@@ -429,6 +482,7 @@ function sample_context(idea_database, N, idea_threshold)::Vector{String}
         for i in (size(idea_database)[1]+1):N
             push!(assumptions, "None")
         end
+        println("[IDEA_MONITOR] 📝 Sampled Ideas: $(join(filter(x -> x != "None", assumptions), ", "))")
         return assumptions
     end
 
@@ -439,6 +493,10 @@ function sample_context(idea_database, N, idea_threshold)::Vector{String}
         end
         push!(assumptions, chosen_idea)
     end
+    
+    valid_ideas = filter(x -> x != "None", assumptions)
+    println("[IDEA_MONITOR] 📝 Sampled Ideas: $(join(valid_ideas, ", "))")
+    
     assumptions
 end
 
@@ -449,6 +507,8 @@ function prompt_evol(idea_database, options::Options)
         return nothing
     end
     n_ideas = 5
+    
+    println("[IDEA_MONITOR] 🧠 Prompt Evolution: Starting with $(num_ideas) ideas in database")
     
     ideas = [idea_database[rand((options.llm_options.idea_threshold + 1):num_ideas)] for _ in 1:n_ideas]
 
@@ -482,6 +542,7 @@ function prompt_evol(idea_database, options::Options)
                 http_kwargs=convertDict(options.llm_options.http_kwargs)
                 )
     catch e
+        println("[IDEA_MONITOR] ❌ Prompt Evolution: LLM call failed - $(e)")
         llm_recorder(options.llm_options, "None", "ideas|failed")
         return nothing
     end
@@ -492,6 +553,7 @@ function prompt_evol(idea_database, options::Options)
     N = min(size(idea_options)[1], N)
 
     if N == 0
+        println("[IDEA_MONITOR] ❌ Prompt Evolution: No valid ideas generated")
         llm_recorder(options.llm_options, "None", "ideas|failed")
         return nothing
     end
@@ -499,6 +561,8 @@ function prompt_evol(idea_database, options::Options)
     # only choose one, merging ideas not really crossover
     chosen_idea = String(strip(idea_options[rand(1:N)], [' ', '\n', '"', ',', '.', '[', ']']))
 
+    println("[IDEA_MONITOR] ✨ Prompt Evolution: Generated new idea -> \"$(chosen_idea)\"")
+    
     llm_recorder(options.llm_options, chosen_idea, "ideas")
 
     chosen_idea
@@ -510,11 +574,16 @@ function update_idea_database(idea_database, dominating, worst_members, options:
         return
     end
 
+    current_size = length(idea_database)
+    println("[IDEA_MONITOR] 🔄 Updating Idea Database: Current size = $(current_size)")
+
     op = options.operators
     num_pareto_context = options.llm_options.num_pareto_context
 
     gexpr = format_pareto(dominating, options, num_pareto_context)
     bexpr = format_pareto(worst_members, options, num_pareto_context)
+
+    println("[IDEA_MONITOR] 📊 Analysis Input: $(length(dominating)) dominating expressions, $(length(worst_members)) worst expressions")
 
     N = 5
 
@@ -574,6 +643,7 @@ function update_idea_database(idea_database, dominating, worst_members, options:
                 verbose=false,
         )
     catch e
+        println("[IDEA_MONITOR] ❌ Idea Extraction: LLM call failed - $(e)")
         llm_recorder(options.llm_options, "None", "ideas|failed")
         return nothing
     end
@@ -585,6 +655,7 @@ function update_idea_database(idea_database, dominating, worst_members, options:
     N = min(size(idea_options)[1], N)
 
     if N == 0
+        println("[IDEA_MONITOR] ❌ Idea Extraction: No valid ideas extracted")
         llm_recorder(options.llm_options, "None", "ideas|failed")
         return nothing
     end
@@ -593,6 +664,7 @@ function update_idea_database(idea_database, dominating, worst_members, options:
 
     chosen_idea1 = String(strip(idea_options[a], [' ', '\n', '"', ',', '.', '[', ']']))
 
+    println("[IDEA_MONITOR] ➕ Adding New Idea 1: \"$(chosen_idea1)\"")
     llm_recorder(options.llm_options, chosen_idea1, "ideas")
     pushfirst!(idea_database, chosen_idea1)
 
@@ -603,17 +675,29 @@ function update_idea_database(idea_database, dominating, worst_members, options:
         end
         chosen_idea2 = String(strip(idea_options[b], [' ', '\n', '"', ',', '.', '[', ']']))
 
+        println("[IDEA_MONITOR] ➕ Adding New Idea 2: \"$(chosen_idea2)\"")
         llm_recorder(options.llm_options, chosen_idea2, "ideas")
 
         pushfirst!(idea_database, chosen_idea2)
     end
 
     num_add = 2
+    evolved_count = 0
     for _ in 1:num_add
         out = prompt_evol(idea_database, options)
         if !isnothing(out)
             pushfirst!(idea_database, out)
+            evolved_count += 1
+            println("[IDEA_MONITOR] ➕ Adding Evolved Idea: \"$(out)\"")
         end
+    end
+    
+    new_size = length(idea_database)
+    total_added = new_size - current_size
+    println("[IDEA_MONITOR] ✅ Database Updated: $(current_size) -> $(new_size) (+$(total_added) ideas, $(evolved_count) evolved)")
+    println("[IDEA_MONITOR] 📋 Latest Top 3 Ideas:")
+    for i in 1:min(3, new_size)
+        println("[IDEA_MONITOR]   $(i). \"$(idea_database[i])\"")
     end
 end
 
@@ -623,10 +707,75 @@ function llm_mutate_op(ex::AbstractExpression{T}, options::Options, idea_databas
     return ex
 end
 
+"""Clean and normalize LLM-generated expression strings"""
+function clean_expression_string(expr_str::String)::String
+    # Remove extra whitespace and quotes
+    cleaned = strip(expr_str, [' ', '\n', '"', ',', '.', '[', ']'])
+    
+    # Fix common LLM mistakes
+    cleaned = replace(cleaned, "**" => "^")  # Double asterisk to exponent
+    cleaned = replace(cleaned, "θ" => "theta")  # Greek theta to theta
+    cleaned = replace(cleaned, "Cos" => "cos")  # Uppercase to lowercase
+    cleaned = replace(cleaned, "Sin" => "sin")  # Uppercase to lowercase
+    cleaned = replace(cleaned, "Exp" => "exp")  # Uppercase to lowercase
+    cleaned = replace(cleaned, "Log" => "log")  # Uppercase to lowercase
+    cleaned = replace(cleaned, "Sqrt" => "sqrt")  # Uppercase to lowercase
+    
+    # Map log to safe_log (but system expects log, not safe_log in expressions)
+    # The system internally maps log to safe_log during parsing
+    
+    # Replace unsupported functions with supported equivalents
+    cleaned = replace(cleaned, r"\btanh\(" => "((exp(2*") # Start tanh replacement
+    cleaned = replace(cleaned, r"\btanh\b" => "((exp(2*theta)-1)/(exp(2*theta)+1))")
+    cleaned = replace(cleaned, r"\brho\b" => "C") # Replace rho with C
+    cleaned = replace(cleaned, r"\bpi\b" => "C") # Replace pi with C  
+    cleaned = replace(cleaned, r"\be\b" => "C") # Replace e with C
+    
+    # Handle tanh(x) patterns - replace with hyperbolic tangent approximation
+    # Note: This is a simplified approach - ideally we'd parse the argument properly
+    cleaned = replace(cleaned, r"tanh\(([^)]+)\)" => s"((exp(2*\1)-1)/(exp(2*\1)+1))")
+    
+    # Remove other unsupported functions entirely and replace with constants
+    unsupported_funcs = ["atan", "asin", "acos", "tan", "cot", "sec", "csc", "sinh", "cosh", "asinh", "acosh", "atanh"]
+    for func in unsupported_funcs
+        cleaned = replace(cleaned, Regex("\\b" * func * "\\([^)]+\\)") => "C")
+    end
+    
+    # Fix malformed expressions
+    cleaned = replace(cleaned, r"\(\s*\*\s*" => "(") # Remove orphaned asterisks
+    cleaned = replace(cleaned, r"\*\s*\)" => ")") # Remove trailing asterisks
+    cleaned = replace(cleaned, r"\(\s*\)" => "C") # Replace empty parentheses with C
+    
+    # Fix multiple consecutive operators
+    cleaned = replace(cleaned, r"\+\s*\+" => "+") # ++ -> +
+    cleaned = replace(cleaned, r"-\s*-" => "+") # -- -> +
+    cleaned = replace(cleaned, r"\*\s*\*" => "^") # ** -> ^
+    cleaned = replace(cleaned, r"/\s*/" => "/") # // -> /
+    
+    # Handle edge cases where expressions might be malformed
+    cleaned = replace(cleaned, r"^\s*[\+\-\*/\^]\s*" => "C") # Expression starting with operator
+    cleaned = replace(cleaned, r"\s*[\+\-\*/\^]\s*$" => "") # Expression ending with operator
+    
+    # Replace sequences of constants/operations that might be invalid
+    cleaned = replace(cleaned, r"C\s*C" => "C") # CC -> C
+    cleaned = replace(cleaned, r"theta\s*theta" => "theta^2") # theta theta -> theta^2
+    
+    # Ensure we have a valid expression - if it's just whitespace, return C
+    cleaned = strip(cleaned)
+    if isempty(cleaned) || cleaned == ""
+        cleaned = "C"
+    end
+    
+    return cleaned
+end
+
 """LLM Mutation on a tree"""
 function llm_mutate_op(tree::AbstractExpressionNode{T}, options::Options, idea_database)::AbstractExpressionNode{T} where {T<:DATA_TYPE}
     expr = tree_to_expr(tree, options) # TODO: change global expr right now, could do it by subtree (weighted near root more)
     N = 5
+    
+    println("[MUTATE_MONITOR] 🔄 Starting LLM Mutation: Input expression = \"$(expr)\"")
+    
     # LLM prompt
     # TODO: we can use async map to do concurrent requests (useful for trying multiple prompts), see: https://github.com/svilupp/PromptingTools.jl?tab=readme-ov-file#asynchronous-execution
 
@@ -681,38 +830,73 @@ function llm_mutate_op(tree::AbstractExpressionNode{T}, options::Options, idea_d
             verbose=false,
 )
     catch e
+        println("[MUTATE_MONITOR] ❌ LLM API call failed: $(e)")
         llm_recorder(options.llm_options, "None", "mutate|failed")
         return tree
     end
 
+    println("[MUTATE_MONITOR] 📨 LLM Response received: $(length(string(msg.content))) characters")
     llm_recorder(options.llm_options, string(msg.content), "llm_output|mutate")
 
     mut_tree_options = parse_msg_content(String(msg.content))
 
     N = min(size(mut_tree_options)[1], N)
+    
+    println("[MUTATE_MONITOR] 🔍 Parsed $(N) candidate expressions from LLM output")
 
     if N == 0
+        println("[MUTATE_MONITOR] ❌ No valid expressions parsed from LLM output")
         llm_recorder(options.llm_options, "None", "mutate|failed")
         return tree
     end
 
+    # Try to parse each candidate
+    valid_candidates = []
     for i in 1:N
-        l = rand(1:N)
-        t = expr_to_tree(T, String(strip(mut_tree_options[l], [' ', '\n', '"', ',', '.', '[', ']'])), options)
-        if t.val == 1 && t.constant
-            continue
+        raw_expr = mut_tree_options[i]
+        cleaned_expr = clean_expression_string(raw_expr)
+        
+        println("[MUTATE_MONITOR] 🧽 Candidate $(i): \"$(raw_expr)\" -> \"$(cleaned_expr)\"")
+        
+        try
+            t = expr_to_tree(T, cleaned_expr, options)
+            if !(t.val == 1 && t.constant)  # Not a trivial constant
+                push!(valid_candidates, (t, cleaned_expr))
+                println("[MUTATE_MONITOR] ✅ Candidate $(i): Successfully parsed")
+            else
+                println("[MUTATE_MONITOR] ⚠️  Candidate $(i): Parsed to trivial constant, skipped")
+            end
+        catch e
+            println("[MUTATE_MONITOR] ❌ Candidate $(i): Parse error - $(e)")
         end
-
-        llm_recorder(options.llm_options, tree_to_expr(t, options), "mutate")
-
-        return t
+    end
+    
+    if length(valid_candidates) == 0
+        println("[MUTATE_MONITOR] ❌ No valid candidates after cleaning and parsing")
+        # Try fallback with the first raw expression
+        try
+            fallback_expr = clean_expression_string(mut_tree_options[1])
+            out = expr_to_tree(T, fallback_expr, options)
+            println("[MUTATE_MONITOR] 🔄 Fallback: Using first candidate \"$(fallback_expr)\"")
+            llm_recorder(options.llm_options, tree_to_expr(out, options), "mutate")
+            return out
+        catch e
+            println("[MUTATE_MONITOR] ❌ Fallback also failed: $(e)")
+            llm_recorder(options.llm_options, "None", "mutate|failed")
+            return tree
+        end
     end
 
-    out = expr_to_tree(T, String(strip(mut_tree_options[1], [' ', '\n', '"', ',', '.', '[', ']'])), options)
+    # Select a random valid candidate
+    selected_idx = rand(1:length(valid_candidates))
+    selected_tree, selected_expr = valid_candidates[selected_idx]
+    
+    println("[MUTATE_MONITOR] 🎯 Selected candidate $(selected_idx): \"$(selected_expr)\"")
+    println("[MUTATE_MONITOR] ✅ Mutation successful: $(tree_to_expr(tree, options)) -> $(tree_to_expr(selected_tree, options))")
 
-    llm_recorder(options.llm_options, tree_to_expr(out, options), "mutate")
+    llm_recorder(options.llm_options, tree_to_expr(selected_tree, options), "mutate")
 
-    return out
+    return selected_tree
 end
 
 function llm_crossover_trees(ex1::E, ex2::E, options::Options, idea_database)::Tuple{E,E} where {T,E<:AbstractExpression{T}}
@@ -730,6 +914,10 @@ function llm_crossover_trees(tree1::AbstractExpressionNode{T}, tree2::AbstractEx
     expr1 = tree_to_expr(tree1, options)
     expr2 = tree_to_expr(tree2, options)
     N = 5
+    
+    println("[CROSSOVER_MONITOR] 🔄 Starting LLM Crossover:")
+    println("[CROSSOVER_MONITOR]   Parent 1: \"$(expr1)\"")
+    println("[CROSSOVER_MONITOR]   Parent 2: \"$(expr2)\"")
 
     # LLM prompt
     # conversation = [
@@ -785,64 +973,151 @@ function llm_crossover_trees(tree1::AbstractExpressionNode{T}, tree2::AbstractEx
                 verbose=false,
         )
     catch e
+        println("[CROSSOVER_MONITOR] ❌ LLM API call failed: $(e)")
         llm_recorder(options.llm_options, "None", "crossover|failed")
         return tree1, tree2
     end
 
+    println("[CROSSOVER_MONITOR] 📨 LLM Response received: $(length(string(msg.content))) characters")
     llm_recorder(options.llm_options, string(msg.content), "llm_output|crossover")
 
     cross_tree_options = parse_msg_content(String(msg.content))
 
-    cross_tree1 = nothing
-    cross_tree2 = nothing
-
     N = min(size(cross_tree_options)[1], N)
+    
+    println("[CROSSOVER_MONITOR] 🔍 Parsed $(N) candidate expressions from LLM output")
 
     if N == 0
+        println("[CROSSOVER_MONITOR] ❌ No valid expressions parsed from LLM output")
         llm_recorder(options.llm_options, "None", "crossover|failed")
         return tree1, tree2
     end
 
-    if N == 1
-        t = expr_to_tree(
-            T,
-            String(strip(cross_tree_options[1], [' ', '\n', '"', ',', '.', '[', ']'])),
-            options,
-        )
+    # Try to parse candidates and collect valid ones
+    valid_candidates = []
+    for i in 1:N
+        raw_expr = cross_tree_options[i]
+        cleaned_expr = clean_expression_string(raw_expr)
         
-        llm_recorder(options.llm_options, tree_to_expr(t, options), "crossover")
-
-        return t, tree2
-    end
-
-    for i in 1:(2*N)
-        l = rand(1:N)
-        t = expr_to_tree(T, String(strip(cross_tree_options[l], [' ', '\n', '"', ',', '.', '[', ']'])), options)
-        if t.val == 1 && t.constant
-            continue
-        end
-
-        if isnothing(cross_tree1)
-            cross_tree1 = t
-        elseif isnothing(cross_tree2)
-            cross_tree2 = t
-            break
+        println("[CROSSOVER_MONITOR] 🧽 Candidate $(i): \"$(raw_expr)\" -> \"$(cleaned_expr)\"")
+        
+        try
+            t = expr_to_tree(T, cleaned_expr, options)
+            if !(t.val == 1 && t.constant)  # Not a trivial constant
+                push!(valid_candidates, (t, cleaned_expr))
+                println("[CROSSOVER_MONITOR] ✅ Candidate $(i): Successfully parsed")
+            else
+                println("[CROSSOVER_MONITOR] ⚠️  Candidate $(i): Parsed to trivial constant, skipped")
+            end
+        catch e
+            println("[CROSSOVER_MONITOR] ❌ Candidate $(i): Parse error - $(e)")
         end
     end
 
-    if isnothing(cross_tree1)
-        cross_tree1 = expr_to_tree(T, String(strip(cross_tree_options[1], [' ', '\n', '"', ',', '.', '[', ']'])), options)
+    if length(valid_candidates) == 0
+        println("[CROSSOVER_MONITOR] ❌ No valid candidates after cleaning and parsing")
+        # Try fallback with the first raw expression  
+        try
+            fallback_expr = clean_expression_string(cross_tree_options[1])
+            t = expr_to_tree(T, fallback_expr, options)
+            println("[CROSSOVER_MONITOR] 🔄 Fallback: Using first candidate \"$(fallback_expr)\"")
+            recording_str = tree_to_expr(t, options) * " && " * tree_to_expr(tree2, options)
+            llm_recorder(options.llm_options, recording_str, "crossover")
+            return t, tree2
+        catch e
+            println("[CROSSOVER_MONITOR] ❌ Fallback also failed: $(e)")
+            llm_recorder(options.llm_options, "None", "crossover|failed")
+            return tree1, tree2
+        end
+    end
+
+    cross_tree1 = nothing
+    cross_tree2 = nothing
+
+    # Try to get two different offspring
+    if length(valid_candidates) == 1
+        cross_tree1, _ = valid_candidates[1]
+        cross_tree2 = tree2  # Keep second parent as second offspring
+        println("[CROSSOVER_MONITOR] 🎯 Only one valid candidate, using it as first offspring")
+    else
+        # Select two different candidates
+        selected_indices = []
+        for attempt in 1:(2*length(valid_candidates))
+            idx = rand(1:length(valid_candidates))
+            t, cleaned_expr = valid_candidates[idx]
+            
+            if cross_tree1 === nothing
+                cross_tree1 = t
+                push!(selected_indices, idx)
+                println("[CROSSOVER_MONITOR] 🎯 Selected candidate $(idx) as first offspring: \"$(cleaned_expr)\"")
+            elseif cross_tree2 === nothing && !(idx in selected_indices)
+                cross_tree2 = t
+                push!(selected_indices, idx)
+                println("[CROSSOVER_MONITOR] 🎯 Selected candidate $(idx) as second offspring: \"$(cleaned_expr)\"")
+                break
+            end
+        end
+        
+        # If we couldn't find two different candidates, use the first one twice
+        if cross_tree2 === nothing
+            cross_tree2, cleaned_expr = valid_candidates[1]
+            println("[CROSSOVER_MONITOR] 🔄 Using first candidate as second offspring: \"$(cleaned_expr)\"")
+        end
+    end
+
+    if cross_tree1 === nothing
+        cross_tree1, _ = valid_candidates[1]
     end
     
-    if isnothing(cross_tree2)
-        cross_tree2 = expr_to_tree(T, String(strip(cross_tree_options[2], [' ', '\n', '"', ',', '.', '[', ']'])), options)
+    if cross_tree2 === nothing
+        cross_tree2, _ = valid_candidates[1]
     end
 
     recording_str = tree_to_expr(cross_tree1, options) * " && " * tree_to_expr(cross_tree2, options)
+    println("[CROSSOVER_MONITOR] ✅ Crossover successful:")
+    println("[CROSSOVER_MONITOR]   Offspring 1: $(tree_to_expr(cross_tree1, options))")
+    println("[CROSSOVER_MONITOR]   Offspring 2: $(tree_to_expr(cross_tree2, options))")
     llm_recorder(options.llm_options, recording_str, "crossover")
 
     return cross_tree1, cross_tree2
 end
 
+"""Test expression cleaning and parsing"""
+function test_expression_cleaning()
+    # Test cases from actual LLM failures
+    test_cases = [
+        "((sqrt((C ^ (1/C)* theta / C)) / C) / (theta * C)) + ((Cos(**theta))*( θ ))",
+        "((sqrt(log(C*C**(θ/  C))) /  θ )/ (log(C)*θ))*C+((C**θ)*(θ))",
+        "(( sqrt(C^(θ/  C) / C) /  θ  ))^-θ*( C ^(   1.0/  θ    ))+((Cos( **theta ))*( θ ))",
+        "((sqrt(C^(1/C)*C/C*theta**-2)) / (C*theta^-1)) + ((Sin(theta))^+2)**θ ",
+        "(( sqrt( C^(sin(θ )*θ) / cos( C))) / (C*θ))*C+((C^ θ)*( Sin( **theta**) * sin(*theta )))",
+        "**theta",
+        "Cos(theta)",
+        "θ + C",
+        "log(theta)",
+        "tanh(theta)",
+        "C / ()",
+        "++ C",
+        "C --",
+    ]
+    
+    println("🧪 Testing Expression Cleaning:")
+    println("=" ^ 60)
+    
+    for (i, test_expr) in enumerate(test_cases)
+        println("Test $(i): \"$(test_expr)\"")
+        cleaned = clean_expression_string(test_expr)
+        println("  Cleaned: \"$(cleaned)\"")
+        
+        # Try to parse it
+        try
+            parsed = Meta.parse(cleaned)
+            println("  ✅ Parse successful: $(parsed)")
+        catch e
+            println("  ❌ Parse failed: $(e)")
+        end
+        println()
+    end
+end
 
 end

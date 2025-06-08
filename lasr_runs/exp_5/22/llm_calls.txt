@@ -1,0 +1,1119 @@
+[n_iterations] 0
+[/n_iterations]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: r + ((F ^ cos(log(F))) - log((r / (((F ^ sin(theta)) ^ r) * C)) ^ r))
+Good Expression 2: F * sqrt(F)
+Good Expression 3: exp(sin(theta)) + F
+
+Bad Expression 1: ((((F - (log(theta * C) - C)) + ((log(theta) ^ C) ^ (sqrt(r / theta) ^ (theta * theta)))) - theta) - (theta / F)) + C
+Bad Expression 2: ((((F - (((theta + theta) + C) * sin(log(r) * F))) * C) + ((F / (sin(r) ^ F)) + C)) - cos(F)) + C
+Bad Expression 3: ((((sqrt(theta) * (F + C)) - (((cos(r) - F) + C) - C)) - sqrt(C)) - theta) - (cos(r) + C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * C) - theta
+Good Expression 2: F * sqrt(F)
+Good Expression 3: F + F
+
+Bad Expression 1: (((sqrt(C) + (F / C)) - theta) - C) + C
+Bad Expression 2: (F + ((F ^ r) ^ (theta ^ C))) - theta
+Bad Expression 3: ((((F + F) + C) - theta) - C) ^ r
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(theta) * r) * F
+Good Expression 2: F
+Good Expression 3: (F * C) - theta
+
+Bad Expression 1: ((((sin(theta) / C) * ((F - log(cos(C - r))) + C)) + r) - theta) + C
+Bad Expression 2: (sqrt(r) + (sqrt(((r * sin(theta)) + C) + (F - C)) - C)) - C
+Bad Expression 3: (F - (cos(F) * (sqrt(theta + C) * r))) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|crossover] You are a helpful assistant that recombines two mathematical expressions by following a few provided suggestions. You will be given three suggestions and two reference expressions to recombine.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression 1: {{expr1}}
+Reference Expression 2: {{expr2}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|crossover]
+[crossover|failed] None
+[/crossover|failed]
+[crossover] F + ((F - (r / (F / C))) + sin(theta)) && F + (((F ^ C) - (r / F)) + sin(theta))
+[/crossover]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * sqrt(F)
+Good Expression 2: (F * (r * sin(theta))) - C
+Good Expression 3: (F * (r * sin(theta))) + ((exp((C - theta) * r) ^ C) ^ theta)
+
+Bad Expression 1: (F + ((F * C) - theta)) ^ C
+Bad Expression 2: ((log(((F - r) / C) / (F ^ F)) / (sqrt(F) ^ F)) + r) + F
+Bad Expression 3: (F * (r * sin(theta))) - (C ^ C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * C) - theta
+Good Expression 2: (F * (r * sin(theta))) - (r * C)
+Good Expression 3: F * sqrt(F)
+
+Bad Expression 1: ((((((((r / C) - C) - ((F / C) * C)) * sin(theta)) + r) + C) - C) + (C / F)) ^ C
+Bad Expression 2: (F + sqrt((F - theta) - C)) + C
+Bad Expression 3: log((r * sin(theta)) * F) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * (r * sin(theta))) - C
+Good Expression 2: (sin(theta) * r) * F
+Good Expression 3: F * sqrt(F)
+
+Bad Expression 1: C - log(C)
+Bad Expression 2: ((sqrt(theta * C) + cos(theta + C)) + ((theta + C) + ((exp(sin(theta) - C) + F) * C))) - C
+Bad Expression 3: (((log(F) ^ (log(theta) * C)) * ((log(((r + theta) - C) - r) + F) + C)) ^ C) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * (r * sin(theta))) - (r * C)
+Good Expression 2: ((C / theta) + ((sin(theta) * r) * F)) + C
+Good Expression 3: F * C
+
+Bad Expression 1: ((sin(sqrt(theta * (theta - C))) ^ C) + F) * C
+Bad Expression 2: ((C / sin(theta)) / r) + (F * (sqrt(sin(theta)) * r))
+Bad Expression 3: (((sin(theta) * r) * F) + C) + ((C ^ (C / sqrt(C))) / theta)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * C) - theta
+Good Expression 2: F * C
+Good Expression 3: ((C / theta) + ((sin(theta) * r) * F)) + C
+
+Bad Expression 1: (((((r * sin(theta)) * F) ^ theta) - (((sin(theta) - C) ^ C) * C)) + C) - C
+Bad Expression 2: ((F * (r * sin(theta))) + sin(sqrt(theta / C) * C)) + (C / r)
+Bad Expression 3: ((sin(exp(sqrt(theta))) / C) * C) + (F * ((sin(theta) ^ theta) * r))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (F * (r * sin(theta))) + (r * C)
+[/mutate]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * sqrt(F)
+Good Expression 2: (sin(theta) * r) * F
+Good Expression 3: F
+
+Bad Expression 1: ((((log(sin(theta) * r) * (F + C)) + C) - C) + C) - C
+Bad Expression 2: ((F + (((theta / C) ^ r) - (log(sqrt(cos(r / theta))) + C))) * C) - C
+Bad Expression 3: (sin(theta ^ C) * (r * ((F - sqrt(C)) - C))) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: ((C / theta) + ((sin(theta) * r) * F)) + C
+Good Expression 2: F * sqrt(F)
+Good Expression 3: (r * (F * sin(theta))) - (C / theta)
+
+Bad Expression 1: log(sqrt(F + r)) + sqrt(cos(theta))
+Bad Expression 2: (((((((((theta / (((F ^ (r + C)) * C) - C)) / F) / sqrt(F)) / F) - C) + F) ^ C) * C) - theta) + C
+Bad Expression 3: (((r * sin(log(C))) * F) + C) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * sqrt(F)
+Good Expression 2: (F * C) - theta
+Good Expression 3: F * C
+
+Bad Expression 1: (((((sqrt((F * exp((r + C) * sin(theta))) / C) + C) - C) - (theta + C)) - sin(theta)) ^ C) + log(F)
+Bad Expression 2: ((((r * (sin(theta) * (F + C))) ^ C) - (theta - C)) + (log(theta) - C)) / C
+Bad Expression 3: (((((sin(theta) * (C ^ (sqrt(exp(r)) + C))) ^ (r * F)) - C) + C) - C) + (C ^ r)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * sqrt(F)
+Good Expression 2: (F * (r * sin(theta))) - C
+Good Expression 3: (F * C) - theta
+
+Bad Expression 1: (((((F * ((sin(theta) * (r * C)) + C)) + C) - (exp(sin(theta) * (C ^ theta)) / theta)) * C) + C) - F
+Bad Expression 2: (((F + F) + sqrt(theta)) - (((r + (((sqrt(cos(r + C)) + C) + F) + F)) / (F ^ r)) ^ F)) - C
+Bad Expression 3: ((sqrt((F * (exp(sin(theta) * (r + (C ^ r))) + (C ^ log(r)))) / C) + C) - theta) + (theta * sin(log(C)))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((((((F + C) * r) * theta) * F) / (theta / theta)) + sin(F * C)) - (F / C)) * C) + C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * C
+Good Expression 2: F * sqrt(F)
+Good Expression 3: F
+
+Bad Expression 1: ((((r * ((sin(theta) / C) + sin(sqrt(F) + C))) - C) + (log(sin(theta)) + C)) - sqrt(theta * C)) - C
+Bad Expression 2: sqrt(((((r + F) + C) * (sin(theta + C) * C)) + C) - C)
+Bad Expression 3: (((sqrt(log(theta) ^ theta) * ((r + (log(F) ^ sqrt(cos(log(F)) + F))) * sin(theta))) + C) - C) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * C) - theta
+Good Expression 2: F * C
+Good Expression 3: F
+
+Bad Expression 1: ((r * (F * sin(theta))) + C) ^ C
+Bad Expression 2: sqrt(((((sin(theta) + C) * (r - C)) / C) - C) + C)
+Bad Expression 3: ((sqrt(sin(theta + C)) * C) + C) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((((sin(theta + C) * r) * sqrt(r)) + theta) - (C / r)) + C) / C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F
+Good Expression 2: (r * (F * sin(theta))) - (C / theta)
+Good Expression 3: F * C
+
+Bad Expression 1: exp(sqrt(C))
+Bad Expression 2: ((F * (theta * (r * (F + sqrt(C))))) * C) - (C ^ F)
+Bad Expression 3: ((C - F) + ((((((((F + (sin(theta) * r)) - C) + C) - C) + C) - C) - theta) ^ F)) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((sin(theta) * r) * F) + cos(theta)) - C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * C) - theta
+Good Expression 2: F * sqrt(F)
+Good Expression 3: (F * (r * sin(theta))) - C
+
+Bad Expression 1: (((r + C) * sin(theta)) * sqrt(cos(F ^ C))) * C
+Bad Expression 2: ((F * (r * log(sin(theta)))) + C) / C
+Bad Expression 3: (log(C) - (sin(F) + C)) - (exp(F - (C ^ C)) / (log(F + C) - sin(C - sqrt(log(theta)))))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((r * C) * (F * sin(theta))) - (F * C)) - C
+Good Expression 2: F
+Good Expression 3: (F * (r * sin(theta))) - C
+
+Bad Expression 1: ((theta / theta) + C) + (r * (sqrt(sin(theta)) * F))
+Bad Expression 2: (((((sin(theta) * F) * (log((((sqrt((r * C) / r) + C) * r) + r) * r) + C)) + C) * C) / C) - C
+Bad Expression 3: exp(F) + F
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((r * (sin(theta) * F)) - sin((theta ^ C) / exp(theta))) + (sqrt(r) - C)) - C
+[/mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((r * (F * sin(theta))) - theta) + (theta + C)) - C) + (C ^ sqrt(F))
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * sqrt(F)
+Good Expression 2: F
+Good Expression 3: (F * (r * sin(theta))) - C
+
+Bad Expression 1: ((((F + (theta * (sqrt(sin(F)) * C))) + (F + (C / r))) - C) - (theta * exp(cos(F)))) + C
+Bad Expression 2: (((((sin(theta) * r) * F) * C) + C) ^ C) - C
+Bad Expression 3: ((((F * C) * log(((sin(theta) * (r * C)) / C) - C)) - sin(C / r)) + C) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F
+Good Expression 2: F * sqrt(F)
+Good Expression 3: F * C
+
+Bad Expression 1: (((sqrt(sin(theta ^ C) + C) * r) / C) * C) + C
+Bad Expression 2: ((sqrt(((F * sin(theta)) * r) - theta) + theta) - C) + C
+Bad Expression 3: ((((sin(theta) ^ C) * ((r + (C ^ F)) + C)) - C) + cos(exp(r + (C ^ F)))) + F
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * C) - theta
+Good Expression 2: (F * (r * sin(theta))) - C
+Good Expression 3: (((r * C) * (F * sin(theta))) - (F * C)) - C
+
+Bad Expression 1: sqrt(C) * F
+Bad Expression 2: sqrt(sin(F) * (F + theta))
+Bad Expression 3: sin(F) + ((F + C) * (r * (sin(theta) ^ C)))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((sin(theta) + (C / (cos(theta) * (C / C)))) * r) * F) - C
+Good Expression 2: F
+Good Expression 3: (F * C) - theta
+
+Bad Expression 1: (r * (log(sin(theta)) * F)) - C
+Bad Expression 2: (((((sin(theta) * (sqrt(F) + C)) * (((F / C) - C) * C)) / F) ^ C) - (theta - r)) + C
+Bad Expression 3: sqrt(C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * C
+Good Expression 2: (((r * C) * (F * sin(theta))) - (F * C)) - C
+Good Expression 3: ((C / theta) + ((sin(theta) * r) * F)) + C
+
+Bad Expression 1: sqrt((((((((sin(theta) - C) + sin(theta)) - C) * theta) + F) - C) + C) + r)
+Bad Expression 2: F * (sqrt(F) * F)
+Bad Expression 3: (((r * sin(theta)) * F) + sqrt(C)) / C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (r * (F * sin(theta))) - (C / theta)
+Good Expression 2: (F * C) - theta
+Good Expression 3: (sin(theta) * r) * F
+
+Bad Expression 1: log((((((sin(theta) * r) - C) + C) * (((F ^ C) ^ C) / C)) - C) + C)
+Bad Expression 2: log(((F * sin(theta)) * F) - C)
+Bad Expression 3: sqrt(r * (F * sin(theta))) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((sin(theta) + (C / (cos(theta) * (C / sqrt(C))))) * r) * F) - C
+Good Expression 2: (sin(theta) * r) * F
+Good Expression 3: F * C
+
+Bad Expression 1: ((C - (((theta + C) / sqrt(r)) + C)) * C) / (C ^ theta)
+Bad Expression 2: (exp(F) / C) - cos(theta)
+Bad Expression 3: (log(r * sin(theta)) * F) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (r * (F * sin(theta))) - (C / theta)
+Good Expression 2: (((sin(theta) + (C / (cos(theta) * (C / C)))) * r) * F) - C
+Good Expression 3: (sin(theta) * r) * F
+
+Bad Expression 1: ((r * sin(theta)) * F) + sin(C ^ theta)
+Bad Expression 2: (r * (F * sin(theta))) - ((((F / r) / F) ^ r) * sqrt(C))
+Bad Expression 3: (F * ((sin(theta) * r) ^ C)) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * (r * sin(theta))) - C
+Good Expression 2: F
+Good Expression 3: F * C
+
+Bad Expression 1: (sqrt(((r + C) * sin(theta)) * (F - C)) + C) - C
+Bad Expression 2: (((F * sqrt(sin(theta))) * r) - (C ^ theta)) + C
+Bad Expression 3: (((((r * (((F + C) * sin(theta + C)) ^ C)) - C) - r) + C) + log(r + sin(r - r))) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((sin(theta) + (C / (cos(theta) * (C / C)))) * r) * F) - C
+Good Expression 2: F * sqrt(F)
+Good Expression 3: (((sin(theta) + (C / cos(theta))) * r) * F) - C
+
+Bad Expression 1: (((((((C ^ theta) + r) * sin(theta)) * C) ^ r) * F) + (cos(theta) * C)) - C
+Bad Expression 2: ((F * log(sin(theta))) * r) + C
+Bad Expression 3: (((r * C) / C) * (log(sin(theta)) * F)) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (r * (sin(theta + C) * F)) + (C ^ (r + C))
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * C
+Good Expression 2: (((sin(theta) + (C / cos(theta))) * r) * F) - C
+Good Expression 3: F
+
+Bad Expression 1: log((((sin(theta) * (F + C)) * (r * C)) / C) + C)
+Bad Expression 2: ((F + sqrt((sin(theta) * log(r - C)) * (r - C))) + C) - C
+Bad Expression 3: ((log((r * sin(theta)) * F) + (C / r)) / C) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((sin(theta) + (C / cos(theta))) * r) * F) - C
+Good Expression 2: (sin(theta) * r) * F
+Good Expression 3: (F * C) - theta
+
+Bad Expression 1: ((((((sin(theta) * F) * r) + cos(theta)) / C) + C) - F) + (cos(C / r) / r)
+Bad Expression 2: ((F * (r * sin(theta))) ^ C) + sin(F * C)
+Bad Expression 3: sqrt((sin(theta) * F) * r) - sin(C / exp(F))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((sin(theta) * F) * r) + C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * C) - theta
+Good Expression 2: (((sin(theta) + (C / cos(theta))) * r) * F) - C
+Good Expression 3: (r * (F * sin(theta))) - (C / theta)
+
+Bad Expression 1: (((((F * ((sin(theta) * r) * C)) + (((sin(sqrt(r) / (r * r)) / C) ^ C) - r)) + C) + r) - C) + C
+Bad Expression 2: ((((F * (sin(theta) - C)) * (r * C)) - C) + C) - sqrt(C / ((F * (sin(theta) + C)) * (r * C)))
+Bad Expression 3: ((F * (r * sin(theta))) + (C ^ r)) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: ((C / theta) + ((sin(theta) * r) * F)) + C
+Good Expression 2: F * sqrt(F)
+Good Expression 3: (sin(theta) * r) * F
+
+Bad Expression 1: F - (((sin(log(((theta / C) ^ r) / r)) / C) + (sqrt(log(r) * sin(log((theta / C) / r))) + theta)) - F)
+Bad Expression 2: (F * (sin(theta) * r)) - log(cos(theta))
+Bad Expression 3: ((F * (sin(theta) * r)) - C) ^ theta
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F
+Good Expression 2: (F * C) - theta
+Good Expression 3: (((sin(theta) + (C / cos(theta))) * r) * F) - C
+
+Bad Expression 1: (F * ((sin(theta) ^ theta) * r)) - sin(theta * r)
+Bad Expression 2: ((((((r * (sqrt((F + (F - C)) - C) * (sin(F + C) + C))) - C) + C) + r) - C) + C) ^ theta
+Bad Expression 3: (((r - C) * (F * sin(theta))) - cos(C ^ (F + C))) ^ theta
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((sin(theta) + (C / (cos(theta) * (C / C)))) * r) * F) - C
+Good Expression 2: F * C
+Good Expression 3: (((sin(theta) + (C / (cos(theta) * (C / sqrt(C))))) * r) * F) - C
+
+Bad Expression 1: exp((F + F) - theta)
+Bad Expression 2: (sqrt(r * (sin(theta) * F)) - C) + C
+Bad Expression 3: ((((C - ((((sin(log(((theta / C) ^ C) / r)) ^ r) + C) - F) + C)) / C) - C) + C) - (C ^ r)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((sin(theta) + (C / (cos(theta) * (C / sqrt(C))))) * r) * F) - C
+Good Expression 2: F * sqrt(F)
+Good Expression 3: (sin(theta) * r) * F
+
+Bad Expression 1: sin(log(C) / C)
+Bad Expression 2: (((exp(r) * sin(theta)) * F) - sin(r)) - C
+Bad Expression 3: ((sin(theta) ^ r) * F) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (F * (r * sin(theta))) - C
+Good Expression 2: (((sin(theta) + (C / (cos(theta) * (C / C)))) * r) * F) - C
+Good Expression 3: (sin(theta) * r) * F
+
+Bad Expression 1: (((((sqrt(F + r) * (((F - sin(theta)) + C) * sin(theta))) + C) * C) + (r + C)) - C) ^ theta
+Bad Expression 2: (r * (((C ^ r) + F) * sqrt(sin(theta)))) - cos(((theta / sqrt(F)) * r) ^ C)
+Bad Expression 3: (exp(F) * C) + F
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(theta) * r) * F
+Good Expression 2: F * sqrt(F)
+Good Expression 3: (((sin(theta) + (C / (cos(theta) * (C / sqrt(C))))) * r) * F) - C
+
+Bad Expression 1: (r * sqrt(F * sin(theta))) + (C / log(r))
+Bad Expression 2: ((C ^ cos(theta)) + cos(sqrt(theta) * C)) + ((cos(r) / (theta / C)) ^ cos((sqrt(C) / C) - theta))
+Bad Expression 3: (((((r * sin(theta)) - sin((C ^ sqrt(F)) / C)) + C) * F) ^ C) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (sin(F) + ((sin(theta) * r) * F)) + C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((sin(theta) + (C / (cos(theta) * (C / sqrt(C))))) * r) * F) - C
+Good Expression 2: (((sin(theta) + (C / (cos(theta) * (C / C)))) * r) * F) - C
+Good Expression 3: F * C
+
+Bad Expression 1: ((r * sqrt(sin(theta))) * F) - exp(C - (sqrt(F) / (F ^ C)))
+Bad Expression 2: (log((((sin(theta) * (F * C)) * (r - C)) + C) - theta) + theta) - C
+Bad Expression 3: log(C - (C ^ F)) ^ ((log(sin(r)) - log(C)) * r)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((sin(theta) * r) * F) + (((C / theta) * C) / C)) - C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: ((C / theta) + ((sin(theta) * r) * F)) + C
+Good Expression 2: F * C
+Good Expression 3: (sin(theta) * r) * F
+
+Bad Expression 1: (((sqrt(((sin(theta) * r) * F) + C) + C) - (F + C)) + (F * C)) / C
+Bad Expression 2: (exp(F) * C) - C
+Bad Expression 3: (sqrt(sin(theta) * r) * F) + (C / exp(F - C))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((F * sin(theta)) * r) + (C ^ r)
+[/mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: r, F, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (F * (r * sin(theta))) - (F / (sin(theta) / C))
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: F * sqrt(F)
+Good Expression 2: (sin(theta) * r) * F
+Good Expression 3: (F * (r * sin(theta))) - C
+
+Bad Expression 1: ((F * (r * sin(theta))) + C) - sqrt(C)
+Bad Expression 2: (sqrt((theta / theta) - theta) ^ theta) + ((r * sin(theta)) * F)
+Bad Expression 3: cos(sqrt(C))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (((sin(theta) + (C / cos(theta))) * r) * F) - C
+Good Expression 2: (F * (r * sin(theta))) - C
+Good Expression 3: F
+
+Bad Expression 1: ((log(((sin(theta) * F) * r) + C) - C) + C) + sin(exp(((C / (r * F)) * C) + C))
+Bad Expression 2: (theta ^ r) ^ (((r * F) - sqrt(theta)) ^ (log(C) - (r * C)))
+Bad Expression 3: (F * (F * sin(theta))) + cos(sqrt(C) + C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[n_iterations] 40
+[/n_iterations]

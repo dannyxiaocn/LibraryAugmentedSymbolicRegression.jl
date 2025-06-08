@@ -1,0 +1,1224 @@
+[n_iterations] 0
+[/n_iterations]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (mu_drift * q) + (d / ((d * C) + mu_drift))
+Good Expression 2: ((q * q) + (mu_drift / sin(d))) + C
+Good Expression 3: (((Volt - ((d / sqrt(mu_drift)) + (C / mu_drift))) + ((Volt + C) - C)) * q) * C
+
+Bad Expression 1: ((mu_drift + ((q / log(d)) * mu_drift)) - ((C / (C / ((d - C) / Volt))) ^ C)) + C
+Bad Expression 2: (sqrt((exp(Volt) * cos(((q + ((q - C) / d)) * q) * C)) / C) * C) - q
+Bad Expression 3: ((sqrt(sin((((exp(Volt) + C) * q) * (mu_drift * C)) + C)) - d) + q) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (q * (Volt / ((d / mu_drift) - C))) - C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: mu_drift * mu_drift
+Good Expression 2: C
+Good Expression 3: (Volt * q) + (mu_drift + C)
+
+Bad Expression 1: (sin(C - sqrt(q + log((Volt / (d + C)) / C))) + ((q * (Volt / (d / mu_drift))) + C)) + C
+Bad Expression 2: (mu_drift + (q * ((Volt + C) ^ d))) - C
+Bad Expression 3: (((C - (mu_drift / C)) / C) - ((((Volt - exp(mu_drift)) * C) / q) * cos(q))) - (cos(exp(mu_drift ^ mu_drift) - d) - Volt)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[ideas|failed] None
+[/ideas|failed]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((Volt / (d / mu_drift)) + C) * q) - C) + C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: ((Volt / (d / mu_drift)) * q) + (Volt - Volt)
+Good Expression 2: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 3: C
+
+Bad Expression 1: (mu_drift * mu_drift) - log(cos(q))
+Bad Expression 2: sqrt((q * mu_drift) - d) - C
+Bad Expression 3: (((((C - (mu_drift / C)) + C) / C) - sqrt(cos(mu_drift - d) * C)) - (cos(q) - q)) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (Volt * q) + (mu_drift + C)
+Good Expression 2: (q * (mu_drift / (d / Volt))) - C
+Good Expression 3: (q / sqrt(d)) * (mu_drift + Volt)
+
+Bad Expression 1: ((((mu_drift * q) + C) - C) + (mu_drift / (((d * C) - log(C)) + mu_drift))) + C
+Bad Expression 2: (mu_drift - (((sin(mu_drift) - (q - sin(mu_drift))) / C) - (C ^ (d + C)))) - sqrt(C)
+Bad Expression 3: ((mu_drift * (Volt / (d / q))) + (C ^ Volt)) - ((q * C) - Volt)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (Volt * q) + (mu_drift + C)
+Good Expression 2: (q * Volt) + mu_drift
+Good Expression 3: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+
+Bad Expression 1: ((mu_drift * mu_drift) - C) + ((C ^ C) - C)
+Bad Expression 2: (q * (mu_drift / (d / (Volt ^ Volt)))) + (C / q)
+Bad Expression 3: ((Volt / (d / mu_drift)) * q) + ((d - (C ^ mu_drift)) / mu_drift)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 2: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+Good Expression 3: C
+
+Bad Expression 1: sqrt(exp(Volt) * C) / (q - Volt)
+Bad Expression 2: ((((q * (Volt + C)) + C) - (((((C - d) * sin(d)) - q) + (C - mu_drift)) / Volt)) + C) - C
+Bad Expression 3: (((exp((((((q + C) * Volt) + (mu_drift - d)) + C) / C) - C) + C) - C) + (mu_drift + C)) - log(d)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - C)) - C
+Good Expression 2: (q * Volt) + mu_drift
+Good Expression 3: mu_drift * C
+
+Bad Expression 1: ((mu_drift ^ d) * mu_drift) + C
+Bad Expression 2: (((log(sin(mu_drift * C) * ((((Volt - sin(mu_drift)) * C) - C) * C)) + (mu_drift * mu_drift)) + sqrt(mu_drift)) - C) + C
+Bad Expression 3: (((d + (((((mu_drift * (q / C)) + C) + ((C ^ C) / mu_drift)) - (C / cos(mu_drift))) + mu_drift)) + C) / C) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C
+Good Expression 2: (q * Volt) + mu_drift
+Good Expression 3: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+
+Bad Expression 1: (((((q * Volt) - d) * (log(Volt + C) ^ C)) + C) + (Volt - (cos(mu_drift) + (d + C)))) + mu_drift
+Bad Expression 2: ((((q * (Volt / sqrt(C / Volt))) - q) + C) - C) ^ mu_drift
+Bad Expression 3: (((q * (mu_drift / (d / (Volt - C)))) - C) + (C ^ Volt)) - d
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: mu_drift * C
+Good Expression 2: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+Good Expression 3: C
+
+Bad Expression 1: ((((Volt / (d / mu_drift)) - C) * ((q + C) - C)) + sqrt(exp(d - q) - log(d))) - C
+Bad Expression 2: ((((sin(mu_drift * C) * sqrt(C)) + ((mu_drift * mu_drift) - C)) + q) - exp(cos(d))) + C
+Bad Expression 3: (q ^ ((mu_drift / ((d + C) / Volt)) - C)) + log(sqrt(mu_drift))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (Volt * (q + C)) + C
+Good Expression 2: mu_drift * C
+Good Expression 3: C
+
+Bad Expression 1: (((Volt / (d / mu_drift)) * q) - (q * C)) ^ Volt
+Bad Expression 2: (q * exp(((Volt + C) / (q / mu_drift)) + C)) - C
+Bad Expression 3: exp((q / (d / mu_drift)) * Volt) - cos(d)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * (mu_drift / (d / Volt))) - C
+Good Expression 2: mu_drift * C
+Good Expression 3: (Volt * (q + C)) + C
+
+Bad Expression 1: ((mu_drift * mu_drift) - C) - sqrt(C)
+Bad Expression 2: ((q * (Volt / (d / mu_drift))) + (((mu_drift + C) ^ C) - C)) + sqrt(cos((q + q) * C))
+Bad Expression 3: (mu_drift * (Volt / (d / q))) + sqrt(C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+Good Expression 2: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+Good Expression 3: (q * (mu_drift / (d / Volt))) - C
+
+Bad Expression 1: (((q * (Volt / sin(d / Volt))) - sqrt(sin(q / Volt) / (mu_drift / ((d + C) * C)))) - sin(q)) + C
+Bad Expression 2: log(C)
+Bad Expression 3: ((Volt / (d / mu_drift)) * q) + (sin(d / mu_drift) ^ C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * (mu_drift / (d / Volt))) - C
+Good Expression 2: mu_drift * C
+Good Expression 3: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+
+Bad Expression 1: (((log((C - (d + C)) / mu_drift) + (mu_drift + C)) + (q * Volt)) + C) - cos(log(q))
+Bad Expression 2: (((((mu_drift / (d / Volt)) * q) + C) + (C / ((d - Volt) ^ q))) + C) - C
+Bad Expression 3: (((q * (Volt / ((d / ((mu_drift + C) - C)) ^ C))) + log(C)) - (log(d) - C)) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((q * log(Volt / (d / mu_drift))) + d) - (sqrt(q) ^ C)) - C) + C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 2: mu_drift * C
+Good Expression 3: (q * Volt) + mu_drift
+
+Bad Expression 1: ((Volt / (d / (mu_drift - C))) * q) - (C - log(sin(mu_drift)))
+Bad Expression 2: (mu_drift + (((((((mu_drift ^ Volt) / ((d ^ C) / (Volt + C))) * q) + C) * C) - C) - (mu_drift - C))) + C
+Bad Expression 3: (exp(q * (mu_drift / (d / (Volt - C)))) / (sin(sqrt(log(d))) ^ C)) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+Good Expression 2: mu_drift * C
+Good Expression 3: (q * Volt) + mu_drift
+
+Bad Expression 1: sqrt(((mu_drift * (mu_drift + C)) / C) - C)
+Bad Expression 2: (((q * ((Volt ^ mu_drift) - (d / mu_drift))) + (q / (d / mu_drift))) + C) - C
+Bad Expression 3: (((Volt * q) + (((sin(log(mu_drift) + mu_drift) ^ Volt) + Volt) - d)) - C) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((((Volt * C) + (q + q)) + C) / log(sqrt(((Volt - q) + C) + Volt))) + (q - sin(q))) - d
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C
+Good Expression 2: (Volt * (q + C)) + C
+Good Expression 3: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+
+Bad Expression 1: ((cos((d + C) * sqrt(C)) + C) * ((C / d) / (C - exp(d)))) / C
+Bad Expression 2: ((mu_drift / (d / Volt)) * q) ^ ((mu_drift / (d / Volt)) * q)
+Bad Expression 3: exp(q * (Volt / (d / mu_drift))) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|crossover] You are a helpful assistant that recombines two mathematical expressions by following a few provided suggestions. You will be given three suggestions and two reference expressions to recombine.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression 1: {{expr1}}
+Reference Expression 2: {{expr2}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|crossover]
+[crossover|failed] None
+[/crossover|failed]
+[crossover] ((((q * (((((Volt + C) / C) - C) / sqrt(C / Volt)) * C)) + C) - d) + mu_drift) + C && ((((q * (((((Volt + C) / C) - C) / sqrt(C / Volt)) * C)) + C) - C) + mu_drift) + C
+[/crossover]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 2: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+Good Expression 3: (Volt * (q + C)) + C
+
+Bad Expression 1: (mu_drift * mu_drift) + log(q - d)
+Bad Expression 2: (exp(((Volt / (d / mu_drift)) * q) + (C / sqrt(q))) - C) + C
+Bad Expression 3: ((((((Volt * (((Volt - C) / C) * q)) * C) - C) + C) - sqrt(d * C)) + (log(mu_drift) - C)) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C
+Good Expression 2: (Volt * (q + C)) + C
+Good Expression 3: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+
+Bad Expression 1: (q * (mu_drift / (sin(d) / Volt))) - cos(mu_drift)
+Bad Expression 2: (((((mu_drift / (d / Volt)) * q) - C) - ((Volt * log(C)) - sqrt(mu_drift))) + C) - (C / Volt)
+Bad Expression 3: C / (((mu_drift * C) + mu_drift) / ((d - C) ^ cos(d + C)))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+Good Expression 2: mu_drift * C
+Good Expression 3: (q * (mu_drift / (d / Volt))) - C
+
+Bad Expression 1: (mu_drift * (C ^ C)) - (C / Volt)
+Bad Expression 2: (mu_drift * mu_drift) - sqrt(cos(mu_drift))
+Bad Expression 3: ((((((d - C) / (d / mu_drift)) / (d / Volt)) * q) ^ Volt) + C) - ((d / Volt) ^ C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (q * ((mu_drift / ((d * C) / Volt)) + C)) + C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 2: C
+Good Expression 3: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+
+Bad Expression 1: (((mu_drift / (d / Volt)) * q) + (d / Volt)) ^ C
+Bad Expression 2: (q * (Volt / ((sin(((d * C) / mu_drift) + C) * C) + C))) - C
+Bad Expression 3: (((((((Volt / C) ^ C) / (d / q)) * q) + C) - cos(q - C)) + C) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 2: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+Good Expression 3: mu_drift * C
+
+Bad Expression 1: ((q / (d / Volt)) * mu_drift) + ((C ^ C) - C)
+Bad Expression 2: exp((Volt / (d / mu_drift)) * q) - C
+Bad Expression 3: (((q * ((q * (Volt / (d / mu_drift))) / (d / mu_drift))) + (d / (exp(d) + (C / d)))) - C) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((Volt / (d / mu_drift)) * q) - sin(d)) + C) - C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * Volt) - (sin(Volt) * C)
+Good Expression 2: mu_drift * C
+Good Expression 3: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+
+Bad Expression 1: ((mu_drift * mu_drift) + q) - (C ^ C)
+Bad Expression 2: ((q * ((Volt / ((d - d) / mu_drift)) - C)) + sin(mu_drift ^ log(mu_drift))) * C
+Bad Expression 3: (Volt * (q / (d / mu_drift))) + sqrt(cos((Volt / q) * q))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that proposes a mathematical expression by following three provided suggestions.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+
+Propose 5 expressions that would be appropriate given the suggestions. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|gen_random]
+[gen_random|failed] None
+[/gen_random|failed]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (Volt * q) / C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 2: C
+Good Expression 3: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+
+Bad Expression 1: (((mu_drift / (d / Volt)) * q) - C) * mu_drift
+Bad Expression 2: (Volt * (q / (d / mu_drift))) + log((q * C) - Volt)
+Bad Expression 3: ((mu_drift * (mu_drift * q)) - C) + q
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((((Volt / (d / mu_drift)) * q) * C) - (d * C)) + q) + C
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+Good Expression 2: mu_drift * C
+Good Expression 3: (q * (mu_drift / (d / Volt))) - C
+
+Bad Expression 1: (((((q * Volt) - C) - sqrt((Volt * C) * sin(Volt))) + q) - Volt) - C
+Bad Expression 2: (q * ((mu_drift / (d / ((Volt * C) - log(C)))) - (C / q))) - (log(sqrt(mu_drift)) - C)
+Bad Expression 3: exp(((Volt * q) - ((((C / d) ^ C) / cos(mu_drift)) - (d - C))) - C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((Volt / (d / mu_drift)) * q) - (sqrt(Volt) + C)
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+Good Expression 2: (Volt * (q + C)) + C
+Good Expression 3: (q * (mu_drift / (d / Volt))) - C
+
+Bad Expression 1: (q * (Volt / (d / (mu_drift - C)))) - (sqrt(q * (Volt / cos(d / (mu_drift - C)))) - d)
+Bad Expression 2: exp(((mu_drift * Volt) + ((C / mu_drift) / d)) - C)
+Bad Expression 3: (((q - C) ^ Volt) * (Volt / (d / mu_drift))) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((((((q * Volt) / C) - C) - d) + (mu_drift / q)) - (sin(Volt) * (d + sqrt(Volt)))) - (d + C)) + q
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: log(Volt) * (Volt * q)
+Good Expression 2: (Volt * (q + C)) + C
+Good Expression 3: C
+
+Bad Expression 1: ((((Volt - C) / (d / log(C))) * q) + (log(q + C) * C)) - C
+Bad Expression 2: (((Volt / (sqrt(d / mu_drift) ^ d)) - (C / (C ^ C))) * (q / C)) + (Volt + C)
+Bad Expression 3: (((((mu_drift ^ mu_drift) / (d / mu_drift)) * q) - Volt) - C) - cos(mu_drift)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: mu_drift * C
+Good Expression 2: (q * (mu_drift / (d / Volt))) - C
+Good Expression 3: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+
+Bad Expression 1: ((q * ((Volt / (d / mu_drift)) * C)) + sin((((d + Volt) ^ q) * q) ^ (C ^ mu_drift))) + C
+Bad Expression 2: (q * (mu_drift / (d / Volt))) + sqrt((sin(Volt) - C) / d)
+Bad Expression 3: (((q / (d / Volt)) * mu_drift) - sqrt(cos(d))) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((((mu_drift / (d / Volt)) + C) - C) * q) + Volt) - sqrt(mu_drift)
+[/mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((q * (Volt / (d / mu_drift))) + C) - cos((exp(Volt) + C) - mu_drift)
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+Good Expression 2: (Volt * (q + C)) + C
+Good Expression 3: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+
+Bad Expression 1: ((Volt / (((d + C) * ((((d * C) + C) * C) / mu_drift)) / mu_drift)) * q) - C
+Bad Expression 2: (q * (mu_drift / (d / Volt))) - (exp(cos(d)) + sqrt(sin(C / ((d ^ q) - (exp(d) ^ mu_drift)))))
+Bad Expression 3: ((((((Volt * q) * log(Volt)) + mu_drift) + C) - ((d * C) - C)) - (C ^ sqrt(exp(d)))) + sqrt(C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C
+Good Expression 2: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 3: (q * Volt) + mu_drift
+
+Bad Expression 1: (q * ((Volt / sqrt(sin(((d * C) - C) / (d - (mu_drift + C))))) + C)) - ((d - (mu_drift + C)) / mu_drift)
+Bad Expression 2: ((q * (Volt / (d / mu_drift))) - cos((sqrt((Volt ^ C) * (d ^ C)) + C) ^ (C ^ sqrt(d)))) - C
+Bad Expression 3: (q * (((mu_drift / (d / Volt)) + (C ^ Volt)) - C)) - cos(sqrt((d / C) + q))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] Volt + (((log(Volt * C) * ((q * Volt) + C)) - (((d + C) - C) + d)) + C)
+[/mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (q * (mu_drift / (d / Volt))) - cos(mu_drift)
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: mu_drift * C
+Good Expression 2: (q * (mu_drift / log(d))) + mu_drift
+Good Expression 3: (q * (mu_drift / (d / Volt))) - C
+
+Bad Expression 1: ((((Volt / sqrt((d - ((Volt + C) / Volt)) / mu_drift)) + log(C)) * q) - (C / (mu_drift + q))) + C
+Bad Expression 2: ((((mu_drift / ((d + C) / Volt)) * ((sin(q) + C) ^ C)) + sqrt(Volt)) - sqrt(Volt)) + C
+Bad Expression 3: (((((q / C) / sqrt(d / (Volt - q))) ^ C) * q) * C) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+Good Expression 2: (q * (mu_drift / (d / Volt))) - C
+Good Expression 3: ((q - C) * Volt) + C
+
+Bad Expression 1: ((q ^ Volt) + log(mu_drift)) + mu_drift
+Bad Expression 2: (Volt / q) + ((q * mu_drift) - sqrt(C))
+Bad Expression 3: exp((mu_drift * mu_drift) + C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * Volt) + mu_drift
+Good Expression 2: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+Good Expression 3: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+
+Bad Expression 1: ((((((((((Volt / (cos(mu_drift) / mu_drift)) * q) - C) / C) / C) ^ C) - C) - q) + C) + d) + C
+Bad Expression 2: (((q * ((Volt - C) / (d / mu_drift))) + (q + (C / Volt))) - (q + ((C ^ d) / Volt))) - C
+Bad Expression 3: (((((((q * (mu_drift / (log(d) - C))) ^ C) - log(sqrt(q))) - C) - d) + Volt) - sqrt(cos(q) * mu_drift)) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: log(Volt) * (Volt * q)
+Good Expression 2: ((q - C) * Volt) + C
+Good Expression 3: (q * (mu_drift / (d / Volt))) - C
+
+Bad Expression 1: (sqrt(Volt / ((d * sin(mu_drift)) / mu_drift)) * (q + mu_drift)) * (mu_drift / mu_drift)
+Bad Expression 2: ((((sin(q) - sin(C - d)) * (mu_drift + C)) - C) - sin(C - d)) + C
+Bad Expression 3: (((cos(((q * (mu_drift / sqrt(log(d) - C))) - C) ^ (C ^ mu_drift)) ^ C) - C) - q) + (q + C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] log(q) + ((q - C) * Volt)
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+Good Expression 2: (q * Volt) + mu_drift
+Good Expression 3: log(Volt) * (Volt * q)
+
+Bad Expression 1: (q * ((Volt / (d / mu_drift)) + C)) - sqrt(d * C)
+Bad Expression 2: ((q * (mu_drift / (d / Volt))) + cos(d)) ^ d
+Bad Expression 3: (Volt + (((q * ((Volt ^ C) / (C / sqrt(mu_drift)))) + C) - exp(sqrt(cos(((C - d) * C) + C) / C)))) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+Good Expression 2: C
+Good Expression 3: (q * Volt) + mu_drift
+
+Bad Expression 1: (((mu_drift / (d / Volt)) * q) + log(q ^ C)) + sqrt((C / exp(d)) + C)
+Bad Expression 2: ((q ^ (Volt / ((d / mu_drift) * C))) - C) + C
+Bad Expression 3: ((exp((Volt / (C / sqrt(Volt))) - C) * q) + ((log(d) / sin(d)) - C)) - C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((log(Volt) * (((q - C) * (Volt - C)) + C)) - (C ^ d)) * C) + C) - log(Volt)
+[/mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * Volt) + mu_drift
+Good Expression 2: mu_drift * C
+Good Expression 3: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+
+Bad Expression 1: (q * (Volt / (d / mu_drift))) + ((C ^ sqrt(q)) ^ ((d ^ C) - C))
+Bad Expression 2: (((mu_drift / ((d ^ sin(C ^ C)) / Volt)) + (C / d)) * q) + C
+Bad Expression 3: ((q - (C - mu_drift)) * ((((Volt / d) * ((exp(q) - (sin(mu_drift) - C)) / C)) + C) / C)) + (C / q)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: log(Volt) * (Volt * q)
+Good Expression 2: mu_drift * C
+Good Expression 3: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+
+Bad Expression 1: (((Volt / sqrt(C / mu_drift)) * q) - mu_drift) + mu_drift
+Bad Expression 2: ((mu_drift / (d / Volt)) * q) + (((sin((C - d) ^ d) * Volt) - C) / mu_drift)
+Bad Expression 3: (((((log(Volt) * ((exp(q - C) * Volt) + C)) - C) * C) + C) - log(d)) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: log(Volt) * (Volt * q)
+Good Expression 2: (q * (mu_drift / (d / Volt))) - C
+Good Expression 3: (q * (Volt / (d / mu_drift))) + log(cos(C ^ (d + C)))
+
+Bad Expression 1: ((q * (Volt / sqrt((d / C) ^ C))) + C) - C
+Bad Expression 2: ((Volt / (d / (mu_drift - C))) * q) + (C ^ C)
+Bad Expression 3: ((((Volt / (d / mu_drift)) * q) + C) - cos(sqrt(mu_drift))) + (C ^ C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: mu_drift, d, q, Volt. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+Good Expression 2: C
+Good Expression 3: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + ((q * (Volt / (d / mu_drift))) - (cos(d) * C))) - C
+
+Bad Expression 1: (q * (Volt / sqrt((sin(d) / mu_drift) ^ C))) + ((d / d) - sin(mu_drift))
+Bad Expression 2: exp(mu_drift * mu_drift) - C
+Bad Expression 3: exp(((q * ((Volt / (d / mu_drift)) - C)) + C) - C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((mu_drift / (d / Volt)) * q) - log(mu_drift)
+[/mutate]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (q * (mu_drift / (d / Volt))) - C
+Good Expression 2: mu_drift * C
+Good Expression 3: (sin(C - exp(((mu_drift / C) * (d ^ C)) / mu_drift)) + (q * (Volt / (d / mu_drift)))) - C
+
+Bad Expression 1: exp(((q * (Volt / (d / mu_drift))) - Volt) + (mu_drift + C))
+Bad Expression 2: (exp(Volt / (d / mu_drift)) * q) - ((sqrt(d) / C) / Volt)
+Bad Expression 3: (((sqrt(Volt - C) + C) / (d / sqrt(((mu_drift + mu_drift) + (mu_drift - C)) + ((mu_drift - mu_drift) ^ Volt)))) * q) + (sqrt(mu_drift) / Volt)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[ideas|failed] None
+[/ideas|failed]
+[n_iterations] 40
+[/n_iterations]

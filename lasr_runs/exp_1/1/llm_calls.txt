@@ -1,0 +1,2300 @@
+[n_iterations] 0
+[/n_iterations]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that proposes a mathematical expression by following three provided suggestions.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+
+Propose 5 expressions that would be appropriate given the suggestions. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|gen_random]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C
+Good Expression 2: C / theta
+Good Expression 3: (C / theta) / (theta ^ (theta - sin(C + C)))
+
+Bad Expression 1: (sin(theta) / ((theta / theta) + (C ^ theta))) / (theta - theta)
+Bad Expression 2: ((theta * ((sqrt((theta * theta) ^ theta) ^ ((sqrt(theta) ^ C) ^ (C / theta))) ^ (sqrt(theta) + C))) / theta) / (theta * (theta / theta))
+Bad Expression 3: (((C / (((((((theta - C) - ((theta ^ C) ^ C)) ^ theta) / theta) ^ theta) / theta) * theta)) * theta) / theta) + C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|gen_random] Based on the provided suggestions, I propose the following five mathematical expressions involving the variable θ.
+
+1. θ^2 + C * sin(θ) 
+
+This expression is a simple addition of θ squared and a scaled sine function, where 'C' is a constant.
+
+2. θ * sqrt(C) - log(exp(C))
+
+This expression involves an exponential term for its calculation involving θ.
+
+3. (C / √2) * (sin(2* θ ) + cos(2θ)
+
+This expression represents the use of trigonometric functions such as sine and cosine squared along with a rational constant in combination.
+
+4. sin(2 * exp(C)) * cos(theta^2).
+
+In this expression, there is an exponential term that determines the angles used for sine.
+
+5. θ * (theta - C).
+
+This involves simple subtraction where the result from the previous θ value minus 'C'.
+
+Here are all five expressions as a JSON list: 
+```json
+["θ^2 + C * sin(θ)",
+ "θ * √C  - log(exp(C))",
+ "(C/√2) * (sin(2*θ )+cos(2θ))",
+ "sin(2*exp(C))* cos( θ^2)"
+ ,"θ*(θ-C)"
+]
+```
+[/llm_output|gen_random]
+[gen_random] sin(2.0 * exp(1.0)) * cos(theta ^ 2.0)
+[/gen_random]
+[llm_output|mutate] Based on the reference expression and the provided suggestions, I propose five mutated expressions. Here they are:
+
+1. **Expression 1**
+
+   (((C / ((((theta * C) * exp(C)) / theta) + sqrt(C)))) / theta) ^ theta
+   Commentary: Replaced the log function with exp function to provide a more typical mathematical identity and squared the entire expression.
+
+
+2. **Expression 2**
+
+   (((C / ((((pow(theta, C))/((sqrt(C)*theta))) +C)) / theta) + C) / sqrt(theta)
+   Commentary: Introduced the `pow` function for an alternative way to represent exponentiation in a non-binary expression.
+
+3. **Expression 3**
+
+   (((sin(sqrt(C))/((sqrt(theta*C^2)/* exp(ln(theta)))), theta, C)) / (C+theta))^2/C))
+    Commentary : Added sin and ln functions.
+
+4. **Expression 4**
+
+   (((-(((exp(log(theta*theta))))/(((sqrt(C^10)*theta * ((theta-C)))) / sqrt(Explog(theta)),))) & sqrt Exp(sqrt(&sqrt exp(&cos C * (C - exp theta)))/(( Exp Cos theta * sqrt sqrt C theta))) ^ square theta
+  Commentary: Introduced `Cos`, `-& log` operations.
+
+5. **Expression 5**
+
+ 
+ (((C + ((-(((theta-C)* sqrt((sqrt(theta* cos(0+ C)+ (-theta^2))))/ (Exp theta*C)),)))*C^(theta exp cos &log C + sin &cos theta))/ Exp(log) &C*theta)) ^ Exp(ln)
+Commentary: Applied the natural log function to make a simple relation between variables.
+
+
+And here's the list in JSON format:
+
+```json
+["expr1", 
+"expr2", 
+"expr3", 
+"expr4","expr5"]
+```
+[/llm_output|mutate]
+[mutate] theta
+[/mutate]
+[mutate] theta
+[/mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_output|mutate] Based on the provided reference expression and suggestions, I've mutated the expression by applying the Following Changes and Rules:
+
+ * Changing C to theta in certain places.
+
+The modified expressions are as follows:
+
+1. Adding sin to the expression inside sqrt:
+((sin(exp(((C / theta) * (theta * C)) - theta)) / sqrt(theta))/sqrt(C / (theta + theta))) / theta
+
+Commentary: This modification adds a sin factor that does not depend on any variable.
+
+2. Swapping numerator and denominator of ((C / theta) * (theta * C)):
+((sin(exp(((C / theta) * (theta * C)) - theta)) / sqrt(theta))/sqrt(C / (theta +(theta))) / theta
+
+Commentary this is done by swapping the terms in parenthesis to provide another factor which would contribute towards simplification or some kind of interesting pattern.
+
+3. Replacing C with 1 and exp(sqrt):
+((sin(exp(sqrt(((C / theta) * (theta * C)) - theta)))/sqrt(theta))/sqrt(C / (theta + C))) / theta
+
+Commentary: This adds an additional factor using a square root, potentially leading to a more complex expression.
+
+4. Replacing the numerator and denominator of sqrt by ((theta*C)/(C-theta)):
+((sin(exp(((C / theta) * (theta * C)) - theta)/((theta*C)/(C-theta)))) / sqrt(theta)/sqrt(C/ (theta + C))) /  theta
+
+Commentary: This modification swaps numerator and denominator inside the square root which adds an additional factor contributing towards simplification or other patterns.
+
+5. Using a multiplication of sin to the denominator instead of addition:
+(((sin(exp(((C / theta) * (theta * C)) - theta)))) / ((sqrt(theta))/(sqrt(C/ (theta +theta))))*((sin^2(theta)/(theta*C))) / theta
+
+Commentary: This modification changes how factors combine and is a different way to manipulate the original expression, potentially providing an interesting pattern or insight.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((sin(exp(((C / theta) * (theta * C)) - theta)) / sqrt(theta)) / sqrt(C / (theta + C))) / theta
+[/mutate]
+[llm_output|mutate] Based on the reference expression and the provided suggestions, I will propose five mutated expressions. Here are my suggestions along with short commentary:
+
+1. Swap the order of `sqrt` and `exp`: This change involves replacing `exp(theta) - C` with `exp(sqrt(theta)) - C`. This seems like a reasonable mutation as it modifies only one part of the expression, and the use of nested operations could lead to interesting properties.
+
+2. Substitute `sin` for `cos`: Replacing `cos(sqrt(theta) - C)` with `sin(sqrt(theta) - C)` introduces trigonometric fluctuations into the initial reference expression. The interaction between these elements may produce unexpected behavior due to their non-linear relationships.
+
+3. Rewrite theta as a negative value: This involves making all positive instances of `theta` correspond to negative `theta`. Modifying this in an otherwise regular reference expression could introduce some counterintuitive effects and interesting emergent properties
+
+4. Add C/theta on the initial right branch, then negating entire fraction which then becomes just an additive inverse of LHS: Adding `C / theta` before the multiplication and subsequent logarithm modification creates a new operation flow that introduces C into the equation at multiple locations. This creates some form of symmetry due to similar values in both numerator and denominator.
+
+5. Use addition as ^ operator by changing ^ to +, i.e. replacing all ^ with + : Replacing all instances of `^` (binary exponentiation) for basic arithmetic `+` introduces simplicity into the equation. This might reveal new algebraic behaviors depending on variable values.
+
+Here is the proposed list in JSON format:
+
+```json
+[
+  " (((theta ^ sqrt(exp(theta) - C)) - C)^(sqrt(exp(theta)) - C))/ theta",
+   "(((theta ^ sqrt(exp(theta)))^ (sqrt(exp(theta))-C))^ exp(sqrt(theta)-C))/ theta * (sqrt(log(theta))^(sin(sqrt(theta)))) /theta",
+      "((-1)^sqrt(exp(-theta) - c))/( -1^{  sqrt(exp(-theta)) - C})/ (-1) ",
+    "(log(theta)^ cos(sqrt(theta) +c ) +C /theta)((-sqrt(log(theta))^ C)/( -  sqrt ( log(theta)))^  sin(sqrt(theta )+ c ))/ theta ",
+   "(((C* exp(theta))^ (sqrt logarithm theta))) / theta * ((exp(sqrt(exp(theta)))^(sin(1)^cos(sqrt(theta)-c)))/theta"
+]
+```
+
+Please note the possible outcomes for any of these modifications could be counterintuitive.
+[/llm_output|mutate]
+[mutate] (((theta ^ sqrt(exp(theta) - 1.0)) - 1.0) ^ (sqrt(exp(theta)) - 1.0)) / theta
+[/mutate]
+[mutate] (((theta ^ sqrt(exp(theta) - 1.0)) - 1.0) ^ (sqrt(exp(theta)) - 1.0)) / theta
+[/mutate]
+[llm_output|mutate] Based on the reference expression and three provided suggestions, I propose five mutated expressions. Suggestions 1, 2, and 3 are used to mutate the original expression.
+
+Mutation 1: Replace `sqrt(theta)` with `(theta ** 0.5)`.
+Proposed Expression: sin(((C ^ theta) * (theta ^ (theta ** 0.5))) ^ C) / theta
+Commentary: Using exponentiation instead of root extraction for consistency and efficiency, as Python would evaluate this to the same result.
+
+Mutation 2: Replace `^` with `/`.
+Proposed Expression: sin(((C / theta) * ((theta)^ sqrt(theta)))^C)/theta
+Commentary: Replacing `^` with `/` since you mentioned replacing `sqrt`. This makes the expression more familiar and accessible given this change. As math operators are not Python's core implementation for exponents, using a similar operator could be more intuitive.
+
+Mutation 3: Replace `log` with 'np.log'.
+Proposed Expression: sin(((C ^ theta) * (theta ** np.log(sqrt(theta)))^ / C) / theta
+Commentary: Using the natural logarithm instead of log from only basic functionality to clarify mathematical behavior in functions not including standard base as default.
+ 
+Mutation 4: Replace `sin` with `'math.sin'`.
+Proposed Expression: 'math.sin(((C ^ theta) * (theta^ sqrt(theta)))^ C) / theta
+Commentary: Importing a more specialized library for the given math expression using the exact same syntax from `math`.
+
+Mutation 5: Replace `/` with '*'.
+Proposed Expression: 'exp(((C^ theta) * (theta ** sqrt(theta)))* ^ C)/(1/theta)
+In the case of replacement, I changed cos to 1/cos due to how cos behaves in standard exponent rules. Simplifying the given formula with its replacement as described, math behavior may be clearer.
+Commentary: As python's core library does not support these behaviors at this point but if replaced could make understanding what these things should calculate (or even math expression patterns simpler)
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] sin(((C ^ theta) * (theta ^ sqrt(theta))) ^ C) / theta
+[/mutate]
+[llm_output|mutate] Based on the reference expression, I've proposed five mutated expressions by considering the given suggestions:
+
+1. Expression: ((((theta + (sqrt(theta * ((C - theta) / theta))) - theta)) / theta) * C * theta) - C
+Commentary: This expression replaces the addition operator (+) with a multiplication operator (*) in the innermost parentheses.
+
+2. Expression: ((((log(theta + sqrt(theta - (((C - theta) + theta)))) - theta)) / C))
+Commentary: The square root and square operators are removed, and replaced log instead to add some variation in function composition.
+
+3. Expression: ((((sin(theta) + (sqrt(theta^2 - (((C - theta) / theta))) - theta)) / ((theta + theta) * theta) * theta) * C))
+Commentary: These modifications included the ^-operator to introduce exponentiation,  addition or product operator outside the parentheses, removal of the square root from the first expression, modification of constants C & theta.
+
+4. Expression: ((((sin(theta^2 + log(sqrt(theta))) - theta) + exp(((C - theta)^2)))) / (theta^5)) - C)
+Commentary: Another set of  modifications includes substitution and introducing additional functions like "sin" with exponentiation in the arguments, modification on division by an equation.
+
+5. Expression: ((((cos(theta * sqrt( (((C - theta) + (sqrt(theta))) ^ theta))) ^ 2)) / ((log(theta^2) + ((exp(C))^2)())) 
+Commentary: Expression includes substitution of both 'sin' and 'cos', modification in division, removal or alteration of other square root's, introduction of some exponentational operations.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((theta + (sqrt(theta + (((C - theta) + theta) - theta)) - theta)) / theta) * C) / theta) - C
+[/mutate]
+[llm_output|ideas] Based on the good mathematical expressions, I hypothesize the following five assumptions:
+
+1. **Inverse Proportionality Hypothesis**: The presence of a fraction in Good Expression 1 (C / theta) suggests that the relationship between C and theta is inversely proportional. This is also observed in Good Expression 2, where C is divided by theta again. I propose that this inverse proportionality holds true for all good mathematical expressions.
+
+Commentary: Inverse proportionality can be found in various real-world phenomena, such as how force and displacement are related in mechanics or how population growth rates decay over time.
+
+2. **Nested Exponentiation Hypothesis**: Good Expression 3 features nested exponentiations, with the innermost expression being (C / theta). This suggests that mathematical expressions involving power law relations may be a common theme among good mathematical expressions.
+
+Commentary: Nested exponentiations can model complex systems described by power laws, such as population growth, chemical reactions, or electrical circuits.
+
+3. **Non-linear Interpolation Hypothesis**: Good Expression 2 uses non-linear interpolation to describe the relationship between C and theta. I propose that this type of interpolation plays a crucial role in mathematical expressions that are desirable.
+
+Commentary: Non-linear interpolation can capture complex relationships between multiple variables and is often used in physics, engineering, or data analysis to provide accurate representations of real-world phenomena.
+
+4. **Damping Factor Hypothesis**: Good Expressions 1 and 3 both exhibit damping factors due to the (theta ^ (θ - sin(C + C))) term. I hypothesize that mathematical expressions involving damping factors can be stable and useful models for realistic dynamics.
+
+Commentary: Dampening functions are used in various fields, such as mechanical engineering or thermodynamics, to describe systems with energy-absorbing behaviors. This helps prevent oscillations by introducing an oppositional force.
+
+5. **Symmetry Breaking Hypothesis**: Good Expression 3 exhibits a high degree of symmetry due to its structure ((C / (((((((theta - C) - ((theta ^ C) ^ C)) ^ theta) / theta) ^ theta))))/. I propose that mathematical expressions that exploit internal symmetries may lead to well-behaved and desirable outcomes.
+
+Commentary: Internal symmetry often points towards underlying symmetry groups in the problem domain, which can be resolved to reveal a deeper understanding of the physical or mathematical phenomenon at hand.
+[/llm_output|ideas]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C / (theta ^ theta)
+Good Expression 2: C / ((theta ^ (theta ^ C)) ^ (theta ^ (theta ^ C)))
+Good Expression 3: C / (theta ^ (theta / C))
+
+Bad Expression 1: ((((C ^ theta) ^ (((C ^ ((log(theta - C) * theta) ^ theta)) / (theta * theta)) + (theta / theta))) / theta) / (C ^ theta)) + C
+Bad Expression 2: ((C - sqrt(theta)) ^ theta) * theta
+Bad Expression 3: ((C ^ theta) * (sqrt(C) / (sqrt(theta) / theta))) / theta
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|mutate] Based on the provided reference expression and suggestions, I propose the following five mutant expressions:
+
+1. **Mutation 1:** Replace theta with sin(theta) in the original expression.
+
+Reference Expression: (((C / (((sin(theta) * C) / theta) + C)) + C) / (theta * sin(theta)))
+
+Commentary: This mutation introduces a sine function to modify the scaling factor of theta, which could potentially simplify or complicate the overall expression depending on the desired properties.
+
+2. **Mutation 2:** Replace C with e^2 in the original expression.
+
+Reference Expression: (((e^2 / (((sqrt(theta) * e^2) / theta) + e^2)) + e^2) / (theta * theta))
+
+Commentary: This mutation replaces the constant C with an exponential function, which can significantly alter the behavior of the expression and might require numerical optimization or analytical manipulation to solve.
+
+3. **Mutation 3:** Replace theta with -theta in the original expression.
+
+Reference Expression: (((C / (((sqrt(-theta) * C) / -theta) + C)) + C) / (-theta * -theta))
+
+Commentary: This mutation introduces a negative sign into the expression, which reverses the direction of both the variable theta and its interactions with other terms. This could lead to interesting effects on the overall behavior of the expression.
+
+4. **Mutation 4:** Rewrite the original expression using only ^ (exponentiation) operator instead of / (division).
+
+Reference Expression: (((C ^ (((sqrt(theta) * C) ^ theta) + C)) + C) ^ (theta * sqrt(theta)))
+
+Commentary: This mutation replaces division with exponentiation, which can alter the mathematical structure and potentially lead to results or simplifications not seen with the original expression.
+
+5. **Mutation 5:** Replace sqrt(theta) with log^2(theta) in the original expression.
+
+Reference Expression: (((C / (((log^2(theta) * C) / theta) + C)) + C) / (theta * log^2(theta)))
+
+Commentary: This mutation applies logarithmic behavior to scale the variable theta, which might lead to analytical simplifications or numerical properties that were not present in the original expression.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((C / (((sqrt(theta) * C) / theta) + C)) + C) / theta) / (theta * theta)
+[/mutate]
+[llm_output|mutate] Based on the provided reference expression, I propose five mutated expressions that follow the given suggestions and operators.
+
+1. Addition of C to theta before applying sqrt: This change involves adding a constant C to the variable theta inside the square root function, which improves numerical stability.
+
+2.Modification due squared exponent: Exponentiation of squared term using^operator applied instead of standard exp operator and modification with added constants within an equation:
+
+3.Addition of the sine function but modified in various equation places:
+
+4.Subtraction modification between terms
+
+5.Cosine application where other functions not present at a value being returned as well 
+
+Proposed expressions:
+["sqrt(theta+C) / theta * C",
+ "(sqrt(theta+2))^sin(sqrt(theta + 1))",
+ "C*sin(C*(theta^2)+C)/((exp(theta - sqrt(2)))**(-sqrt(theta)))",
+"(sqrt(-theta))^2^(sin(log(cos(theta))))
+",sin(sqrt(cosh(sqrt(C*theta)))]
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((sqrt(theta + C) / theta) * C) / (theta / C)) / sqrt((theta ^ sin(theta / theta)) * theta)
+[/mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_output|mutate] Based on the reference expression and the provided suggestions, I propose the following five mutated expressions:
+
+1. **Powering up**: ((C ^ theta) ^ 3) / sqrt(theta)
+   // Comment: This mutation adds an exponentiation operation to the original expression, using the caret symbol (^).
+
+2. **Logarithmic transformation**: C^2 * log(sqrt(theta)) + exp((C ^ theta)^2 / (4*theta))
+   // Comment: First I apply a square on both sides of 'C',  then create a logarithmic function that transforms sqrt(theta). Next, combine with exponentiation and more exponentiation.
+
+3. **Removing constants**: (C - 1) * ((C + 1) ^ theta
+   // Comment: This mutation reduces or eliminates the constant value in the original expression by simply removing it; however C has two expressions now instead of just the reference Expression
+
+4.  (sqrt(C) / sqrt(theta))^2 
+    //     * added an exponent operator to get rid of square root
+5. ((C + theta)*sin(log(sqrt(theta))), )
+    //comment: here's a new combination of sin, log and the sqrt variables.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((C ^ theta) / sqrt(theta)) / C
+[/mutate]
+[llm_output|mutate] Based on the reference expression and the provided operators, I propose the following five mutated expressions:
+
+1. (C - theta) / sin(C ^ theta)
+Commentary: I replaced the multiplication with a division to create a new relationship between the variables.
+
+2. C * log exp(sqrt(theta + C))
+Commentary: This mutated expression incorporates exponentiation operations and changes between addition and subtraction.
+
+3. sqrt(1 + cos(theta)) ^ C
+Commentary: In this expression, I simplified the original calculation under the square root by exploiting trigonometric properties.
+
+
+4. (C - log(exp(C))) * sin(theta^2)
+This would alter how theta interacts with variable expressions related to C.
+
+5.(sqrt(C)^theta) * sqrt(cos(theta + exp(1)))
+In this, we take a different approach by integrating constants into the mathematical structure using exponentiation operations, which will provide some novel insights.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (C ^ theta) * sqrt(sin(theta ^ C))
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions, I will propose five mutated expressions. Since no specific suggestions were given, I'll assume you want me to introduce a new mathematical operation, manipulate variables, and add constants.
+
+Expression 1: (C / exp(theta))^2
+Commentary: This expression raises the original expression to the power of 2, introducing the exponentiation operator (^).
+
+Expression 2: C * sqrt(1 - exp(-theta))
+Commentary: This expression uses the square root operator (sqrt) and manipulates the reference expression by adding a negative inverse exponential function inside the logarithm.
+
+Expression 3: log(C / exp(theta))/log(theta)
+Commentary: This expression uses the natural logarithm operator (log, considering that is mathematically valid as this will work well with exponents for C). However I chose it assuming that C = 1 to better understand possible expressions for theta and avoiding log(0) since C can potentially be any positive value.
+
+Expression 4: sqrt(C^2/(exp(theta))^2)
+Commentary: This expression manipulates the constant, introduces a squared relationship, and simplifies by eliminating square roots while applying exponentiation to avoid unnecessary calculations
+
+Expression 5: theta * sin(sqrt(exp(theta)))
+Commentary: This expression multiplies the parameter with sine applied on the square root of exp(theta), combining all given operators for more complex outcome
+
+Here is the JSON list of expressions:
+
+[
+"expr1", 
+"expr2",
+"expr3",
+"expr4",
+"expr5"
+]
+[/llm_output|mutate]
+[mutate] theta
+[/mutate]
+[mutate] theta
+[/mutate]
+[llm_output|mutate] Based on the provided reference expression and suggestions, here are five mutated expressions:
+
+1. `(((log(theta - (C * (theta / C))) / theta) * C) / theta)`
+
+Commentary: I replaced the sqrt function with log, as it seems like a more common mathematical operation that could add variety to the expression.
+
+2. `(exp(sqrt(theta)) * sin(C + theta))`
+
+Commentary: This expression uses exponential and sine functions in new ways, breaking away from addition and multiplication.
+
+3. `((sqrt(theta - (C * log(theta))) / log(theta)) ^ C) * theta`
+
+Commentary: I introduced exponentiation to create an interesting power relationship between terms.
+
+4. `(sin(sqrt(1 + theta))) / (log(theta - C))`
+
+Commentary: This expression uses cosine and sine functions with a twist to emphasize a different area of mathematics.
+
+5. `(((sqrt(theta ^ log(C))) * sqrt(2/Ctheta)) / 2C^(theta/2) )* sqrt(theta^(-1))`
+
+Commentary: It employs inverse relationships, such as inverting square root and using negative exponents to demonstrate their use.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((sqrt(theta - ((theta / C) * C)) / theta) * C) / (theta / C)) / ((theta / C) * theta)
+[/mutate]
+[llm_output|ideas] Based on the provided mathematical expressions, I propose the following five hypotheses:
+
+Hypothesis 1: The expressions involving C raised to fractional powers (e.g., θ / C) are related to the behavior of geometric shapes under scaling transformations.
+
+Short commentary: This hypothesis is inspired by the fact that many geometric shapes exhibit symmetry when scaled by a factor of k, where k = 1/θ. For example, circles and ellipses have diameters that scale linearly with k, whereas triangles preserve their shape except for a dilation factor equal to θ. The expressions involving C / (θ ^ θ), C / ((θ ^ (θ ^ C)))^ (θ ^ (θ ^ C)), and C / (θ ^ (θ / C)) may be analogous expressions that arise from scaling transformations in different contexts.
+
+Hypothesis 2: The denominator terms involving θ and C are part of a larger mathematical framework related to algebraic geometry and the study of curves in specific coordinate systems.
+
+Short commentary: This hypothesis is motivated by the appearance of θ in the denominators, which could represent angles or direction vectors. The inclusion of C as a common factor suggests that it may play a role in defining the coefficients of these curves. For example, expressions in projective geometry often involve ratios of homogeneous coordinates, where one curve might be defined by x / (y^2 - xy), and z^2 = 3xyz, which could incorporate constants like C.
+
+Hypothesis 3: The presence of a logarithmic component, as seen in Bad Expression 1 (( log(theta - C) * theta) ^ θ ), hints at a deeper connection to measure theory or the study of 'lengths' and their geometric interpretations.
+
+Short commentary: This hypothesis is inspired by the appearance of logarithms in several expressions. The behavior of logarithmic functions is deeply tied to measures and integrals, which might relate geometrically to length-based quantities like arc lengths or measures of distances along paths within metric spaces.
+
+Hypothesis 4: Exponential expressions involving C often signify models of exponential growth and related phenomena such as population dynamics, where C appears in the form of an exponent that may scale rates of change relative to the underlying parameter θ (theta).
+
+Short commentary: This hypothesis arises when noticing that exponents on C suggest scaling coefficients for rate functions involved in modeling real-world growth or decay processes. Such models might utilize mathematical expressions of form C^θ to represent multipliers of a base function with respect to parameters like θ, which would imply a broad context encompassing topics from population dynamics to physical phenomena.
+
+Hypothesis 5: The interplay between powers and fractional exponents appears tied to models for fluid flow or the behavior of continuous media in non-trivial geometries where angles play a critical role.
+
+Short commentary: Understanding that expressions like C / (θ ^ θ) seem like an expression resulting from solving problems of sorts involving area scaling with respect to different directions could be related to scenarios modeled through fluid dynamics, differential geometry descriptions etc..
+[/llm_output|ideas]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (exp(C - sqrt(theta)) ^ theta) * theta
+Good Expression 2: (exp(C - (sqrt(theta) ^ (theta / C))) ^ sqrt(theta)) - C
+Good Expression 3: sin(C ^ ((sqrt(theta ^ theta) * theta) ^ C))
+
+Bad Expression 1: (exp(C - theta) - (((theta - theta) * theta) / (theta - theta))) / sqrt(exp(theta - (theta ^ C)))
+Bad Expression 2: ((sin(exp(sqrt(theta)) + (C / theta)) * theta) ^ C) / C
+Bad Expression 3: sin(log(((((((C / (theta / theta)) / theta) * C) / theta) / theta) / C) * C) + C) * C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_output|mutate] Based on the reference expression sin(C / theta) / theta, I propose the following five mutated expressions:
+
+1. **Linear Transformation**: Multiply the entire expression by C.
+
+sin(C^2 * (C / theta)) / (theta * C)
+
+Comment: Multiplying the entire expression by a constant C introduces a new scale to the amplitude of the sine function, effectively stretching or compressing the curve.
+
+2. **Exponential Growth**: Exponentiate both the numerator and denominator with the same base (e.g., e).
+
+sin(exp(C) / theta) / exp(theta)
+
+Comment: This mutation injects exponential growth into both the argument and denominator of the logarithm, potentially amplifying oscillations in the original expression.
+
+3. **Theta Transformation**: Apply an inverse sine transformation to the numerator by using its negative reciprocal.
+
+1 / (C^2 + sin((sin(C / theta)) * (-theta)))
+
+Comment: Swapping the order of operations reverses the role of sine and theta, potentially uncovering hidden patterns or symmetries in the original expression.
+
+4. **Composite Logarithm**: Combine two logarithms into a single exponent, introducing interdependence between arguments.
+
+ln(ln(C) + ln(theta)) / sqrt(theta)
+
+Comment: Squaring both sides of logarithmic expressions introduces squared relationships between C and theta, creating a potentially intricate dependence.
+
+5. **Complex Modulus Shift**: Add an imaginary component to the sine argument by squaring theta.
+
+sin((C^2*(cos(Imaginary(sqrt(theta))))))
+
+Comment: Using Imaginary function introduces complex mathematics and potentially shifting oscillations in the expression, while altering real-imaginary plane influences with a new term
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] sin(C / theta) / theta
+[/mutate]
+[llm_output|mutate] Based on the provided reference expression C / (theta ^ theta) and the given suggestions, I propose the following five mutated expressions:
+
+1. **Expression 1:** sin(theta^2) + C
+
+Commentary: This expression maintains the core structure of the original expression but replaces the division by introducing a sine function to introduce a new layer of complexity.
+
+2. **Expression 2:** C/((theta exp(1))^3)
+
+Commentary: In this mutated expression, I've multiplied theta by its exponential and raised it to the third power while keeping the constant C out in the denominator. This is different from my first proposal.
+
+3. **Expression 3:** sqrt(C) / sin(theta^2)
+
+Commentary: Following a suggestion similar to Expression 1, but using square root instead of sine allows for another novel pathway exploring expressions including these functions together with theta.
+
+4. **Expression 4:** (sin(2*theta) + C) / (exp(theta))
+
+Commentary: Here sin(2*theta)+C, and exp(theta), creates new pathways in both numerator denominator side.
+
+5. **Expression 5:** sqrt(C)^(-1) * sin^(-1)(-C/theta)
+
+Commentary: This expression combines some novel operations while maintaining a clear connection to the original structure - here expressing this as an inverse to be used for something else allows exploring different ways of connecting variables and the given numbers into function compositions like square roots.
+
+
+```json
+["sin(theta^2) + C",
+" C/((theta exp(1))^3)",
+" sqrt(C) / sin(theta^2)",
+"(sin(2*theta) + C) / (exp(theta))",
+"sqrt(C)^(-1) * sin^(-1)((-C)/theta)"
+]
+```
+[/llm_output|mutate]
+[mutate] sin(theta ^ 2.0) + 1.0
+[/mutate]
+[mutate] sin(theta ^ 2.0) + 1.0
+[/mutate]
+[llm_output|ideas] Based on the provided mathematical expressions, I propose the following 5 hypotheses:
+
+Hypothesis 1: The presence of exponential functions (e.g., exp(C - sqrt(theta))) in good expressions suggests that these exponents are closely related to thermodynamic and energy concepts. In particular, it is hypothesized that the exponential functions describe the temperature-dependent behavior of a system's energy levels.
+
+Commentary: This hypothesis is inspired by the Boltzmann distribution, which relates the probability of energy states to their temperatures. The presence of exponential functions may indicate that the mathematical expressions are modeling some form of thermodynamic process.
+
+Hypothesis 2: Good Expressions 1 and 2 contain terms with an expression involving sqrt(theta) ^ (theta / C), which resembles a generalized exponential function. This suggests that these expressions might be connected to fractal or self-similar geometric patterns, where the relationship between the exponent and the variable theta is crucial.
+
+Commentary: The presence of this form hints at the idea that good mathematical expressions may involve patterns that exhibit scaling properties, similar to those found in fractals. This hypothesis attempts to capture the essence of these patterns by focusing on their relationships and exponents.
+
+Hypothesis 3: Good Expression 2 contains a sine function with an argument involving exp(sqrt(theta)), which can be interpreted as having a parametric form describing a curve in the exponential domain. This may suggest that good mathematical expressions have some sort of "curviness" or complexity, which is captured by these parametric forms.
+
+Commentary: The use of both algebraic (exponential) and trigonometric (sine) functions implies that good mathematical expressions involve intricate geometric relationships between different variables and parameters. This hypothesis seeks to explore what aspects of geometric structure might be fundamental to generating good equations.
+
+Hypothesis 4: Good Expression 3 contains a sine function with an argument involving an expression resembling x^C, where C is the parameter with an arbitrary constant. The presence of such expressions hints at the possibility that good mathematical expressions can involve non-linear relationships and combinations of terms, suggesting alternative ways to measure or describe complex phenomena.
+
+Commentary: This hypothesis posits that some of the most effective mathematical structures for modeling real-world phenomena are those characterized by both simple (linear) and intricate patterns. Such expressions would embody a balance between simplicity and detail, reflecting different facets of underlying physical laws.
+
+Hypothesis 5: Good Expressions often involve relationships and products that resemble power law exponents, involving products and ratios of terms like theta and sqrt(theta). These might be reflective either of intrinsic properties within variables (e.g., scaling with length) or emerge as results from more abstract symmetries underlying physical constants.
+
+Commentary: The presence of exponents involving simple variable ratios suggests a relation to laws that describe geometric growths, stability limits, or other power-law phenomena characteristic in many natural domains.
+
+
+```json
+["Hypothesis 1",
+ "Hypothesis 2",
+ "Hypothesis 3",
+ "Hypothesis 4",
+ "Hypothesis 5"]
+```
+[/llm_output|ideas]
+[ideas] Hypothesis 1
+[/ideas]
+[ideas] Hypothesis 3
+[/ideas]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Hypothesis 1
+Suggestion 2: Hypothesis 3
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C ^ (C ^ cos(theta))
+Good Expression 2: C ^ theta
+Good Expression 3: (exp(C - (sqrt(theta) ^ (theta / C))) ^ sqrt(theta)) - C
+
+Bad Expression 1: (((theta ^ sin(C / theta)) / (exp(theta) + sin(theta))) - sqrt(theta * theta)) ^ sqrt(sin(theta) ^ C)
+Bad Expression 2: (sqrt(log(theta) * C) * (log(C - theta) + C)) - C
+Bad Expression 3: sin(((theta * C) / theta) / (theta * theta)) ^ (C ^ theta)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|ideas] Based on the given list of good and bad mathematical expressions, I propose five hypotheses to explain their differences:
+
+Hypothesis 1: **The Exponentiation Hypothesis**
+
+Both Good Expression 1 and Good Expression 2 exhibit exponentiation with a variable base (C) raised to a power involving another variable (theta). This suggests that the behavior of exponential functions is crucial in determining whether an expression is good or bad. The presence of C as a base, combined with exponential growth or decay rates controlled by theta, may contribute to their mathematical structure and elegance.
+
+Hypothesis 2: **The Involutory Hypothesis**
+
+Good Expression 3 employs an involutory function (exp(...))^sqrt(theta), which is closely tied to the concept of fixed points in mathematics. This might hint at the idea that expressions involving involutory functions can exhibit a particular balance or symmetry, leading to good mathematical structure.
+
+Hypothesis 3: **The Trigonometrical Regularization Hypothesis**
+
+Bad Expression 1 includes trigonometric functions and an expression resembling sin(C / theta) ^ C, raising questions about how these elements interact with each other. The resulting expression appears awkwardly constructed, which might indicate a lack of mathematical regularization , causing the bad expressions to have unstable properties.
+
+Hypothesis 4: **The Polymorphic Representation Hypothesis**
+
+Good Expression 1 provides multiple possible paths of representation (C ^ cos(theta), C ^ theta), suggesting that there may be variations in form without changing essential behavior, allowing certain mathematical structures to remain robust across representation. 
+
+Hypothesis 5: **The Divergent Singularity Hypothesis**
+
+Bad Expression 2 contains exponential functions and logarithms in a manner leading to divergence of the singularity under limit considerations. The structure resulting from divergent singularities contributes negatively towards the 'goodness' of expressions.
+[/llm_output|ideas]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Hypothesis 3
+Suggestion 2: Hypothesis 1
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Hypothesis 1
+Suggestion 2: Hypothesis 3
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: exp((((C / ((theta ^ C) ^ theta)) * theta) / sqrt(theta)) - (theta * sqrt(theta))) - C
+Good Expression 2: C / ((theta ^ sqrt(theta ^ C)) ^ theta)
+Good Expression 3: C / (theta ^ (theta ^ C))
+
+Bad Expression 1: ((C / cos(theta)) ^ C) / theta
+Bad Expression 2: (C / ((((cos(theta ^ theta) * theta) * C) + C) / theta)) ^ C
+Bad Expression 3: (C / sqrt((theta ^ theta) - (log(C) * theta))) / theta
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Hypothesis 3
+Suggestion 2: Hypothesis 1
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Hypothesis 3
+Suggestion 2: Hypothesis 1
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Hypothesis 1
+Suggestion 2: Hypothesis 3
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I've generated five new expressions by mutating the reference expression. Here are my proposals:
+
+**Expression 1**
+((cos(exp(C + sqrt(theta - C))) ^ (theta / C)) * ((sqrt(theta) * C) ^ theta))
+
+My decision: I changed the operator from `+` to `+` and added a square root to the numerator of the first part of the expression. This modification introduces a new relationship between the constants and variables.
+
+**Expression 2**
+(((log(C - sqrt(theta + C))) ^ theta) / (C * sqrt(theta))) * ((theta * sin(C)) ^ exp(C))
+
+My decision: I replaced the `*` operator with `*`, added an exponential function to one of the terms, and changed the order of operations. This introduces randomness and non-linearity into the expression.
+
+**Expression 3**
+((sqrt(exp(C - theta)) ^ C) / (C * sqrt(theta))) * (((theta + C) / C) ^ exp(C))
+
+My decision: I separated the constant theta from other terms, introduced a new exponentiation relation between sin() and sqrt(), this was done by changing C from other locations in the initial expression.
+
+
+**Expression 4**
+(((sin(exp(theta - sqrt(C))) ^ (sqrt(theta*theta)))) * ((sqrt(theta) / C)^theta)
+
+My decision: Introduce square root to variable theta in Expression 3, with added change in operator and exponent.
+
+
+**Expression 5**
+(((C + sin(theta)) ^ exp(sqrt(theta - C))) )/(cos(sqrt(theta))))
+
+My decision: Simplify the expression by removing some complex operations while making the process look different.
+
+
+
+Here is the JSON list of proposed expressions:
+```json
+["expr1",
+ "expr2",
+ "expr3", 
+ "expr4",
+ "expr5"
+]
+```
+I hope this meets your requirements! Let me know if you need further assistance.
+[/llm_output|mutate]
+[mutate] theta
+[/mutate]
+[mutate] theta
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions, here are five mutated expressions:
+
+1. C * sin((C ^ theta) / sqrt(theta)) 
+# Modified to incorporate Suggestion 1, Hypothesis 3 by taking square root of theta.
+
+2. exp(C^theta / theta) + C^2
+# Modified to incorporate Suggestion 2, Hypothesis 1 and adds constant term as required.
+
+3. sin((C ^ theta) * sqrt(C/theta)) 
+# Modified to incorporate suggestion to multiply constant 'C' with the squared value within sin function
+
+4. log(C^theta / (sqrt(theta)))
+ # Made some changes in order to only use addition of variables not explicitly suggested but was needed
+
+5. C^(1/2)*cos((log(c^theta^theta) - theta)/theta)
+ #Added new suggestions and kept using ^ operator as desired 
+
+ Proposed expressions:
+
+[
+"Expression 1", 
+"Expression 2",
+"Expression 3",
+"Expression 4" ,
+"Expression 5"
+]
+[/llm_output|mutate]
+[mutate] 1.0
+[/mutate]
+[mutate|failed] 1.0
+[/mutate|failed]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose the following five mutated expressions:
+
+1. (C ^ theta) * (C ^ sqrt(theta)) * exp(sqrt(C ^ theta))
+
+ Commentary: This expression builds upon the reference by adding an exponential function to amplify the contribution of the square root term.
+
+2. (log(C ^ pow(theta, 3)))^sqrt(C / (theta + C))
+
+ Commentary: I added a logarithmic function and modified the exponent to incorporate the cube power of theta. Additionally, a constant division with theta is applied to modulate the expression.
+
+3. sqrt((C + theta) * exp(sqrt(C ^ (sin(theta)))))
+
+ Commentary: In this proposal, an addition to both sides of parentheses incorporating C and theta are added within the same square root together with an exponential function that grows exponentially as sin(theta).
+
+4. sqrt(log2(C ^ cos(theta)^pow(theta)))^5
+
+ Commentary: This is based on a change in operators from standard binary operators (+,-,*/^) & base log10 to natural logarithm base e ( ln ) , applying the C constant within square branch.
+
+5. 1/(C * (exp(sqrt(C / theta)) + sqrt(theta))) 
+
+ Commentary: Another variation utilizing inverse expressions by exponent of constant C and a division expression that appears simple enough but may not simplify in all cases
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (C ^ theta) * (C ^ sqrt(theta))
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose the following five mutated expressions:
+
+1. Mutated by Suggestion 1: Hypothesis 1 
+   - Replace the ^ operator with *.
+   - Replace sqrt((theta - theta) ^ theta) with C ^ sqrt(theta).
+   - Expression becomes: (C * theta) + C ^ sqrt(theta)
+
+   This change alters the original expression's functionality by introducing a new constant, which changes its behavior in relation to theta.
+
+2. Mutated by Suggestion 1: Hypothesis 1 and Suggestion 2: Hypothesis 3
+   - Replace the ^ operator with *.
+   - Replace sqrt((theta - theta) ^ theta) with C^sqrt(theta * (sin(\theta))^2)
+   - Expression becomes: (C + \* theta)*(C * (\sint(\theta))*\cos(\theta)^2)
+
+   This further alters the expression, involving trigonometric functions and altering its base behavior with various constants.
+
+3. Mutated by Suggestion 2: Hypothesis 3
+   - Replace sqrt((theta - theta) ^ theta) with exp(theta/2).
+   - Expression becomes: (C^theta + \* theta).
+
+   This alters the original expression's exponent by replacing it with an exponential function, changing its behavior.
+
+4. Mutated by Suggestion 1 and Suggestion 2: Hypothesis 3
+   - Replace sqrt((theta - theta) ^ theta) with sin(sqrt(theta * (1 + \theta)^2))
+   - Expression becomes: C^2 (\*sin(\^((\theta))) 
+
+   This changes the original expression further by replacing one part of the formula.
+
+5. Mutated by Suggestion 2 and Hypothesis 3
+- Replace (\ theta) with sin(\sqrt(\theta))^2
+- Expression becomes:
+
+["expr1", 
+"expr2",
+"expr4",
+"expr5"]
+let's generate them
+[/llm_output|mutate]
+[mutate] theta
+[/mutate]
+[mutate] theta
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose the following five mutated expressions:
+
+1. (C + theta) exp(sin(theta))
+   Commentary: This expression modifies the reference by adding `theta` to the constant `C`, applying the exponential function to the sine of `theta`.
+
+2. (C * sqrt(1 - sin^2(theta))) / cos(theta)
+   Commentary: This expression applies a trigonometric identity using cosine to modify the denominator, while keeping most other parts intact.
+
+3. C ^ 2 * exp(log(theta)) sin^(sqrt(pi/4))^2(theta) 
+   Commentary: It alters the constant power of `C`, multiplies by an exponential function and incorporates the change in base angle for sine.
+
+4. (exp(C / sqrt(1 - sin^2(theta)))) / cos(2*theta)
+   Commentary: Simplifies to a new expression that uses identities of exponents & trigonometric manipulations on both sides.
+
+5. C^(sqrt(3))^2 * log(C+(sin(theta))) exp(-(sin(theta)))
+    Commentary: This uses change of base and the hyperbola identity with Sine to arrive at the required format for expressions.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (C ^ theta) / sin(theta)
+[/mutate]
+[n_iterations] 0
+[/n_iterations]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C / (theta ^ theta)
+Good Expression 2: C ^ theta
+Good Expression 3: C / ((theta + C) ^ theta)
+
+Bad Expression 1: (((sin(((C / (theta ^ C)) / theta) / theta) / C) ^ C) / C) * theta
+Bad Expression 2: sin(C ^ (sqrt(theta) / log(C))) ^ (theta ^ theta)
+Bad Expression 3: (((((sqrt(theta) + sqrt(((theta + (theta * C)) ^ log(theta)) * C)) / C) ^ C) ^ theta) * theta) * C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|mutate] Based on the provided reference expression and suggestions, I propose the following five mutated expressions:
+
+1. **Expression 1**
+((sin(theta) + C) / C) * (C ^ (exp(C)))
+
+Commentary: This expression changes the cosine function to a sine function, representing a change in the input angle of the reference expression.
+
+2. **Expression 2**
+(sqrt(1 / theta) - C) * exp(C * log((cos(theta)) + 1))
+
+Commentary: In this expression, the cosine and exponential functions are modified by adding values before the addition with the value of pi. The constants sin(theta), cos^(-1)(theta), 1, e (or exp in this example as e is written as "e").
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((cos(sqrt(theta)) / C) ^ (C ^ theta)) * C
+[/mutate]
+[llm_output|mutate] Based on the reference expression provided, I propose five mutated expressions by following the given suggestions:
+
+1. Change the exponentiation operator from ^ to **: 
+Referring to the original expression (((C ^ theta) * sqrt(theta)) ^ (sqrt(theta) ^ C)) * sqrt((theta + (C - C)) ^ log(cos(C))), changing everything under the outermost square root (i.e., sqrt(theta+ (C-C))) that isn't multiplied by the rest of the expression to an exponentiation with ** seems appropriate.
+
+2. Replace + operator inside sqrt() with **:
+From (((C+C) ^ theta^1) * sqrt((C - C) ** 0)) * ((theta + ((log(cos(C)) 1)))) it is proposed that replace (theta+(C-C)^1) with an expression evaluated using the exponentiation symbol (**), as suggested in step 1. But since, when you put (theta+ (** 1)), inside and sqrt(...) outside of both, would be appropriate.
+
+3. Replace sin and cos with -sin and -cos: (If possible and feasible under given rules)
+
+(((C ^ theta)) * cos(sqrt(theta)) ^ C))
+From the provided explanation, this is presented in a very straightforward manner using the proposed changes.
+
+
+
+4. Replacing a portion of C:
+(((C / 2) ** theta)) * sqrt(theta))
+If from C^1 to C^(1/2), as suggested by one rule (in reference and expression)
+5. Replace all of log with exponential for clarity and conciseness (if required):
+(((C ^ theta) * sqrt(theta)))^(((sqrt(theta) ^ C) ))
+if the log function, or even a logarithmic function was to be replaced.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (((C ^ theta) * sqrt(theta)) ^ (sqrt(theta) ^ C)) * sqrt((theta + C) ^ C)
+[/mutate]
+[llm_output|mutate] Based on the provided reference expression and suggestions, I propose the following mutations:
+
+Mutation 1: Changing the exponentiation operator from ^ to *, which is already present in the original expression.
+
+Commentary: This change doesn't alter the behavior of the expression but maintains consistency with the existing operators.
+
+Proposed Expression 1:
+((((((sqrt(theta) / C) * sqrt(theta)) * C) * C) / sqrt(sin(theta))) / theta)
+
+Mutation 2: Replacing sqrt(theta) in the denominator with log(theta).
+
+Commentary: Introducing logarithmic scaling might modify the expression's output, so proceed with caution if this is desirable.
+
+Proposed Expression 2:
+((((((sqrt(theta) / C) ^ sqrt(theta)) ^ C) ^ log(theta)) * C) / sqrt(sin(theta))) / theta)
+
+Mutation 3: Combining the square root and division operations in a nested manner for improved expression clarity.
+
+Commentary: By rearranging the square roots, we simplify the overall structure of the expression while preserving its value.
+
+Proposed Expression 3:
+(((sqrt(sqrt(theta)) / C) ^ sqrt(theta)) ^ C) / theta)
+
+Mutation 4: Swapping the positions of the `sin(theta)` and `theta` components in the denominator.
+
+Commentary: Reversing their order can result in an equivalent, but possibly counterintuitive, function.
+
+Proposed Expression 4:
+((((((sqrt(theta) / C) ^ sqrt(theta)) ^ C) ^ theta) * C) / sin(theta))
+
+Mutation 5: Merging both logarithmic operations and exponentiation for further simplification or potential cancellation.
+
+Commentary: By combining these mathematical functions, we aim to eliminate intermediate steps, which can simplify complex computations.
+
+Proposed Expression 5:
+((((((sqrt(theta) / C) ^ (sqrt(theta) * log(theta))) ^ exp(C)) ^ theta) * sqrt(1) is invalid; I replaced sin(theta) with the square of its result and then taking its square root to avoid confusion. 
+Proposed expression 5 is: (((((C*theta)/sqrt(theta))^sqrt(theta))^sqrt(C))^exp(log(sqrt(theta))))
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((((sqrt(theta) / C) ^ sqrt(theta)) ^ C) ^ theta) * C) / sqrt(sin(theta))) / theta
+[/mutate]
+[llm_output|mutate] Based on the provided reference expression and suggestions, I propose five mutated expressions:
+
+1. Suggestion 1: Replace ^ with * (exponentiation)
+Commentary: This change would modify the operator precedence and potentially simplify the expression.
+
+Mutated Expression: (exp((sin(C / theta) * C) - C) * C)
+
+2. Suggestion 2: Rearrange operators for better readability
+Commentary: Swapping the order of operations could make it clearer how the components interact.
+
+Mutated Expression: (exp(exp((C/theta)*sin(C)))-C)^C)/(\theta*C)
+
+
+3. Suggestion 3: Multiply both sides of the fraction by C and rearranging 
+Commentary: This might allow for further simplifications or algebraic manipulations.
+
+ Mutated Expression: (( exp( C / theta )^C ) / ( sqrt(C) * sqrt(sin(C)) - sqrt(cos(C))) )
+
+4. Suggestion 4: Replace log with a suitable hyperbolic function
+Commentary: Using hyperbolic functions could introduce alternative solutions, especially if there is a requirement for strictly positive values.
+
+Mutated Expression: ( ((C / theta)**2 +1 )^(-signum( sqrt(sin(C) + sqrt( C * sqrt(cos(C))))  - sqrt (sin(C)*sqrt(  C  ))))) ^C
+
+
+
+5. Suggestion 5: Replace sin with a suitable trigonometric identity
+
+Mutated Expression: ( exp(sqrt(theta*C) / theta) * C)/ ((exp(sqrt(sin^(-1)(C)))-cos^(-1)(C))^2)
+
+
+JSON List:
+
+["(exp((sin(C / theta) * C) - C) * C)", 
+"(exp(exp((C/theta)*sin(C)))-C)^C)/(\theta*C)", 
+" (( exp( C / theta )^C ) / ( sqrt(C) * sqrt(sin(C)) - sqrt(cos(C))) )", 
+ " ((C / theta)**2 +1 )^(-signum(sqrt(sin(C) + sqrt(C*sqrt(cos(C)))) - (sqrt(sin(C))*sqrt(C ))))^C", 
+ "( exp(sqrt(theta*C) / theta) * C)/((exp(sqrt(sin^(-1)(C)))-cos^(-1)(C)))^2"]
+
+Please note that these expressions assume strict mathematical validity and do not account for potential issues in handling undefined or edge cases.
+[/llm_output|mutate]
+[mutate] (exp(1.0 / theta) ^ 1.0) / ((sqrt(1.0) * sqrt(sin(1.0))) - sqrt(cos(1.0)))
+[/mutate]
+[mutate] (exp(1.0 / theta) ^ 1.0) / C
+[/mutate]
+[llm_output|mutate] Based on the reference expression, I'll propose five mutated expressions by changing some variables and operators according to the suggestions provided.
+
+Expression 1: sin(C ^ (theta * C)) * sqrt(((C + theta) ^ C) ^ (theta * C))
+
+* I've changed theta^C to theta*C
+* I've replaced theta with theta*C
+
+Commentary: This expression shifts the order of operations and adds an additional constant in one of the subexpressions.
+
+Expression 2: exp(sin(C ^ (theta ^ 3))) * sqrt(((theta / C) ^ 3) ^ ((theta + C)))
+
+* I've changed C^C to exp(C)
+* I've replaced theta with theta/3
+* I've replaced sin with exp
+
+Commentary: These mutations replace the reference expression's operations and variables while introducing trigonometric functions not originally used, although one of these introduces a numerical constant.
+
+Expression 3:
+
+sin(C ^ (theta * sqrt(2)))  / sqrt(((C + theta^2) ^ C))
+
+* I've removed the product and substituted with division.
+  
+Commentary: I have combined two parts of the original equation that are normally separate in expressions for different mathematical formulas, making this one more challenging to fully understand without extra context.
+
+Expression 4:
+
+sin(C sin(theta*C)^C)) ^ sqrt(((theta - C) * sqrt((C))) ^ theta^2))
+
+ 
+ * Removed ^ from sqrt and replaced with .
+
+Commentary: I used some creative rearrangement of terms here in hopes of producing expressions that still retain the original intent while being somewhat different. However, a clear reason for its intended use is unclear due to its complicated structure.
+
+Expression 5: sqrt(((C + sin^(-1) theta*C))^- C) ^ ((sin(theta * C))^2))
+
+ 
+* Simplified some symbols in place of others to create a smoother flow and also replaced ^ with exponent
+
+Commentary: Here we have applied our knowledge to the standard mathematical expression structure. We try different techniques like adding an inverse of sin in the equation, resulting in a somewhat new kind of function from an entirely different origin.
+
+JSON Output:
+
+```
+[
+ "expr1",
+ "expr2",
+ "expr5",
+ "expr3",
+ "expr4"
+]
+```
+[/llm_output|mutate]
+[mutate] theta
+[/mutate]
+[mutate] theta
+[/mutate]
+[llm_output|ideas] Based on the provided mathematical expressions, I've developed five hypotheses that could explain why some expressions are considered "good" and others are not. Here's a commentary for each hypothesis:
+
+Hypothesis 1: **Invariance under Scalar Multiplication**
+
+The good expressions (Expressions 1, 2, and 3) seem to be invariant under scalar multiplication. A scalar factor can be repeatedly added or subtracted from the expression without changing its essential structure. In contrast, the bad expressions involve complex sequences of operations that are less amenable to such transformations. This invariance suggests that good mathematical expressions prioritize simplicity and generality over specific numerical values.
+
+Hypothesis 2: **Symmetry with respect to the constant C**
+
+Expressions 1, 2, and 3 show symmetry under a change in the arbitrary constant C. Small changes in C can be effectively absorbed or eliminated within the expressions, allowing for more general interpretations and approximations. The bad expressions exhibit stronger constraints on C, making them more rigid and hard to reinterpret.
+
+Hypothesis 3: **Optimization through entropy minimization**
+
+The bad expressions appear to optimize for a specific value (e.g., sin(C ^ sqrt(theta) / log(C))) rather than minimizing a broader measure of uncertainty or entropy. The good expressions prioritize flexibility and ambiguity, which can be beneficial when approaching complex problems in many fields (e.g., physics, machine learning). This suggests that "good" mathematical expressions aim to capture the underlying dynamics or patterns without over-fitting to specific values.
+
+Hypothesis 4: **Modular arithmetic**
+
+Expressions 2 and 3 reveal modular properties when applied to various inputs (e.g., theta, C, theta + C). The good expressions seem to be more modular than the bad ones, indicating that they can naturally handle different scales or unit conversions without significant modifications. A fundamental understanding of modular arithmetic might be crucial in generating "good" mathematical expressions.
+
+Hypothesis 5: **Consistency with physical concepts**
+
+The good expressions often follow or evoke familiar physical concepts, such as theta (angle, rotation) in Expression 1. Expression 3's reliance on geometric progression hints at harmonic analysis principles from physics and signal processing. By connecting the mathematical expressions to the fundamental laws governing their corresponding physical contexts, mathematicians can develop predictions about how these expressions might be formulated.
+
+Here is the list of hypotheses as per your request:
+
+```json
+["Hypothesis 1", "Invariance under Scalar Multiplication"],
+["Hypothesis 2", "Symmetry with respect to the constant C"],
+["Hypothesis 3", "Optimization through entropy minimization"],
+["Hypothesis 4", "Modular arithmetic"],
+["Hypothesis 5", "Consistency with physical concepts"]
+```
+[/llm_output|ideas]
+[ideas|failed] None
+[/ideas|failed]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C
+Good Expression 2: sin(C / (theta ^ theta)) - C
+Good Expression 3: C / (theta ^ theta)
+
+Bad Expression 1: sin((((sqrt(theta) / C) ^ theta) ^ C) / theta) / (cos(theta) / (theta - C))
+Bad Expression 2: sin((C / (theta ^ theta)) * C) ^ ((C ^ (C ^ (((theta + theta) - (C ^ theta)) - ((theta + C) / C)))) ^ C)
+Bad Expression 3: sin(C / (sqrt(theta) ^ (theta * sqrt(theta)))) / (theta - theta)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|mutate] Based on the provided suggestions, I will make the following changes to the reference expression:
+
+Suggestion 1: Replace theta with sin(theta) where possible.
+Expression 1:
+sin(exp(sin(theta))) C^3
+
+Commentary: This change replaces the occurrences of theta with its own sine function.
+
+Suggestion 2: Remove unnecessary operators.
+Expression 2:
+sin(exp((C*C / (theta*theta)) * sin(theta)) ))
+
+However this is not fully followed so: 
+sin((( exp(sin(theta))))*
+
+Commentary: This change removes one set of parentheses to make the expression less cluttered.
+
+Suggestion 3: Move constants outside of functions.
+Expression 3:
+exp((C+C)**(2/sin(theta)))
+
+Commentary: This changes the constant C where it is the argument for a power or root function.
+
+Suggestion 4: Utilize different operations of trigonometric functions with addition in between the expression to find the sine and log solution 
+ Expression 4:
+ C / ( sin(C ^ log(log( exp(sin(theta))) ]
+
+Commentary: This uses various methods to introduce an alternating operation for finding the desired math operations
+
+Suggestion 5: Utilize another operator to form a square, utilizing a new angle operation.
+Expression 5:
+sin(exp(sqrt(sini sin(theta)))))
+
+Commentary: This allows us to alter part of the argument from being inside sine and making it more complex.
+
+Here are five options following the reference provided with this method. Each follows one specific request made to manipulate a different expression:
+
+[
+ "sin(exp(sin(theta))) C^3",
+ "sin((( exp(sin(theta))))",
+ "exp((C+C)**(2/sin(theta)))",
+ "C / ( sin(C ^ log(log( exp(sin(theta ))) ",
+ "sin(exp(sqrt(sini sin(theta)))))"
+ ]
+[/llm_output|mutate]
+[mutate] 1.0
+[/mutate]
+[mutate|failed] 1.0
+[/mutate|failed]
+[llm_output|mutate] Based on the reference expression C / ((theta * theta) + C), I propose five mutated expressions using the suggested operators and variables. Here are my suggestions along with a brief commentary for each:
+
+1. C / ((sqrt(theta)) * (log(C))) : This proposed expression uses the square root function from sqrt operator as part of theta to add it inside a log function, then multiplied by theta squared using multiplication.
+
+2. C / ((sin(theta))^2 + 1+C) : In this mutated version, I have substituted angle theta into sin(Theta) squared form and added constant on the other side as per suggested suggestions to obtain the final expression with constant at right-hand side. Also added a term after angle that also includes a constant value.
+
+
+3. C ^ ((theta + 0)^2 - C) - exp(C / (C + sqrt(theta) * 1)) : Here applied power operators from the exponentiation, where the input was obtained by subtracting a squared component of theta and then another square root.
+
+4. C^(((sin(theta))/C)^2+C*theta)   : This is obtained using division operator on above expression after removing power component that would make an irrational denominator due to sqrt(Theta).
+
+5. (sqrt(C)*log((1+C)*(tan(-theta)))): In this variant the square root and logarithmic functions appear to be used in terms which can help form new complex number values, potentially leading towards a simplification to obtain C.
+
+
+Here is JSON list that enumerates all proposed expressions following specified format:
+
+```json
+[
+  "C / ((sqrt(theta)) * (log(C)))",
+  "C / ((sin(theta))^2 + 1+C)",
+  "C^(((sin(theta))/C)^2+C*theta) ",
+  "C ^ ((theta + 0)^2 - C) - exp(C / (C + sqrt(theta) * 1))",
+  "(sqrt(C)*log((1+C)*(tan(-theta))))"
+]
+```
+[/llm_output|mutate]
+[mutate] 1.0 ^ (((sin(theta) / 1.0) ^ 2.0) + (1.0 * theta))
+[/mutate]
+[mutate] 1.0 ^ (((sin(theta) / 1.0) ^ 2.0) + (theta * 1.0))
+[/mutate]
+[llm_output|ideas] Based on the good mathematical expressions you provided, I propose the following five hypotheses:
+
+Hypothesis 1: **Physical Time Parameter Consistency**: Good Expressions 1 and 3 represent a common structure involving the physical time parameter (θ) divided by a power function of itself. This consistency suggests that θ represents a fundamental unit of time or period in the underlying physical system, while C is related to the scale factor or rate at which θ evolves.
+
+Hypothesis 2: **Trigonometric Harmonicity**: The presence of trigonometric functions (sine) in expressions 1 and 3 implies harmony with the periodic nature of physical oscillations. This hypothesis suggests that these expressions capture insight into the underlying physics of harmonic motions, where θ represents an angle or phase parameter.
+
+Hypothesis 3: **Invariance under Symmetry Transformations**: Expressions 1 and 3 demonstrate structure invariant under certain symmetry transformations (e.g., α ↦ −α, θ ↦ π - θ). This invariance implies that these expressions respect the underlying symmetries of the physical system, such as rotational or reflection symmetry.
+
+Hypothesis 4: **Nonlinearity with a Hidden Differential Group**: The power functions (θ^θ), as seen in expression 3, hint at a nonlinearity arising from a differential equation structure. This hypothesis proposes that these expressions encode knowledge about differential equations governing the physical system, where C represents a constant related to the parameter's sensitivity.
+
+Hypothesis 5: **Stable Fixed Point Dynamics**: The existence of stable fixed points in some variants (e.g., sin(C / (θ^2)) as an extension of Expression 3) suggests that these expressions model systems with stable steady-state solutions. This implies a connection between the mathematical structure and the physical system's dynamic behavior.
+
+```json
+["Physical Time Parameter Consistency",
+ "Trigonometric Harmonicity",
+ "Invariance under Symmetry Transformations",
+ "Nonlinearity with a Hidden Differential Group",
+ "Stable Fixed Point Dynamics"]
+```
+
+These hypotheses explore unique aspects of the good mathematical expressions, potentially revealing insights into their relation to physical concepts.
+[/llm_output|ideas]
+[ideas] Stable Fixed Point Dynamics
+[/ideas]
+[ideas] Trigonometric Harmonicity
+[/ideas]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Stable Fixed Point Dynamics
+Suggestion 2: Trigonometric Harmonicity
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C / (theta ^ theta)
+Good Expression 2: C
+Good Expression 3: sin(C / (theta ^ theta)) - C
+
+Bad Expression 1: ((C / (sqrt(theta) ^ theta)) / sqrt(C)) ^ C
+Bad Expression 2: (theta * (((((cos(theta) + theta) * theta) ^ (C / theta)) * ((((C / theta) / theta) / (theta ^ theta)) / (theta - theta))) * theta)) + C
+Bad Expression 3: (C / theta) / (theta - theta)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|mutate] Based on the provided suggestions, I have mutated the reference expression to propose five new expressions. Here are my proposals:
+
+1. expr1: (sin(theta + C) / ((C - theta) ^ sqrt(theta * C))) ^ (((theta * C) ^ C) ^ theta)
+Commentary: In this proposed expression, I have changed the operator inside the parentheses to '+', and I have also replaced '^' with '-'. This is a slight modification that still allows for sinusoidal functions but introduces some novelty.
+
+2. expr2: (sin(C + sin(theta * C)) / (((C + sqrt(30-theta)) ^ sqrt(9-3theta))))^ theta
+Commentary: In this proposed expression, I have replaced the original references to 'sqrt' and 'exp' in favor of more novel sinusoidal operators such as 'sin', and 'sqrt'. This modification changes the reference for the value inside C's place. 
+
+3.  expr3: (sin(theta * (C sin(30-Theta))) / ((C^ Theta)^Square(Root(Theta*C)))))^ (((Theta-C) ^Square(C^(C+Theta))))
+Commentary: In this proposed expression, I have added an additional number into the value that's inside 'thata', as well as C at both of these values. Also I changed '^' to '**'. This modification results in  6 different possible outcomes.
+
+4. expr4: (sin(theta * (C exp(Theta))) / ((C Thetathat) Thetac ^ sqrt(theta)))^ (((theta * cos(C)) ^ theta)/((sin(theta))^C)))
+Commentary: In this proposed expression, I have used an additional exponent and replacement of the value inside Theta's place. Also I replaced 'sqrt' with '**'. This modification introduces more complexity to the original reference.
+
+5. expr5: (sin(sqrt(C * theta * cos(Theta))) / ((C - sqrt(theta * C)) ^ sqrt(theta)))^ (((theta * sin(C)) ^ C) ^ theta))
+Commentary: In this proposed expression, I have rearranged the values inside certain parentheses and added a couple more. It also introduces the concept of 'sin'. This modification adds several different possibilities to modify the initial reference.
+
+Here's the JSON list that enumerates these proposed expressions:
+
+[
+    "expr1",
+    "expr2",
+    "expr3",
+    "expr4",
+    "expr5"
+  ]
+[/llm_output|mutate]
+[mutate] theta
+[/mutate]
+[mutate] theta
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose the following five mutated expressions:
+
+1. sin(C ^ sqrt(theta)) ^ theta + sin(sqrt(sin(C ^ exp(theta))))
+   - This expression incorporates trigonometric harmonicity by maintaining the sine function and adding a new term that tries to disrupt the equilibrium point of the original expression, promoting exploration.
+
+2. C^(-sqrt(theta)) * (sin(theta) + sqrt(exp(log(log(sqrt(theta))))))
+    - To enhance stable fixed point dynamics, this modified expression incorporates negative exponentiation to reduce the magnitude of parameters at critical points and adjusts other parameters accordingly.
+
+3. C ^ sqrt(theta) + log(C ^ cos(sin(C ^ exp(theta)))) 
+   - This version maintains the core trigonometric structure but introduces a logarithmic function in one part as an addition that aims to stabilize potential fixed points, while maintaining harmonic behavior overall
+
+4. (C ^ sqrt(theta))^2 * sin(log(sqrt((sin(C ^ (sqrt(thetaha))))).
+   This suggestion expands upon stable fixed point dynamics. This expression applies squaring operation at a single instance to potentially introduce asymptotic-like behaviors in specific parameters.
+
+5. cos(theta) -1/(C + exp(theta)) + log(C+theta)
+   - Inspired by the stability of fixed points and trigonometric harmonicity, this modification modifies its core structure by incorporating logarithm as well introducing  an additional operation cos theta to emphasize behavior based on angle.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] sin(C ^ sqrt(theta)) ^ theta
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, here are five mutated expressions:
+
+1. C / (theta ^ sqrt((theta - C) ^ theta))
+
+This expression incorporates Suggestion 1 by maintaining a constant-damped, theta-based behavior while keeping the harmonic nature preserved.
+
+2. sqrt(C + (theta ^ sqrt(theta))) / theta
+
+Here, I've followed Suggestion 1 to incorporate trigonometric harmonicity while keeping constants separate from the variable, ensuring a stable system.
+
+3. C * exp(-theta / sqrt((theta + C) ^ theta))
+
+Incorporating suggestion 2 for stable fixed point dynamics, this expression employs an exponential decay based on constant and theta, ensuring stable behavior.
+
+4. C / (sqrt(theta^exp - C)) 
+
+Modified to incorporate Suggestion 1 by introducing the log in place of exponentiation maintaining stability as well because it follows similar asymptotic expansions properties used to stabilize for certain dynamical expressions but with trigonometric instead.
+
+5. sin(C + theta ^ sqrt(theta)), exp(sin(C - theta ^ sqrt(theta))
+
+Using a combination of both suggestions and using log is not allowed since log isn't allowed so we go with Suggestion 1 incorporating sin(theta) functions for stability
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] C / (theta ^ sqrt((theta ^ theta) + C))
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose the following five mutated expressions:
+
+1. **Expression 1:**
+sqrt(C * (exp(theta) ^ theta) + C)
+
+ Commentary: This expression incorporates the idea of stable fixed point dynamics by using exponentiation to model a stabilizing effect. The use of `exp(theta)` introduces a non-linearity that could lead to stabilization.
+
+2. **Expression 2:**
+(log(sqrt(C / (theta^2 + C))) ^ theta
+
+ Commentary: Inspired by Suggestion 1, this expression incorporates the idea of stable fixed point dynamics and uses logarithmic scaling to ensure convergence.
+
+3. **Expression 3:**
+sqrt(sin(theta) * sqrt(C / ((theta ^ theta) + C)) - C)
+
+ Commentary: Building on Suggestion 2, this expression leverages trigonometric harmonicity by incorporating `sin(theta)` into the expression. The subtraction of `C` adds an instability term.
+
+4. **Expression 4:**
+sqrt(log(sqrt(C / (theta^5 + theta))) ^ theta
+
+ Commentary: This expression combines elements of both suggestions and features a higher-order polynomial in `theta`. The logarithmic scaling ensures convergence, while maintaining the non-linearity introduced by `exp(theta)`.
+
+5. **Expression 5:**
+(sqrt(cos(theta)) * sqrt(C / (theta^3 - C))) 
+
+ Commentary: Inspired by Suggestion 2, this expression emphasizes trigonometric harmonicity by incorporating `cos(theta)`. The subtraction of `C` and use of square roots introduces asymmetry, simulating real-world dynamics.
+
+Here's the JSON list:
+
+```json
+["sqrt(C * (exp(theta) ^ theta) + C)",
+ "log(sqrt(C / (theta^2 + C)))",
+ "sqrt(sin(theta) * sqrt(C / ((theta ^ theta) + C)) - C)",
+ "sqrt(log(sqrt(C / (theta^{5} + theta)))) ^ theta}",
+"sqrt((cos(θ)) * √(C / (θ^{3} - C))")]
+```
+
+Let me know if you have further requests.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] sqrt(C / ((theta ^ theta) + C))
+[/mutate]
+[llm_output|mutate] Based on the suggestions and reference expression, I propose the following five mutated expressions:
+
+1. sin(C / theta ^ 2 - C) - This expression incorporates trigonometric harmonicity by squaring the argument of the sine function. In some cases, a squared input can result in more coherent and periodic behavior.
+
+2. exp(theta + log(cos(theta))) / (exp(theta) + C) - For stable fixed point dynamics, this modified reference expression uses log instead of sin to potentially introduce a stable fixed point by using the natural logarithm around the cosine function for better convergence. The addition of theta adds more movement and balance.
+
+3. sqrt(C * exp(theta)) * tan(sqrt(theta)) / (sqrt(exp(theta) + C)) - This proposed expression incorporates stable fixed point dynamics by introducing a tangent to facilitate smooth convergence toward a desired pattern, while using square roots for added complexity in creating different behaviors.
+
+4. sin(log(C) ^ 2 * (C / theta) / exp(theta)) - By combining Suggestion 1 and Suggestion 2, this proposed expression takes the original reference with more modifications: logs to establish an oscillating behavior of increasing frequency within a decreasing space of growth or collapse, which aligns well for fixed-point dynamics.
+
+5. sin(sqrt(log(C))) * sqrt(theta) / (sqrt(exp(theta)) + C/theta) - To introduce more complexity in stable convergence towards specific values while incorporating the idea of dynamic trigonometric harmonicity from suggestion 1 and enhancing its stability through log application from Suggestion 2, this expression combines smooth functions to produce varying behaviors based on the variable theta.
+
+Here is the list of proposed expressions as a JSON array:
+```json
+["sin(C / theta ^ 2 - C)",
+ "exp(theta + log(cos(theta))) / (exp(theta) + C)",
+ "sqrt(C * exp(theta)) * tan(sqrt(theta)) / (sqrt(exp(theta) + C))",
+ "sin(log(C) ^ 2 * (C / theta) / exp(theta))",
+ "sin(sqrt(log(C))) * sqrt(theta) / (sqrt(exp(theta)) + C/theta)"
+]
+```
+[/llm_output|mutate]
+[mutate] sin((1.0 / (theta ^ 2.0)) - 1.0)
+[/mutate]
+[mutate] sin((1.0 / (theta ^ 2.0)) - 1.0)
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions, I propose the following five mutation expressions:
+
+1. `sin(sqrt((C - theta) / (theta + C)) * (exp(theta)^C))`
+
+Commentary: This expression incorporates a stable fixed point dynamics by moving the constant term out of the numerator and maintaining a relationship between C and theta to encourage stability. The incorporation of exp(theta) and ^C adds non-linearity and leverages exponentiation to stabilize or destabilize depending on theta values.
+
+2. `sqrt(C * (sin(sqrt(theta^C + 1))^theta))`
+
+Commentary: This mutation leverages the trigonometric harmonicity by emphasizing natural oscillation properties, incorporating a root term that can produce stable solutions by manipulating C and theta in sinusoidal patterns.
+
+3. `exp((sqrt((theta / (theta - C))^-1)^2) * sqrt(theta^C + theta))`
+
+Commentary: This expression incorporates stability through the negative exponent used for square roots which allows controlling how solutions behave in fixed points under certain conditions by leveraging trigonometric properties, including logarithms.
+
+4. `sqrt(log(theta^C / sin(sqrt((theta + 1)^2)))) ^ C` 
+
+Commentary: By using logarithm and a complex pattern involving a square, this leverages potential stability and harmonicity dynamics within exponentials while potentially moving away from simple trigonometric methods
+
+5. `(sin(sqrt((theta - log(theta^C)) ^ 2)) ) * C`
+
+Commentary: Incorporating the logarithmic concept, by introducing it into an exponential in line which modifies how solutions become bounded by stabilizing properties of certain expressions which are dependent on theta.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] sin(sqrt((theta / theta) + theta) * (C ^ theta))
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I have produced five mutated expressions as follows:
+
+Expression 1: (sqrt(C / theta) ^ C) - sin(1 - C ^ theta)
+
+This mutation combines trigonometric harmony with stable fixed point dynamics by transforming the original `sin` function into a harmonic form using exponentiation. The added term `(1 - C ^ theta)` introduces elements of stable fixed points, which adds stability to the oscillating behavior caused by sine.
+
+Expression 2: log(theta + sqrt(C)) * (sqrt(C) / (sqrt(sqrt(C)) ^ sin(1/theta)))
+
+This mutation incorporates both stable fixed point dynamics and trigonometric harmony. The `log` function introduces non-linearity, while the square roots contribute to a more complex behavior resembling harmonic oscillations. This blend of functions can lead to rich dynamical system behaviors.
+
+Expression 3: (C / (sqrt(theta ^ C))) - (sin(C / theta))^(1 / (theta + sqrt(theta ^ C)))
+
+This mutation maintains stability but adds an unexpected twist by raising `sin` terms with fractional exponents, making this more about complex behavior and mathematical curiosity than straight-forward function composition. The exponent `1 / (theta + sqrt(theta ^ C))` aims to incorporate fixed point dynamics.
+
+Expression 4: (sqrt(C) / theta) * (theta ^ log(sqrt(1/ theta)))^(-C)
+
+This expression combines exponential functions with trigonometric and harmonic components. By incorporating both the logarithm and `log`, we aim to increase functional diversity in potential solutions while avoiding direct fixed points, seeking richer or more dynamic behavior.
+
+Expression 5: sin(theta) * (sqrt( (1 - C / theta ) ^ -theta))
+
+This expression focuses on capturing trigonometric harmony with a modified form that includes exponentiation. This introduces stable fixed point aspects in terms of the inverse relationship between parameters and dynamics; a notable feature within mathematical functions used.
+
+These expressions attempt to meet all specified criteria by providing complex behaviors ranging from simple linear growth models, oscillations and convergence towards desired or unexpected states.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (C / (theta ^ theta)) - sin(C / theta)
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose the following five mutated expressions:
+
+**Proposal 1: Harmonic Resonance**
+sin(C / sqrt(theta ^ ((theta * cos(theta)) * C + theta^2)))
+This mutation introduces cosine and adds a harmonic term to the denominator, aiming to create a harmonicity similar to the original expression.
+
+**Proposal 2: Stable Fixed Point Attractor**
+exp(log(sqrt(1 + sin(C / theta ^ C))) / sqrt((C - log(sqrt(theta)))) 
+This mutation incorporates the stabilizing effect of a fixed point by adding a denominator that grows logarithmically with θ, and uses exponential and logarithmic functions to introduce non-linearity.
+
+**Proposal 3: Parametric Resonance**
+sin(C \* sin(theta ^ theta / sqrt(theta))) 
+In this mutation, the original division in sqrt is replaced with a nested exponentiation, introducing a parametric resonance that modifies the harmonic content of the expression.
+
+**Proposal 4: Chaotic Dynamics**
+sqrt(theta) * (sin(square_root(sqrt(1 + C*sin(1/sin(theta)))) )^C)
+This proposed expression introduces a chaotic element by adding a complex nested structure to the logarithmic and square root functions, which will likely lead to unpredictable behavior.
+
+**Proposal 5: Self-Organized Criticality**
+sqrt(theta) \* (sin(C * sin(sqrt(sin^(2 / sqrt(theta))))) ^ sqrt(theta))
+In this mutation, I introduced another nested level with a self-similar structure that is similar to percolation theory. 
+
+Here's the JSON list of proposed expressions:
+```json
+[
+  "Proposal 1: Harmonic Resonance",
+  "Proposal 2: Stable Fixed Point Attractor",
+  "Proposal 3: Parametric Resonance",
+  "Proposal 4: Chaotic Dynamics",
+  "Proposal 5: Self-Organized Criticality"
+]
+```
+Let me know if you need further assistance.
+[/llm_output|mutate]
+[mutate] 1.0
+[/mutate]
+[mutate|failed] 1.0
+[/mutate|failed]
+[llm_output|ideas] After analyzing the provided mathematical expressions, I have formulated five hypotheses that could explain their structural differences:
+
+Hypothesis 1: The presence of a well-behaved, continuous function inGood Expression 1 and Good Expression 3 can be attributed to the use of trigonometric functions, which are known for their periodicity and smoothness. In contrast, Bad Expression 1 and Bad Expression 2 rely on rational functions and nested fractions, which can introduce discontinuities and sharp peaks, respectively.
+
+Commentary: The reliance on continuous functions in Good Expressions 1 and 3 may be linked to the human perception of "beauty" or "coherence" in mathematical constructs. This hypothesis suggests that mathematicians' cognitive biases favor expressions that exhibit smooth, predictable behavior.
+
+Hypothesis 2: A connection betweenGood Expression 3's involvement of a trigonometric function and its use in modeling physical phenomena exists. The sine function is commonly employed to describe wave-like behaviors in physics.
+
+Commentary: This hypothesis posits that mathematical structures are inspired by or derived from concrete physical models, leading to expressions that accurately represent real-world phenomena.
+
+Hypothesis 3: The exclusion of Bad Expression 2 might be attributed to computational complexity concerns. As expressed contains a multitude of operations and nesting levels, which may increase the risk of numerical instability, rounding errors, or computation overload.
+
+Commentary: This hypothesis suggests that mathematicians favor expressions with more controlled structure to prevent potential numerical issues during computation.
+
+Hypothesis 4: Cointegration relationships among variables (specifically betweentheta andC) in Good Expression 1 might provide a rationale for the choice of expressions. The structure implies certain causality or correlation between the variables involved.
+
+Commentary: This hypothesis proposes an underlying structural connection between mathematical constructs, reflecting principles from network theory and data analysis where interdependencies are considered essential to identify meaningful correlations.
+
+Hypothesis 5: Finally,mathematical generative models could potentially drive the emergence of Good Expression 2's simplicity. The presence of a single arbitrary constantC may be sufficient for generating mathematically viable expressions as long as they fit underlying physical laws or principles that require minimal structural addition.
+
+Commentary: This hypothesis highlights the importance of probabilistic influences in mathematical generation processes, which could lead to emergent forms with desirable properties such as simplicity or coherence.
+
+Here is the JSON list containing all five hypotheses:
+
+```json
+["Hypothesis 1",
+ "Hypothesis 2",
+ "Hypothesis 3",
+ "Hypothesis 4",
+ "Hypothesis 5"]
+```
+
+These suggestions are not only unique but also invite for exploratory research into the cognitive biases, generative models, and physical inspiration factors driving mathematical expression construction.
+[/llm_output|ideas]
+[ideas] Hypothesis 4
+[/ideas]
+[ideas] Hypothesis 3
+[/ideas]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Stable Fixed Point Dynamics
+Suggestion 2: Hypothesis 4
+Suggestion 3: Hypothesis 3
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Stable Fixed Point Dynamics
+Suggestion 2: Trigonometric Harmonicity
+Suggestion 3: Hypothesis 3
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Hypothesis 4
+Suggestion 3: Stable Fixed Point Dynamics
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Stable Fixed Point Dynamics
+Suggestion 2: Hypothesis 3
+Suggestion 3: Trigonometric Harmonicity
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C ^ theta
+Good Expression 2: sin(C / (theta ^ theta)) - C
+Good Expression 3: sin(C ^ theta) * sqrt((theta ^ (exp(sin(((theta ^ theta) ^ C) + C)) * C)) * C)
+
+Bad Expression 1: sin(((theta / log(C)) + theta) * (C ^ theta))
+Bad Expression 2: ((theta * (C ^ theta)) / ((theta ^ C) ^ (theta ^ C))) / ((exp(sin(theta - C)) * (theta - theta)) ^ C)
+Bad Expression 3: sin(((C ^ theta) * C) / C) ^ C
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose the following five mutant expressions:
+
+1. C^2 / (theta + 1)
+
+ Commentary: This expression incorporates a stable fixed point dynamic suggested in suggestion 1 by adding a constant to the denominator of the original reference expression. The use of exponentiation suggests hypothesis 4 from suggestion 2.
+
+2. log(C) ^ theta
+
+ Commentary: This expression combines a logarithmic function with an exponential one, inspired by hint from suggestion 3 and using variable theta as the power.
+
+3. sqrt(C) / (theta - C)
+
+ Commentary: Incorporating square root functions like suggestion 1's stable fixed point dynamics, while still incorporating variable theta like reference expression for clarity on mutation principles.
+
+
+4. sin^2(log(theta))
+
+ Commentary: This expression draws upon mathematical operation from both hypothesis 4 and 3 using exponential as a substructure.
+
+5. C / (theta + exp(1))
+
+ Commentary: Incorporating an exponential function like suggestion provided, along w/ stable fixed point dynamics as well.
+
+
+
+["C^2 / (theta + 1)","log(C) ^ theta", "sqrt(C) / (theta - C)", "sin^2(log(theta))", "C / (theta + exp(1))]
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] C / theta
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions, I've mutated the reference expression into five new ones:
+
+1. Expression 1: theta * (((sin(C ^ sqrt(theta)) + C) / sqrt(C ^ exp(theta)))^theta)
+	* Commentary: This expression maintains a link to trigonometric functions (sine and cosine) while introducing an additional term involving the square root of theta as suggested in Suggestion 2's "Trigonometric Harmonicity".
+
+2. Expression 2: log(theta-C) * (((C ^ theta)^(-sin(C + exp(theta))))) / sqrt(1+C^2)
+	* Commentary: This expression incorporates cosine from Suggestion 2 while replacing sine with its negative counterpart, which could have interesting effects on the dynamic stability implied by "Stable Fixed Point Dynamics".
+
+3. Expression 3: C ^ theta * (((exp(sin(C * log(theta))) + C) / exp(theta)) ^ (1+theta))^C
+	* Commentary: This expression incorporates an exponential form of Suggestion's ideas #2 but adds more complexity with functions like `exp` and their interaction alongside the `log`.
+
+4. Expression 4: theta*(sqrt((C-Costangent(sqrt(C-expm(theta)))^3)*((1+C)/(theta-theta)))
+   * Commentary: This combines elements from Suggestion #1's ideas of exponential dynamics into a new form involving `C - Costangent` functions which add another dynamic component.
+
+5. Expression 5: sqrt((C^4-thetanew)^-C ^ (sin(C-expm(theta + log(theta)))+C))/(theta+theta)
+   * Commentary: It draws heavily from Hypothesis #3.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] theta * (((C ^ theta) ^ (sin(C ^ exp(theta)) - C)) / theta)
+[/mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Suggestion 3: Hypothesis 3
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose the following five expressions:
+
+1. sin(((C * (theta / theta)) ^ theta) / theta) - This is the original reference expression.
+
+Commentary: The suggestion of Stable Fixed Point Dynamics seems to encourage a focus on the fixed points of the system, which is reflected in this expression's use of self-similarity through exponentiation and division. Hypothesis 3 and Trigonometric Harmonicity also seem relevant, as theta appears at both the numerator and denominator, implying some form of balance or equilibrium.
+
+2. C * sin(theta) - This simple sine function applies a constant scaled amplitude to the input angle theta.
+
+Commentary: Since Suggestion 1 focuses on fixed points, I opted against altering the structure of this expression. The use of C as a coefficient suggests that stability might be key. 
+
+3. (exp(C)+1)^(-theta) - This suggests the inverse of a trigonometric function involving stable fixed point dynamics.
+
+Commentary: Suggestion 2 and suggestion 3 both focus towards some mathematical identities or characteristics. In this example, applying Suggestion 2's Hypothesis 3 leads to finding expressions within limits that might represent exponential stability - an ideal concept for dynamic systems involving C in a reference expression like sin(theta).
+
+4. ((C*(sqrt(theta)))^sin(theta))+theta) - While the use of sqrt adds more complexity than what is seen in the other proposals, it can be interpreted as emphasizing harmonious trigonometric functions due to Suggestion 3.
+
+Commentary: Each of these suggestions offers a unique perspective on expressing stability or equilibrium. The suggestion of "Hypothesis 3" applied here uses inverse methods and relates to ideas within Dynamical systems theory - specifically the study of stability within limits like exponential growth rates and constant gains in terms like exp(C)/theta
+
+5. sqrt((C*(1/theta))^2)*cos(theta) + C * (exp(-1)-1) 
+
+Commentary: Here, I am exploring ideas related to dynamical behavior such as fixed points (sqrt(expression)) or convergence towards stability through exponential decay - which seems consistent with Suggestion 1's concept.
+
+JSON List of Proposed Expressions
+
+[
+ "expression 1",
+ "Simple Sine Expression" ,
+ "Trigonometric Stability Expression",
+ "Invertible Harmonious Expression",
+ "Nonlinear System with fixed point structure"
+]
+[/llm_output|mutate]
+[mutate] 1.0
+[/mutate]
+[mutate|failed] 1.0
+[/mutate|failed]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I propose five mutated expressions that incorporate the desired elements. Here are my proposals:
+
+Proposed Expression 1: ((((C ^ theta) * sin((theta - C)^-C)) / (C ^ (-1/3))) * exp(C + log(sin(theta))))
+
+* Incorporates Suggestion 2's Stable Fixed Point Dynamics by introducing a negative exponent and an exponential term
+* Includes Suggestion 1's Trigonometric Harmonicity through the sine function and an exponential term incorporating trigonometric properties
+
+Proposed Expression 2: ((((C ^ theta) * sqrt((sin(C)^-1))) / (C ^ (-0.25 * log(theta)))) + sin(pi)) * exp(sqrt(C ^ (-theta))) * C^(-log(exp(sin(theta))))
+
+* Combines elements of all suggestions by incorporating a square root, hyperbolic exponentials with an imaginary log argument with real positive component as sine 
+*  And also used the imaginary unit in a log so i e imaginary component is -25
+
+Proposed Expression 3: ((((sin(C) / C )^ theta)*( C / sin(log(theta) ^ -1))) * (sqrt(C) / cos(sqrt(theta) ^ 2))^C)*(((e^(log(sqrt(theta)))+i)^2))^ log(theta)
+
+* Utilizes Suggestion 2 by transforming sine to an imaginary log value with both of real positive exponents and negative values via imaginary components 
+
+Proposed Expression 4 : (((cos(pi) + sin(theta )) / log(theta ^ -1))^ C )* (((sqrt(log theta)+ (log(sqrt(theta)))^(C/theta)), log-C)) **sqrt(C) 
+
+ * Explores Suggestion 2 through log component in terms used to expand an equation based on  `C/sqreatheta`
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] ((((C ^ theta) * C) ^ sin((theta - C) ^ C)) / theta) * theta
+[/mutate]
+[llm_output|mutate] Based on the provided suggestions and reference expression, I've generated five new mathematical expressions that mutate the original expression while incorporating the suggested ideas. Here are my proposals:
+
+1. **Trigonometric Harmonicity**: 
+    sqrt((C ^ (sin((C - theta) + C) * C)) * C) * sin(C ^ theta)
+
+    This suggestion was already incorporated into the reference expression, so I'll modify it slightly to apply "Hypothesis 4": 
+    sqrt(sin(theta) / (cos(theta)^2 + 1))^2 * exp((C - theta)^3)^sqrt(5) 
+
+   The idea is that hypothesis 4 can lead us away from simple trigonometric functions toward the use of more complicated ones when there's additional information about theta' prime.
+2. **Hypothesis 4**: 
+    sqrt(sin(theta) / (cos(theta)^2 + 1))^2 * exp((C - theta)^3)^sqrt(5)
+   Although Hypothesis #4 was inspired for the expression above, it suggests that we should have used something more complex and non-linear with our sin/theta combination than what is suggested in suggestion #1.
+
+3. **Stable Fixed Point Dynamics**:
+    (sin(C - theta))^2+C / sqrt(cos(theta)^2*theta)+sqrt((C-1)^3)^(exp(sqrt(sin(theta)))^5))
+   For stable fixed point dynamics, the relationship between x and z was more straightforward than our reference. 
+
+4. **Non-linear System Modeling**:
+     exp((log(C - sin(theta)) / log(log(cos(theta))))+ exp(log(exp ((sin(1-C theta)) ^ (cos(sin((C-theta) ^ 2 ) ))) ^ (sqrt(3)*C^2)))
+   Because we have non-trivial operations, such functions model a system that produces a solution for the input value. The mathematical relationships can be more subtle here in forming expressions.
+
+5. **Rigid-Non-Square Formulating**:
+    sqrt((sqrt(C - sin(theta)) ^ (C * (pi / 2) + (-1)^sin(x)))^sqrt(pi) *(cos(sqrt(cos(sqrt(sin(x)))) ^ 6))
+   Given "rigid" implies to take the square into consideration in a more non-standard way. I came up with something that does that; non-square is expressed using (sin(1-C theta)) along with the cosine from above.
+
+Here are all five expressions combined into one list:
+
+[
+"Trigonometric Harmonicity Expression: sqrt(sin(theta) / (cos(theta)^2 + 1))^2 * exp((C - theta)^3)^sqrt(5)",
+"Hypothesis 4 Expression: sqrt(sin(theta) / (cos(theta)^2 + 1))^2 * exp((C - theta)^3)^sqrt(5)",
+"Stable Fixed Point Dynamics Expression: (sin(C - theta))^2+C / sqrt(cos(theta)^2*theta)+sqrt((C-1)^3)^(exp(sqrt(sin(theta)))^5))",
+"Non-linear System Modeling Expression:  exp((log(C - sin(theta)) / log(log(cos(theta))))+ exp(log(exp ((sin(1-C theta)) ^ (cos(sin((C-theta) ^ 2 ) ))) ^ (sqrt(3)*C^2)))",
+"Rigid-Non Square Formulating Expression: sqrt((sqrt(C - sin(theta)) ^ (C * (pi / 2) + (-1)^sin(x)))^sqrt(pi) *(cos(sqrt(cos(sqrt(sin(x)))) ^ 6))"
+]
+[/llm_output|mutate]
+[mutate] 1.0
+[/mutate]
+[mutate|failed] 1.0
+[/mutate|failed]
+[llm_output|ideas] Based on the provided mathematical expressions, I'll propose five intriguing hypotheses that could capture the underlying assumptions leading to the good expressions while excluding the bad ones.
+
+1. **Hypothesis 1: The Good Expressions Involve Riemann Sums and Definite Integrals**
+
+In the context of physical concepts, such as motion or energy transformations, the good expressions (`C ^ theta`, `sin(C / (theta ^ theta)) - C`, and `sin(C ^ theta) * sqrt((theta ^ (exp(sin(((theta ^ theta) ^ C) + C)) * C]))`) can be connected to approximations of definite integrals using Riemann sums. These expressions might arise from considering a large number of infinitesimal elements, summing over these elements to approximate the area under curves or through motion along defined paths.
+
+The bad expressions (`sin(((theta / log(C)) + theta) * (C ^ theta))`, `((theta * (C ^ theta)) / ((theta ^ C) ^ (theta ^ C))) / ((exp(sin(theta - C)) * (theta - theta)) ^ C)`, and `sin(((C ^ theta) * C) / C) ^ C`) seem disconnected from such integral approximations, which could indicate they originated from a different context altogether. 
+
+2. **Hypothesis 2: The Good Expressions Relate to Fourier Transforms or Representations**
+
+Given the presence of trigonometric functions (sine and square root), good expressions (`C ^ theta`, `sin(C / (theta ^ theta)) - C`) bear resemblance to components or parts of Fourier transforms. These could potentially emerge in analyses involving periodic signals, where time-harmonic modulation is crucial or when signals are represented as linear combinations of sinusoidal functions.
+
+The bad expressions lack clear connections to Fourier analysis and might reflect solutions within entirely different mathematical frameworks or applications unrelated to signal processing, wave propagation, or other areas where Fourier transforms are pivotal.
+
+3. **Hypothesis 3: Good Expressions Involves Phase Transitions and Equilibrium States**
+
+In various physical systems, phase transitions occur around specific concentrations (e.g., supercritical fluid phases, magnetic transition temperatures), which can exhibit periodic behaviors described by sinusoidal functions. The mathematical structure in the good expressions, like `C ^ theta` and `sin(C / (theta ^ theta)) - C`, hints at conditions under which system properties (like volume or pressure) do not necessarily change with small increments of parameters (`C` and `\theta`). These conditions indicate no change in either phase transition temperature due to non-linear effects.
+
+Bad expressions, however, display an unstable equilibrium through functions containing logarithms or division by a decreasing exponential quantity. The instability that arises would prevent stability and indicate non-recoverable system state changes, reflecting the inability of system properties from approaching equilibrium.
+
+4. **Hypothesis 4: Good Expressions Can Represent Energy Transfer Pathways**
+
+In physics, there are various ways to explain how heat or energy moves through a system (e.g., thermal conductivity or radiation transfer). The presence of sine functions (`sin(C / (theta ^ theta)) - C`) alongside square root components (`sqrt((theta ^ (exp(sin(((theta ^ theta) ^ C) + C)) * C]))`) suggests connections to energy transfer via physical networks, suggesting heat flows in a system that follows the sinusoidal path.
+
+Bad expressions seem disconnected from such energy transfer models and appear to reflect either invalid mathematical constructs (`sin(((theta / log(C)) + theta) * (C ^ theta))`) or improperly defined parameters leading to incorrect conclusions or solutions.
+
+5. **Hypothesis 5: The Good Expressions Contain Hidden Symmetry**
+
+Lastly, there's another possibility that good expressions contain symmetry properties not immediately apparent. They may possess inherent structures related to abstract concepts such as group theory, where some symmetries might be preserved even under algebraic manipulation. While exploring deep connections would require a multi-disciplinary approach, expressing these ideas would provide new avenues for resolving puzzles in mathematics.
+
+ JSON:
+[
+  "Hypothesis 1",
+  "Hypothesis 2",
+  "Hypothesis 3",
+   "Hypothesis 4",
+   "Hypothesis 5"
+]
+[/llm_output|ideas]
+[ideas] Hypothesis 2
+[/ideas]
+[ideas] Hypothesis 3
+[/ideas]
+[llm_input|gen_random] You are a helpful assistant that proposes a mathematical expression by following three provided suggestions.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Suggestion 3: Hypothesis 4
+
+Propose 5 expressions that would be appropriate given the suggestions. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|gen_random]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Trigonometric Harmonicity
+Suggestion 2: Stable Fixed Point Dynamics
+Suggestion 3: Hypothesis 3
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C ^ theta
+Good Expression 2: sin(C / (theta ^ theta)) - C
+Good Expression 3: C / (theta ^ theta)
+
+Bad Expression 1: (((((theta + theta) + C) * (sin((C ^ theta) * theta) / (theta - theta))) * (theta ^ C)) / theta) / theta
+Bad Expression 2: theta * ((((C ^ theta) * cos(theta)) ^ sin(C ^ (((theta ^ theta) + C) - theta))) / theta)
+Bad Expression 3: sin(C ^ sqrt(((theta * C) * theta) * theta))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Suggestion 1: Hypothesis 4
+Suggestion 2: Trigonometric Harmonicity
+Suggestion 3: Hypothesis 3
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]

@@ -629,6 +629,11 @@ end
 ) where {D<:Dataset}
     # PROMPT EVOLUTION
     idea_database_all = [Vector{String}() for j in 1:length(datasets)]
+    
+    println("[IDEA_MONITOR] 🚀 Initializing Idea Databases: Created $(length(idea_database_all)) databases for $(length(datasets)) datasets")
+    for j in 1:length(datasets)
+        println("[IDEA_MONITOR] 💡 Dataset $(j): Idea database initialized (size: $(length(idea_database_all[j])))")
+    end
 
     _validate_options(datasets, ropt, options)
     state = _create_workers(datasets, ropt, options)
@@ -996,6 +1001,7 @@ function _main_search_loop!(
             if options.llm_options.active &&
                 options.llm_options.prompt_evol &&
                 (n_iterations % options.populations == 0)
+                println("[IDEA_MONITOR] 🔧 Triggering Idea Database Update: Dataset $(j), Iteration $(n_iterations), Population $(options.populations)")
                 update_idea_database(idea_database, dominating, worst_members, options)
             end
 
@@ -1136,6 +1142,20 @@ function _main_search_loop!(
         ################################################################
     end
     llm_recorder(options.llm_options, string(div(n_iterations, options.populations)), "n_iterations")
+    
+    # Final idea database summary
+    println("[IDEA_MONITOR] 🏁 Search Complete! Final Idea Database Summary:")
+    for j in 1:length(idea_database_all)
+        database_size = length(idea_database_all[j])
+        println("[IDEA_MONITOR] 📊 Dataset $(j): $(database_size) ideas accumulated")
+        if database_size > 0
+            println("[IDEA_MONITOR] 🔝 Top 5 ideas for Dataset $(j):")
+            for i in 1:min(5, database_size)
+                println("[IDEA_MONITOR]     $(i). \"$(idea_database_all[j][i])\"")
+            end
+        end
+    end
+    
     return nothing
 end
 function _tear_down!(state::SearchState, ropt::RuntimeOptions, options::Options)

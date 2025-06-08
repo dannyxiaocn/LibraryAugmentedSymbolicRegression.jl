@@ -1,0 +1,277 @@
+[n_iterations] 0
+[/n_iterations]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: sigma, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|mutate] You are a helpful assistant that mutates a mathematical expression by following a few provided suggestions. You will be given three suggestions and a single reference expression to mutate.
+An expression must consist of the following variables: sigma, theta. All constants will be represented with the symbol C. Each expression will only use these operators: binary operators: +, *, -, /, ^, and unary operators: exp, log, sqrt, sin, cos.
+Reference Expression: {{expr}}
+
+Propose 5 expressions that would be appropriate given the suggestions and references. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr5"
+]
+```
+
+[/llm_input|mutate]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: C / theta
+Good Expression 2: (C - theta) * C
+Good Expression 3: (sin(((theta + sqrt(log((theta ^ sigma) / theta) ^ C)) + C) / sigma) / theta) * C
+
+Bad Expression 1: exp((((cos(theta) - C) ^ theta) / (C - ((sigma + C) - cos(C / theta)))) / sigma) * C
+Bad Expression 2: (C / (theta - theta)) * C
+Bad Expression 3: sqrt((C / sin(exp(theta / C) + C)) / C)
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|mutate] I'll mutate the reference expression by following the provided suggestions.
+
+Suggestion 1: Change the order of constants and variables in an operator. Suggestion 2: Replace the division with a more complex operation. Suggestion 3: Invert the sign of at least one variable.
+
+Here are the mutated expressions:
+
+1\. C^theta / theta => C^theta + C / theta
+
+Inversion of the division by theta, followed by change of order.
+
+2\. sin(C) * (C - log(theta)) => This is not valid because it does not meet the condition, so it will be omitted.
+
+
+3\. exp(C) * sqrt(sin(sqrt(theta)))  is also not valid and will be omitted.
+ 
+4\. C / theta - sigma ^ (1/theta ) => Reversal of the order of constants and variables in 'C', and inversion of division by theta.
+
+5\. log( ( theta + C ) / cos(sigma) )/theta => Here, an exponential was added as a binary operator which is not mentioned but allowed.
+
+
+JSON List:
+
+```
+ [
+“exp(C) * sqrt(sin(C))”,
+
+“sin(C + exp(theta)) / sqrt(cos(C))”,
+
+“C^ exp(theta - sigma)”,
+
+“log( ( theta + C ) / cos(sigma))”, 
+
+"log(sqrt(C^2)/cos(sigma))"
+ ]
+```
+
+Note: There may be various other permutations to choose from based on the specific requirements.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] C / theta
+[/mutate]
+[llm_output|mutate] Based on the provided reference expression, I will create five mutated versions by applying the variables and operations.
+
+**Suggested Mutations:**
+
+*   Add log(sigma + C) as a unary operation to the existing expression.
+*   Replace sqrt in the denominator with a different root (such as cuberoot or fourth-root).
+*   Introduce an additional factor after sigma and before C, resulting in (sigma * sin(theta)) / sqrt(theta + C)
+*   Modify operator to change the type of root from square-root to exp(log).
+
+Let's proceed with introducing those modifications:
+
+### 1\. Replaced sqrt by another root
+
+To introduce this modification: we replace sqrt(θ+C) in our reference expression with log(C/θ+C), applying properties of logarithmic roots.
+
+\[ \mathit{expression}_{ 1 } : \frac{( σ ) C}{\log (C+ θ) + C} \]
+
+---
+
+### 2\. Introducing a factor for theta
+
+By adding sin(θ) between sigma and C, we change the original expression into:
+
+\[ \mathit{expression}_{ 2 } : \frac{σsin θ C}{\sqrt{C +   θ}} \]
+
+---
+
+### 3\. Changed root from quadratic to cube
+
+First, I will replace sqrt with an exponent denoting a cuberoot. By defining cuberoot as an operator in our rules (this operator uses the syntax cubθ), this is a reasonable modification.
+
+\[ \mathit{expression}_{ 3 } : {(\sigma*C^{\wedge2})}/\cuberoot{(C+ \theta)} \]
+
+Here **"C²"** comes from applying properties of cubic roots (the root of C³ should be C itself).
+
+---
+
+### 4\. Changed operation type
+
+First, we need to replace / by exp(1/θ) where θ is the argument of a function using its inverse and then multiply by that function. We also changed the original expression's first operator.
+
+\[ \mathit{expression}_{ 4 } : ({C*\sigma^{\wedge}}exp(\left\{}(sin\theta)\log(\sigma)^{-1}\right.){+ C}) \]
+
+As above, we changed sigma back to its non-unity exponent and swapped operators between the * operator with the inverse operations used in our expressions.
+
+
+
+### 5\. Adding a log for one of them
+
+Using property: $$log( x^C) = C*Log(x)$$
+
+I will now introduce \[  expression_ { 5 }\] by replacing theta as $theta$ in the original expression. Then, replace $sigma$ with its logarithm and apply multiplication from left to right.
+
+\[ \mathit{expression} _{\mathit{ 5 }} : (exp(\log( σ ) * C ) \mathit{/ sqrt }(( \sqrt { \theta+C}) *{ log (\ theta*C)})\]
+
+Now let's wrap this up by encapsulating our output into a JSON list:
+
+```json
+[
+  {(σ*C)/log(C/θ+C)},
+    {{C*√C}/(θ+sin θ*C)}/{(σ)},
+    {(σ*C²)/cuberoot(C±θ)},
+	{(exp(1/θ)*[(σ)^C]*sinC)+(θ^3)},
+   ((exp(log(σ*{C}))*C)*sqrt(C))/(log(sqrt(θ+C)))
+ ]
+```
+
+JSON representation is correct but for a human readable format, we could say the following:
+ 
+We have developed five mutated versions of our original expression.
+
+Each one incorporates and utilizes operators provided by this notation.
+To make life easier, each example has been carefully labeled.
+[/llm_output|mutate]
+[mutate|failed] None
+[/mutate|failed]
+[mutate] (sigma * C) / sqrt(theta + C)
+[/mutate]
+[llm_output|ideas] After analyzing the good and bad mathematical expressions, I propose the following five hypotheses:
+
+**Hypothesis 1:** Scale Invariance as a Primary Concurrency Principle
+A possible assumption underlying the good expressions is that they adhere to a principle of scale invariance. This would mean that the values obtained from these expressions remain consistent or exhibit similar behavior regardless of the units chosen for measurement, such as angular rotation (theta) and constant C. Good Expression 1(C/ theta) might reflect this assumption by directly relating an intrinsic property of its input to a unitless quantity. Meanwhile, Bad expression 2's reference to identical denominators could indicate its divergence from this principle.
+
+**Hypothesis 2:** Emergence of Harmonic Motion and Rhythmic Oscillations
+A fascinating hypothesis is that the good expressions relate to harmonic motion or rhythmic oscillations exhibited in physical systems under specific conditions. Expression 3, which involves various trigonometric functions and transcendental relationships between dimensionless combinations (theta + sqrt(log((theta ^ sigma) / theta)) C)), might be an example of an emergent property that can emerge from intricate dynamics. By contrast, the Bad Expression 1's combination of logarithms, exponentials, and transcendental inverse hyperbolic trigonometric functions does not seem to capture such a behavior naturally.
+
+**Hypothesis 3:** Connection between mathematical forms expressing self-similarity and scaling properties
+Good Expressions 2 ((C - theta) * C), particularly involve polynomial relationships that share common factorization patterns with those found in descriptions of critical phenomena, for example, lattice gas models or spin systems near phase transitions. Good Expression 1 could be analyzed under similar principles of symmetry, though it's less clear if its structure aligns closely with any physically motivated patterns related to self-similarity. The bad expressions lack these specific mathematical forms.
+
+**Hypothesis 4:** Potential role of algebraic invariants in physical contexts
+Another possibility is that the good expressions utilize properties related to algebraic invariance as a fundamental concept. They could represent quantities, which exhibit behaviors under transformations of their defining variables, leading to preserved features like integrability or singularity type changes in associated differential systems. One example could be the way Expression 3 incorporates both trigonometric and logarithmic parts tied together by roots, signifying structural resilience against certain operations and providing an intrinsic description of underlying symmetries.
+
+**Hypothesis 5:** Possible association with non-rigorous topological or homotopy type changes in space-manifold evolution
+
+A more abstract hypothesis revolves around the idea that good expressions implicitly describe physical systems during processes associated with changes in their topological structure. This could arise from geometric interpretations of algebraic structures or intrinsic symmetries related to phase transitions; thus Good Expression 2 and especially its quadratic parts resemble certain combinatorial patterns typically linked to critical regions on a lattice, hinting at homotopic transformation along dimensionless parameters (C-theta).
+
+Proposed hypotheses as JSON list:
+
+```json
+[
+    "hyp1 - Scale Invariance Principle",
+    "hyp2 - Harmonic Motion and Rhythmic Oscillations",
+    "hyp3 - Self-Similarity Patterns in Critical Phenomena Modeling",
+    "hyp4 - Algebraic Invariants and Symmetries",
+    "hyp5 - Topological or Homotopy Changes"
+]
+```
+[/llm_output|ideas]
+[ideas] hyp1 - Scale Invariance Principle
+[/ideas]
+[ideas] hyp2 - Harmonic Motion and Rhythmic Oscillations
+[/ideas]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin((theta + sqrt(sigma ^ C)) / sigma) / theta) * C
+Good Expression 2: C
+Good Expression 3: (sin((theta + sqrt(C ^ C)) / (sigma ^ C)) / theta) * C
+
+Bad Expression 1: (((sin((log((theta * C) + (C ^ C)) * C) ^ sigma) - ((theta + C) * C)) / sigma) + C) * theta
+Bad Expression 2: (sqrt((C ^ C) ^ exp(cos(sigma) - C)) / theta) * C
+Bad Expression 3: ((theta * C) / C) * sigma
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
+[llm_output|ideas] What an intriguing set of expressions! After scrutinizing them, I've come up with five hypotheses that might explain their differing fate. Keep in mind that these are mere conjectures and may not hold water upon further investigation.
+
+**Hypothesis 1: Symmetry between Sine and Cosine Influences**
+I propose that the presence of both sine and cosine functions (or their equivalents) is a crucial factor in determining whether an expression is good or bad. Specifically, expressions that solely involve trigonometric functions, such as sine, might be more prone to "goodness." This could be attributed to the inherent symmetry between sine and cosine functions, which allows for a deeper understanding and manipulation of mathematical quantities.
+
+**Hypothesis 2: Sigma-Dependence as an Indicator of Physical Consequences**
+I hypothesize that expressions containing sigma-dependent terms (e.g., σ ^ C) are more likely to be "good" due to their connection to physical concepts, such as scaling or rescaling phenomena. Perhaps these sigma-dependent terms reflect properties of the physical world where changes in scale lead to meaningful consequences. In contrast, bad expressions might discard or obscure this important information with complex and unnecessary computations.
+
+**Hypothesis 3: Separability and Factoring Facilitate Physical Interpretations**
+Good expressions often exhibit separable functions where a clear division between different mathematical entities (e.g., trigonometric functions, exponents) is apparent. I speculate that the ability to isolate and factorize fundamental components may facilitate physical interpretation and understanding of underlying concepts. In contrast, bad expressions seem to blend disparate elements together in ways that obscure meaningful physical connections.
+
+**Hypothesis 4: Exponential Scaling and Root Structures Suggest Conservation Laws**
+Good expressions may rely on specific properties of exponentials (e.g., exponential scaling) and roots (e.g., square root functions), reflecting fundamental principles of conservation or energy scaling. In contrast, bad expressions violate these patterns by manipulating quantities in ways that contradict well-established physical concepts.
+
+**Hypothesis 5: Constants as Coarse-Grained Parameters**
+Finally, I propose that the appearance of constants (e.g., C) can serve as an indicator of good expressions due to their role as coarse-grained parameters. In other words, these constants might represent simplifications or average values inherent in mathematical modeling, allowing for meaningful approximations and generalizations rather than exact but non-interpretable calculations.
+
+JSON list:
+```json
+[
+  "symmetry_between_sin_cos",
+  "sigma_dependence_indicates_physical_consequences",
+  "separability_facilitates_physical_interpretation",
+  "exponential_scaling_and_roots_suggest_conservation_laws",
+  "constants_as_coarse_grained_parameters"
+]
+```
+Please note that these hypotheses are intended to inspire discussion and research rather than being immediately proven true.
+[/llm_output|ideas]
+[ideas] constants_as_coarse_grained_parameters
+[/ideas]
+[ideas] exponential_scaling_and_roots_suggest_conservation_laws
+[/ideas]
+[llm_input|gen_random] You are a helpful assistant that hypothesizes about the underlying assumptions that generated a list of good and bad mathematical expressions in detailed ways. My ultimate goal is to discover what assumptions generated the observed good mathematical expressions and excludes the bad mathematical expressions. Focus more on the good expressions, their mathematical structure, and any relation to physical concepts. Note that capital C represents an arbitrary constant.
+Good Expression 1: (sin((theta + sqrt(((sigma + sigma) ^ C) - C)) / sigma) / theta) * C
+Good Expression 2: sigma * C
+Good Expression 3: (sin((theta + sqrt(log(theta) ^ C)) / sigma) / theta) * C
+
+Bad Expression 1: (sin(((sqrt(((log(theta) * C) ^ sigma) / C) + theta) + C) / sigma) / theta) * C
+Bad Expression 2: C
+Bad Expression 3: sin(C / (theta + (C ^ C)))
+
+Propose 5 hypotheses that would be appropriate given the expressions. Provide short commentary for each of your decisions. Do not talk about topics related to the simplicity or complexity of the expressions. I want ideas that are unique and interesting enough to amaze the world's best mathematicians. End with a JSON list that enumerates the proposed hypotheses following this format:
+```json
+["hyp1",
+ "hyp2",
+ ...
+ "hyp5"
+]
+```
+
+
+[/llm_input|gen_random]
