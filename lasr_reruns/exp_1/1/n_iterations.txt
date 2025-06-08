@@ -1,3 +1,0 @@
-Dataset Feynman Equations - 400 iterations - Prompt Evol = True - Prompt concepts = True, LLM Mutate = 0.01, LLM Crossover = 0.01, LLM Gen Random = 0.01, Num Pareto Context = 3
-Equation: f = exp(-theta**2/2)/sqrt(2*pi)
-----------------

@@ -24,5 +24,6 @@ LocalPreferences.toml
 *.key
 !pysr/juliapkg.json
 lasr_runs
+lasr_reruns
 logs
 outputs
