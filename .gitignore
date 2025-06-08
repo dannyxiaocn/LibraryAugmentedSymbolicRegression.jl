@@ -23,3 +23,6 @@ docs/src/index.md
 LocalPreferences.toml
 *.key
 !pysr/juliapkg.json
+lasr_runs
+logs
+outputs
