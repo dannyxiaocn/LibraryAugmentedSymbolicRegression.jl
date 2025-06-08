@@ -1,3 +1,0 @@
-Dataset Feynman Equations - 40 iterations - Prompt Evol = True - Prompt concepts = True, LLM Mutate = 1e-05, LLM Crossover = 1e-05, LLM Gen Random = 1e-05, Num Pareto Context = 3
-Equation: F = G*m1*m2/((x2-x1)**2+(y2-y1)**2+(z2-z1)**2)
-----------------
