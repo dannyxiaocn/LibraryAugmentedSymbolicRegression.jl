@@ -734,7 +734,7 @@ function clean_expression_string(expr_str::String)::String
     # Handle tanh(x) patterns - replace with hyperbolic tangent approximation
     # Note: This is a simplified approach - ideally we'd parse the argument properly
     cleaned = replace(cleaned, r"tanh\(([^)]+)\)" => s"((exp(2*\1)-1)/(exp(2*\1)+1))")
-    
+
     # Remove other unsupported functions entirely and replace with constants
     unsupported_funcs = ["atan", "asin", "acos", "tan", "cot", "sec", "csc", "sinh", "cosh", "asinh", "acosh", "atanh"]
     for func in unsupported_funcs

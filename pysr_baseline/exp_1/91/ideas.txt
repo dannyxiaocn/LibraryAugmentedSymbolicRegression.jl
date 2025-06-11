@@ -1,0 +1,3 @@
+Dataset Feynman Equations - 40 iterations - Prompt Evol = False - Prompt concepts = True, LLM Mutate = 0.0, LLM Crossover = 0.0, LLM Gen Random = 0.0, Num Pareto Context = 3
+Equation: E_n = mom*sqrt(Bx**2+By**2+Bz**2)
+----------------

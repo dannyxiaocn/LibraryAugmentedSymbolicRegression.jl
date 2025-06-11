@@ -1,0 +1,3 @@
+Dataset Feynman Equations - 40 iterations - Prompt Evol = False - Prompt concepts = True, LLM Mutate = 0.0, LLM Crossover = 0.0, LLM Gen Random = 0.0, Num Pareto Context = 3
+Equation: kappa = 1/(gamma-1)*kb*v/A
+----------------
