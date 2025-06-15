@@ -98,7 +98,7 @@ options = Options(
         ),
         http_kwargs = Dict(
             "retries" => 5,
-            "readtimeout" => 360, # Wait 6 minutes for a response.
+            "readtimeout" => 3600, # Wait 6 minutes for a response.
         ),
         llm_recorder_dir,
         prompts_dir,

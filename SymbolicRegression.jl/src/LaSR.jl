@@ -250,7 +250,7 @@ using .MutationFunctionsModule:
     random_node,
     random_node_and_parent,
     crossover_trees
-using .LLMFunctionsModule: update_idea_database, llm_recorder
+using .LLMFunctionsModule: update_idea_database, llm_recorder, log_concept_library_init, log_concept_library_final_summary
 
 using .InterfaceDynamicExpressionsModule: @extend_operators
 using .LossFunctionsModule: eval_loss, score_func, update_baseline_loss!
@@ -630,10 +630,8 @@ end
     # PROMPT EVOLUTION
     idea_database_all = [Vector{String}() for j in 1:length(datasets)]
     
-    println("[IDEA_MONITOR] 🚀 Initializing Idea Databases: Created $(length(idea_database_all)) databases for $(length(datasets)) datasets")
-    for j in 1:length(datasets)
-        println("[IDEA_MONITOR] 💡 Dataset $(j): Idea database initialized (size: $(length(idea_database_all[j])))")
-    end
+    # Log the initialization using the new logging system
+    log_concept_library_init(length(datasets))
 
     _validate_options(datasets, ropt, options)
     state = _create_workers(datasets, ropt, options)
@@ -1001,8 +999,7 @@ function _main_search_loop!(
             if options.llm_options.active &&
                 options.llm_options.prompt_evol &&
                 (n_iterations % options.populations == 0)
-                println("[IDEA_MONITOR] 🔧 Triggering Idea Database Update: Dataset $(j), Iteration $(n_iterations), Population $(options.populations)")
-                update_idea_database(idea_database, dominating, worst_members, options)
+                update_idea_database(idea_database, dominating, worst_members, options, j)
             end
 
             if options.save_to_file
@@ -1143,18 +1140,8 @@ function _main_search_loop!(
     end
     llm_recorder(options.llm_options, string(div(n_iterations, options.populations)), "n_iterations")
     
-    # Final idea database summary
-    println("[IDEA_MONITOR] 🏁 Search Complete! Final Idea Database Summary:")
-    for j in 1:length(idea_database_all)
-        database_size = length(idea_database_all[j])
-        println("[IDEA_MONITOR] 📊 Dataset $(j): $(database_size) ideas accumulated")
-        if database_size > 0
-            println("[IDEA_MONITOR] 🔝 Top 5 ideas for Dataset $(j):")
-            for i in 1:min(5, database_size)
-                println("[IDEA_MONITOR]     $(i). \"$(idea_database_all[j][i])\"")
-            end
-        end
-    end
+    # Final idea database summary using the new logging system
+    log_concept_library_final_summary(idea_database_all)
     
     return nothing
 end

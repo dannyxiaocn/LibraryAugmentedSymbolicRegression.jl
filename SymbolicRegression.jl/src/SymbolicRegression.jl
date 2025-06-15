@@ -250,7 +250,7 @@ using .MutationFunctionsModule:
     random_node,
     random_node_and_parent,
     crossover_trees
-using .LLMFunctionsModule: update_idea_database, llm_recorder
+using .LLMFunctionsModule: update_idea_database, llm_recorder, log_concept_library_init, log_concept_library_final_summary
 
 using .InterfaceDynamicExpressionsModule: @extend_operators
 using .LossFunctionsModule: eval_loss, score_func, update_baseline_loss!
@@ -629,6 +629,9 @@ end
 ) where {D<:Dataset}
     # PROMPT EVOLUTION
     idea_database_all = [Vector{String}() for j in 1:length(datasets)]
+    
+    # Log the initialization using the new logging system  
+    log_concept_library_init(length(datasets))
 
     _validate_options(datasets, ropt, options)
     state = _create_workers(datasets, ropt, options)
@@ -982,7 +985,7 @@ function _main_search_loop!(
             # Dominating pareto curve - must be better than all simpler equations
             dominating = calculate_pareto_frontier(state.halls_of_fame[j])
             if options.llm_options.active && options.llm_options.prompt_evol && (n_iterations % options.populations == 0)
-                update_idea_database(idea_database, dominating, worst_members, options)
+                update_idea_database(idea_database, dominating, worst_members, options, j)
             end
 
             if options.save_to_file
@@ -1122,6 +1125,10 @@ function _main_search_loop!(
         ################################################################
     end
     llm_recorder(options.llm_options, string(div(n_iterations, options.populations)), "n_iterations")
+    
+    # Final idea database summary using the new logging system
+    log_concept_library_final_summary(idea_database_all)
+    
     return nothing
 end
 function _tear_down!(state::SearchState, ropt::RuntimeOptions, options::Options)

@@ -25,6 +25,106 @@ using ..MutationFunctionsModule: gen_random_tree_fixed_size
 
 using PromptingTools: SystemMessage, UserMessage, AIMessage, aigenerate, render, CustomOpenAISchema, OllamaSchema, OpenAISchema
 using JSON: parse
+using Dates
+
+"""
+Log concept library changes to a dedicated log file with clear formatting
+"""
+function concept_library_logger(message::String, log_file::String="concept_library.log")
+    timestamp = Dates.format(now(), "yyyy-mm-dd HH:MM:SS")
+    log_entry = "[$timestamp] $message"
+    
+    open(log_file, "a") do file
+        println(file, log_entry)
+    end
+    
+    # Also print to console for immediate feedback
+    println(log_entry)
+end
+
+"""
+Log the initialization of concept library databases
+"""
+function log_concept_library_init(num_datasets::Int, log_file::String="concept_library.log")
+    message = "INITIALIZATION: Created $num_datasets concept library databases"
+    concept_library_logger(message, log_file)
+    
+    for j in 1:num_datasets
+        dataset_message = "DATASET: Concept library initialized with size: 0"
+        concept_library_logger(dataset_message, log_file)
+    end
+end
+
+"""
+Log concept library updates with detailed information
+"""
+function log_concept_library_update(
+    dataset_id::Int,
+    current_ideas::Vector{String},
+    added_ideas::Vector{String},
+    evolved_ideas::Vector{String},
+    dominating_count::Int,
+    worst_count::Int,
+    log_file::String="concept_library.log"
+)
+    current_size = length(current_ideas)
+    total_added = length(added_ideas) + length(evolved_ideas)
+    evolved_count = length(evolved_ideas)
+    
+    # Main update message
+    update_message = "UPDATE_DATASET: Database size changed from $(current_size - total_added) to $current_size (+$total_added ideas: $(length(added_ideas)) extracted, $evolved_count evolved)"
+    concept_library_logger(update_message, log_file)
+    
+    # Analysis input information
+    analysis_message = "ANALYSIS_INPUT_DATASET: Processed $dominating_count dominating expressions and $worst_count worst expressions"
+    concept_library_logger(analysis_message, log_file)
+    
+    # Log each added idea
+    for (i, idea) in enumerate(added_ideas)
+        idea_message = "NEW_IDEA_$i: \"$idea\""
+        concept_library_logger(idea_message, log_file)
+    end
+    
+    # Log each evolved idea
+    for (i, idea) in enumerate(evolved_ideas)
+        evolved_message = "EVOLVED_IDEA_$i: \"$idea\""
+        concept_library_logger(evolved_message, log_file)
+    end
+    
+    # Log current top ideas
+    top_count = min(5, current_size)
+    if top_count > 0
+        top_message = "CURRENT_TOP_IDEAS: Showing top $top_count ideas"
+        concept_library_logger(top_message, log_file)
+        
+        for i in 1:top_count
+            top_idea_message = "TOP_IDEA_$i: \"$(current_ideas[i])\""
+            concept_library_logger(top_idea_message, log_file)
+        end
+    end
+end
+
+"""
+Log the final summary of concept libraries
+"""
+function log_concept_library_final_summary(idea_database_all::Vector{Vector{String}}, log_file::String="concept_library.log")
+    summary_message = "FINAL_SUMMARY: Search completed, generating final concept library report"
+    concept_library_logger(summary_message, log_file)
+    
+    for j in 1:length(idea_database_all)
+        database_size = length(idea_database_all[j])
+        dataset_summary = "FINAL_DATASET: Accumulated $database_size total ideas"
+        concept_library_logger(dataset_summary, log_file)
+        
+        if database_size > 0
+            top_count = min(5, database_size)
+            for i in 1:top_count
+                final_idea_message = "FINAL_TOP_IDEA_$i: \"$(idea_database_all[j][i])\""
+                concept_library_logger(final_idea_message, log_file)
+            end
+        end
+    end
+end
 
 """LLM Recoder records the LLM calls for debugging purposes."""
 function llm_recorder(options::LLMOptions, expr::String, mode::String="debug")
@@ -457,7 +557,7 @@ end
 function sample_context(idea_database, N, idea_threshold)::Vector{String}
     assumptions = Vector{String}()
     if isnothing(idea_database)
-        println("[IDEA_MONITOR] ⚠️  Context Sampling: No idea database available")
+        concept_library_logger("CONTEXT_SAMPLING: No idea database available for sampling")
         for _ in 1:N
             push!(assumptions, "None")
         end
@@ -466,14 +566,14 @@ function sample_context(idea_database, N, idea_threshold)::Vector{String}
 
     database_size = size(idea_database)[1]
     if database_size == 0
-        println("[IDEA_MONITOR] ⚠️  Context Sampling: Idea database is empty")
+        concept_library_logger("CONTEXT_SAMPLING: Idea database is empty")
         for _ in 1:N
             push!(assumptions, "None")
         end
         return assumptions
     end
 
-    println("[IDEA_MONITOR] 🎯 Context Sampling: Sampling $(N) ideas from database of $(database_size) ideas (threshold: $(idea_threshold))")
+    concept_library_logger("CONTEXT_SAMPLING: Sampling $N ideas from database of $database_size ideas (threshold: $idea_threshold)")
 
     if size(idea_database)[1] < N
         for i in 1:(size(idea_database)[1])
@@ -482,7 +582,8 @@ function sample_context(idea_database, N, idea_threshold)::Vector{String}
         for i in (size(idea_database)[1]+1):N
             push!(assumptions, "None")
         end
-        println("[IDEA_MONITOR] 📝 Sampled Ideas: $(join(filter(x -> x != "None", assumptions), ", "))")
+        valid_ideas = filter(x -> x != "None", assumptions)
+        concept_library_logger("CONTEXT_SAMPLING_RESULT: Sampled $(length(valid_ideas)) ideas: $(join(valid_ideas, ", "))")
         return assumptions
     end
 
@@ -495,7 +596,7 @@ function sample_context(idea_database, N, idea_threshold)::Vector{String}
     end
     
     valid_ideas = filter(x -> x != "None", assumptions)
-    println("[IDEA_MONITOR] 📝 Sampled Ideas: $(join(valid_ideas, ", "))")
+    concept_library_logger("CONTEXT_SAMPLING_RESULT: Sampled $(length(valid_ideas)) ideas: $(join(valid_ideas, ", "))")
     
     assumptions
 end
@@ -507,8 +608,6 @@ function prompt_evol(idea_database, options::Options)
         return nothing
     end
     n_ideas = 5
-    
-    println("[IDEA_MONITOR] 🧠 Prompt Evolution: Starting with $(num_ideas) ideas in database")
     
     ideas = [idea_database[rand((options.llm_options.idea_threshold + 1):num_ideas)] for _ in 1:n_ideas]
 
@@ -542,7 +641,7 @@ function prompt_evol(idea_database, options::Options)
                 http_kwargs=convertDict(options.llm_options.http_kwargs)
                 )
     catch e
-        println("[IDEA_MONITOR] ❌ Prompt Evolution: LLM call failed - $(e)")
+        concept_library_logger("ERROR_PROMPT_EVOLUTION: LLM call failed - $e")
         llm_recorder(options.llm_options, "None", "ideas|failed")
         return nothing
     end
@@ -553,7 +652,7 @@ function prompt_evol(idea_database, options::Options)
     N = min(size(idea_options)[1], N)
 
     if N == 0
-        println("[IDEA_MONITOR] ❌ Prompt Evolution: No valid ideas generated")
+        concept_library_logger("ERROR_PROMPT_EVOLUTION: No valid ideas generated from evolution process")
         llm_recorder(options.llm_options, "None", "ideas|failed")
         return nothing
     end
@@ -561,29 +660,29 @@ function prompt_evol(idea_database, options::Options)
     # only choose one, merging ideas not really crossover
     chosen_idea = String(strip(idea_options[rand(1:N)], [' ', '\n', '"', ',', '.', '[', ']']))
 
-    println("[IDEA_MONITOR] ✨ Prompt Evolution: Generated new idea -> \"$(chosen_idea)\"")
+    concept_library_logger("PROMPT_EVOLUTION: Generated new evolved idea -> \"$chosen_idea\"")
     
     llm_recorder(options.llm_options, chosen_idea, "ideas")
 
     chosen_idea
 end
 
-function update_idea_database(idea_database, dominating, worst_members, options::Options)
+function update_idea_database(idea_database, dominating, worst_members, options::Options, dataset_id::Int=1)
     # turn dominating pareto curve into ideas as strings
     if isnothing(dominating)
         return
     end
 
     current_size = length(idea_database)
-    println("[IDEA_MONITOR] 🔄 Updating Idea Database: Current size = $(current_size)")
-
+    
     op = options.operators
     num_pareto_context = options.llm_options.num_pareto_context
 
     gexpr = format_pareto(dominating, options, num_pareto_context)
     bexpr = format_pareto(worst_members, options, num_pareto_context)
 
-    println("[IDEA_MONITOR] 📊 Analysis Input: $(length(dominating)) dominating expressions, $(length(worst_members)) worst expressions")
+    dominating_count = length(dominating)
+    worst_count = length(worst_members)
 
     N = 5
 
@@ -643,7 +742,7 @@ function update_idea_database(idea_database, dominating, worst_members, options:
                 verbose=false,
         )
     catch e
-        println("[IDEA_MONITOR] ❌ Idea Extraction: LLM call failed - $(e)")
+        concept_library_logger("ERROR_DATASET: LLM call failed - $e")
         llm_recorder(options.llm_options, "None", "ideas|failed")
         return nothing
     end
@@ -655,18 +754,20 @@ function update_idea_database(idea_database, dominating, worst_members, options:
     N = min(size(idea_options)[1], N)
 
     if N == 0
-        println("[IDEA_MONITOR] ❌ Idea Extraction: No valid ideas extracted")
+        concept_library_logger("ERROR_DATASET: No valid ideas extracted from LLM response")
         llm_recorder(options.llm_options, "None", "ideas|failed")
         return nothing
     end
 
+    # Track added ideas for logging
+    added_ideas = Vector{String}()
+    evolved_ideas = Vector{String}()
+
     a = rand(1:N)
-
     chosen_idea1 = String(strip(idea_options[a], [' ', '\n', '"', ',', '.', '[', ']']))
-
-    println("[IDEA_MONITOR] ➕ Adding New Idea 1: \"$(chosen_idea1)\"")
     llm_recorder(options.llm_options, chosen_idea1, "ideas")
     pushfirst!(idea_database, chosen_idea1)
+    push!(added_ideas, chosen_idea1)
 
     if N > 1
         b = rand(1:N-1)
@@ -674,31 +775,29 @@ function update_idea_database(idea_database, dominating, worst_members, options:
             b += 1
         end
         chosen_idea2 = String(strip(idea_options[b], [' ', '\n', '"', ',', '.', '[', ']']))
-
-        println("[IDEA_MONITOR] ➕ Adding New Idea 2: \"$(chosen_idea2)\"")
         llm_recorder(options.llm_options, chosen_idea2, "ideas")
-
         pushfirst!(idea_database, chosen_idea2)
+        push!(added_ideas, chosen_idea2)
     end
 
     num_add = 2
-    evolved_count = 0
     for _ in 1:num_add
         out = prompt_evol(idea_database, options)
         if !isnothing(out)
             pushfirst!(idea_database, out)
-            evolved_count += 1
-            println("[IDEA_MONITOR] ➕ Adding Evolved Idea: \"$(out)\"")
+            push!(evolved_ideas, out)
         end
     end
     
-    new_size = length(idea_database)
-    total_added = new_size - current_size
-    println("[IDEA_MONITOR] ✅ Database Updated: $(current_size) -> $(new_size) (+$(total_added) ideas, $(evolved_count) evolved)")
-    println("[IDEA_MONITOR] 📋 Latest Top 3 Ideas:")
-    for i in 1:min(3, new_size)
-        println("[IDEA_MONITOR]   $(i). \"$(idea_database[i])\"")
-    end
+    # Log the complete update using the new logging system
+    log_concept_library_update(
+        dataset_id,
+        idea_database,
+        added_ideas,
+        evolved_ideas,
+        dominating_count,
+        worst_count
+    )
 end
 
 function llm_mutate_op(ex::AbstractExpression{T}, options::Options, idea_database)::AbstractExpression{T} where {T<:DATA_TYPE}

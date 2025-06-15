@@ -11,7 +11,7 @@ def parse_args():
     parser.add_argument("--model", type=str, required=False, help="Model to be used")
     parser.add_argument("--resume_from", type=str, required=False, default=None, help="all_equations.json file generated from all_equations.py")
     parser.add_argument("--model_url", type=str, required=False, default="http://localhost:11440/v1/", help="URL of the model endpoint")
-    parser.add_argument("--max_tokens", type=int, required=False, default=1024, help="Maximum number of tokens for the model response")
+    parser.add_argument("--max_tokens", type=int, required=False, default=2048, help="Maximum number of tokens for the model response")
     parser.add_argument("--num_pareto_context", type=int, required=False, default=3, help="Number of equations to sample from the pareto front")
     parser.add_argument("--num_iterations", type=int, required=False, default=40, help="Number of iterations to run the experiment")
     parser.add_argument("--num_workers", type=int, required=False, default=0, help="Number of equations to evaluate in parallel (Defualts to 0; sequential evaluation)")

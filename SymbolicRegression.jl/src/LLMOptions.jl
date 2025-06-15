@@ -39,7 +39,7 @@ this module serves as the entry point to define new options for the LLM inferenc
 - model::String: OpenAI model to use. Required.
 - api_kwargs::Dict: Additional keyword arguments to pass to the OpenAI API.
     - url::String: URL to send the request to. Required.
-    - max_tokens::Int: Maximum number of tokens to generate. (default: 1000)
+    - max_tokens::Int: Maximum number of tokens to generate. (default: 16384)
 - http_kwargs::Dict: Additional keyword arguments for the HTTP request.
     - retries::Int: Number of retries to attempt. (default: 3)
     - readtimeout::Int: Read timeout for the HTTP request (in seconds; default is 1 hour).
@@ -56,9 +56,9 @@ Base.@kwdef mutable struct LLMOptions
     api_key::String = ""
     model::String = ""
     api_kwargs::Dict = Dict(
-        "max_tokens" => 1000
+        "max_tokens" => 2048
     )
-    http_kwargs::Dict = Dict("retries" => 3, "readtimeout" => 3600)
+    http_kwargs::Dict = Dict("retries" => 3, "readtimeout" => 10800)
     llm_recorder_dir::String = "lasr_runs/"
     prompts_dir::String = "prompts/"
     llm_context::AbstractString = ""

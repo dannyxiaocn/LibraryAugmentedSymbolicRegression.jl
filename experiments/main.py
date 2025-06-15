@@ -1,8 +1,8 @@
 from time import sleep
 import json
-from .config import parse_args, setup_logging, setup_api_key
-from .dataset import feynman_dataset, synthetic_dataset, srsd_dataset
-from .model import eval_dataset
+from experiments.config import parse_args, setup_logging, setup_api_key
+from experiments.dataset import feynman_dataset, synthetic_dataset, srsd_dataset
+from experiments.model import eval_dataset
 
 
 def main():
@@ -21,6 +21,7 @@ def main():
             else:
                 processed_equations = []
 
+    print(f"Running {args.dataset} dataset")
     match args.dataset:
         case "Feynman":
             equations_to_keep = set(range(1, 101))  # keep all 100
@@ -44,22 +45,21 @@ def main():
                 hints_path=args.hints_path,
             )
         case "Synthetic":
-            equations_to_keep = set(range(0, 42))  # keep all 42
-            if args.resume_from is not None:
-                equations_to_keep -= set(processed_equations)
+            # Synthetic equations are numbered from 1 to 5, so adjust start_idx if needed
+            start_idx = max(args.start_idx, 1) if args.start_idx == 0 else args.start_idx
+            end_idx = args.end_idx if args.end_idx else 6  # Changed from 5 to 6 to include equation 5
 
-            end_idx = args.end_idx if args.end_idx else 42
-
-            print("Running {n} equations".format(n=len(equations_to_keep)))
+            print("Running 5 synthetic equations")
             sleep(3)
 
             dataset, all_hints = synthetic_dataset(
+                dataset_path=args.dataset_path,
                 num_samples=args.num_samples,
                 noise=args.noise,
                 use_hints=args.use_hints,
                 hints_path=args.hints_path,
-                equations_to_keep=equations_to_keep,
             )
+            
         case "SRSD":
             assert (
                 args.equations_order
@@ -108,7 +108,7 @@ def main():
             ),
             http_kwargs=dict(
                 retries=5,
-                readtimeout=360,
+                readtimeout=3600,
             ),
             llm_recorder_dir=log_file_path,
             idea_threshold=args.idea_threshold,
