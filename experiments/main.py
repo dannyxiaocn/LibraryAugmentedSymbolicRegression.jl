@@ -24,16 +24,18 @@ def main():
     print(f"Running {args.dataset} dataset")
     match args.dataset:
         case "Feynman":
-            equations_to_keep = set(range(1, 101))  # keep all 100
-            if int(args.exp_idx) % 10 == 0:
-                equations_to_keep = {19, 50, 68, 86, 87, 91, 2, 9, 17, 18, 24, 30, 56, 64, 65, 67, 71, 72, 3, 5, 6, 29, 33, 44, 80, 89, 90, 99}
+            equations_to_keep = set(range(1, 11))  # keep 10 equations
+            # if int(args.exp_idx) % 10 == 0:
+            #     equations_to_keep = {19, 50, 68, 86, 87, 91, 2, 9, 17, 18, 24, 30, 56, 64, 65, 67, 71, 72, 3, 5, 6, 29, 33, 44, 80, 89, 90, 99}
 
-            equations_to_keep -= {26, 31, 81}  # remove 26, 31, 81
-            if args.resume_from is not None:
-                equations_to_keep -= set(processed_equations)
+            # equations_to_keep -= {26, 31, 81}  # remove 26, 31, 81
+            # if args.resume_from is not None:
+            #     equations_to_keep -= set(processed_equations)
 
-            end_idx = args.end_idx if args.end_idx else 100
-            equations_to_keep = set(filter(lambda x: args.start_idx <= x < end_idx, equations_to_keep))
+            # end_idx = args.end_idx if args.end_idx else 100
+            # equations_to_keep = set(filter(lambda x: args.start_idx <= x < end_idx, equations_to_keep))
+            # # Limit to first 10 equations for consistency across different settings
+            # equations_to_keep = set(sorted(equations_to_keep)[:10])
             print("Running {n} equations".format(n=len(equations_to_keep)))
             sleep(3)
             dataset, all_hints = feynman_dataset(
@@ -45,13 +47,8 @@ def main():
                 hints_path=args.hints_path,
             )
         case "Synthetic":
-            # Synthetic equations are numbered from 1 to 5, so adjust start_idx if needed
-            start_idx = max(args.start_idx, 1) if args.start_idx == 0 else args.start_idx
-            end_idx = args.end_idx if args.end_idx else 6  # Changed from 5 to 6 to include equation 5
-
-            print("Running 5 synthetic equations")
-            sleep(3)
-
+            end_idx = args.end_idx if args.end_idx else len(dataset) + 1
+            print(f"Running {end_idx - 1} synthetic equations")
             dataset, all_hints = synthetic_dataset(
                 dataset_path=args.dataset_path,
                 num_samples=args.num_samples,
@@ -59,6 +56,19 @@ def main():
                 use_hints=args.use_hints,
                 hints_path=args.hints_path,
             )
+        case "Synthetic_Difficult":
+            print("Running Synthetic Difficult dataset (excluding equations 1, 4, 10)")
+            equations_to_keep = set(range(1, 11)) - {1, 4, 10}
+            dataset, all_hints = synthetic_dataset(
+                dataset_path=args.dataset_path,
+                equations_to_keep=equations_to_keep,
+                num_samples=args.num_samples,
+                noise=args.noise,
+                use_hints=args.use_hints,
+                hints_path=args.hints_path,
+            )
+            end_idx = args.end_idx if args.end_idx else len(dataset) + 1
+            print(f"Running {len(dataset)} difficult synthetic equations")
             
         case "SRSD":
             assert (
@@ -108,7 +118,7 @@ def main():
             ),
             http_kwargs=dict(
                 retries=5,
-                readtimeout=3600,
+                readtimeout=360,
             ),
             llm_recorder_dir=log_file_path,
             idea_threshold=args.idea_threshold,

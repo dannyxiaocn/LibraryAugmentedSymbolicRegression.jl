@@ -81,8 +81,10 @@ def synthetic_equations(dataset_path):
     return dataset
 
 
-def synthetic_dataset(num_samples, noise, dataset_path="data/synthetic_equations.csv", hints_path="data/synthetic_hints.json", use_hints=True):
+def synthetic_dataset(num_samples, noise, dataset_path="data/synthetic_equations.csv", hints_path="data/synthetic_hints.json", use_hints=True, equations_to_keep=None):
     equations = synthetic_equations(dataset_path)
+    if equations_to_keep:
+        equations = [eq for eq in equations if eq[0] in equations_to_keep]
     all_hints = load_json(hints_path) if use_hints else None
     add_extra_vars = False
     dataset = sample_dataset(equations, num_samples, noise, add_extra_vars)

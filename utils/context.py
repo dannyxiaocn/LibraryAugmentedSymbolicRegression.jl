@@ -17,7 +17,7 @@ def get_chat_response(current_context, temp=0.5, long=False):
         model="gpt-4",
         messages=current_context,
         temperature=temp,
-        max_tokens=2048 if long else 1024,
+        max_tokens=4096 if long else 4096,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,

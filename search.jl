@@ -89,7 +89,7 @@ options = Options(
         api_key="token-abc123",
         model="meta-llama/Meta-Llama-3.1-8B-Instruct",
         api_kwargs = Dict(
-            "max_tokens" => 1024,
+            "max_tokens" => 4096,
             "url" => "https://avior.mlfoundry.com/vllm/v1",
             # "url" => "http://localhost:11440/v1",
             "temperature" => 0.0, # 0.0 is greedy sampling. 
@@ -98,7 +98,7 @@ options = Options(
         ),
         http_kwargs = Dict(
             "retries" => 5,
-            "readtimeout" => 3600, # Wait 6 minutes for a response.
+            "readtimeout" => 360, # Wait 6 minutes for a response.
         ),
         llm_recorder_dir,
         prompts_dir,

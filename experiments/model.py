@@ -106,7 +106,7 @@ def eval_equation(idx, eq, X, Y, var_order, args, llm_options, hints, log_files,
     else:
         model = PySRRegressor(
             niterations=args.num_iterations,
-            timeout_in_seconds=3600,
+            timeout_in_seconds=360,
             ncyclesperiteration=550,
             populations=15,
             population_size=33,

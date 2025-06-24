@@ -56,7 +56,7 @@ Base.@kwdef mutable struct LLMOptions
     api_key::String = ""
     model::String = ""
     api_kwargs::Dict = Dict(
-        "max_tokens" => 2048
+        "max_tokens" => 4096
     )
     http_kwargs::Dict = Dict("retries" => 3, "readtimeout" => 10800)
     llm_recorder_dir::String = "lasr_runs/"
@@ -117,7 +117,7 @@ end # module
 #     api_key="vllm_api.key",
 #     model="meta-llama/Meta-Llama-3-8B-Instruct",
 #     api_kwargs=Dict("url" => "http://localhost:11440/v1"),
-#     http_kwargs=Dict("retries" => 3, "readtimeout" => 3600),
+#     http_kwargs=Dict("retries" => 3, "readtimeout" => 360),
 #     llm_recorder_dir="lasr_runs/",
 #     llm_context="",
 #     var_order=nothing,

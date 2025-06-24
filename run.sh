@@ -21,18 +21,83 @@ echo "API Key: $OLLAMA_API_KEY"
 # python -m experiments.main --llm_recorder_dir "lasr_reruns" --use_llm                   --model $VLLM_MODEL --api_key $VLLM_API_KEY --model_url $VLLM_MODEL_URL --exp_idx 5 --dataset_path data/FeynmanEquations.csv  --dataset "Feynman" --hints_path data/feynman_hints.json --early_stopping_condition 1e-5 --prompts_path prompts/ --llm_crossover_weight 0.01 --llm_mutate_weight 0.01 --llm_gen_random_weight 0.01 --ablation_mode no-crossover --disable_prompt_concepts
 # python -m experiments.main --llm_recorder_dir "lasr_reruns" --use_llm --use_prompt_evol --model $VLLM_MODEL --api_key $VLLM_API_KEY --model_url $VLLM_MODEL_URL --exp_idx 6 --dataset_path data/FeynmanEquations.csv  --dataset "Feynman" --hints_path data/feynman_hints.json --early_stopping_condition 1e-5 --prompts_path prompts/ --llm_crossover_weight 0.01 --llm_mutate_weight 0.01 --llm_gen_random_weight 0.01 --use_hints
 
-# [INFO] LaSR llama3.2 synthetic
-python -m experiments.main --llm_recorder_dir "lasr_runs_llama3.2_synthetic" \
+NUM_SAMPLES=500
+
+# [INFO] LaSR llama3.2 synthetic with base prompts
+# python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
+#     --use_llm --use_prompt_evol \
+#     --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+#     --exp_idx 0 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
+#     --hints_path data/synthetic_hints.json --prompts_path prompts/base_prompts/ \
+#     --llm_crossover_weight 1e-5 --llm_mutate_weight 1e-5 --llm_gen_random_weight 1e-5 \
+#     --num_iterations 10  --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+#     --start_idx 0 --end_idx 11
+
+# # [INFO] LaSR llama3.2 synthetic with llama3.2 prompts
+# python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
+#     --use_llm --use_prompt_evol \
+#     --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+#     --exp_idx 1 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
+#     --hints_path data/synthetic_hints.json --prompts_path prompts/llama32_prompts/ \
+#     --llm_crossover_weight 1e-5 --llm_mutate_weight 1e-5 --llm_gen_random_weight 1e-5 \
+#     --num_iterations 10  --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+#     --start_idx 0 --end_idx 11
+
+# # [INFO] LaSR llama3.2 synthetic with hints
+# python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
+#     --use_llm --use_prompt_evol \
+#     --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+#     --exp_idx 2 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
+#     --hints_path data/synthetic_hints.json --prompts_path prompts/llama32_prompts/ \
+#     --llm_crossover_weight 1e-5 --llm_mutate_weight 1e-5 --llm_gen_random_weight 1e-5 \
+#     --num_iterations 10  --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+#     --start_idx 0 --end_idx 11 --use_hints
+
+# # [INFO] LaSR llama3.2 synthetic with hints and more crossover and mutation weights
+# python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
+#     --use_llm --use_prompt_evol \
+#     --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+#     --exp_idx 3 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
+#     --hints_path data/synthetic_hints.json --prompts_path prompts/llama32_prompts/ \
+#     --llm_crossover_weight 1e-4 --llm_mutate_weight 1e-4 --llm_gen_random_weight 1e-4 \
+#     --num_iterations 10  --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+#     --start_idx 0 --end_idx 11 --use_hints
+
+# [INFO] LaSR llama3.2 synthetic with large p
+# python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
+#     --use_llm --use_prompt_evol \
+#     --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+#     --exp_idx 8 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
+#     --hints_path data/synthetic_hints.json --prompts_path prompts/llama32_prompts/ \
+#     --llm_crossover_weight 1e-3 --llm_mutate_weight 1e-3 
+#     --llm_gen_random_weight 1e-3 \
+#     --num_iterations 10  --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+#     --start_idx 0 --end_idx 11 --use_hints
+
+# [INFO] LaSR llama3.2 synthetic with C_improved_prompts
+python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
     --use_llm --use_prompt_evol \
     --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
-    --exp_idx 1 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
-    --hints_path data/synthetic_hints.json --prompts_path prompts/llama32_prompts/ \
-    --llm_crossover_weight 1e-5 --llm_mutate_weight 1e-5 --llm_gen_random_weight 1e-5 \
-    --num_iterations 10 --early_stopping_condition 1e-5 --num_samples 5 \
-    --start_idx 0
+    --exp_idx 10 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
+    --hints_path data/synthetic_hints.json --prompts_path prompts/C_improved_prompts/ \
+    --llm_crossover_weight 1e-4 --llm_mutate_weight 1e-4 \
+    --llm_gen_random_weight 1e-4 \
+    --num_iterations 10  --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+    --start_idx 0 --end_idx 11 --use_hints
+
+# # [INFO] PySR Baseline Synthetic
+# python -m experiments.main --llm_recorder_dir "pysr_runs_baseline_synthetic" \
+#     --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+#     --exp_idx 1 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
+#     --hints_path data/synthetic_hints.json --prompts_path prompts/ \
+#     --llm_crossover_weight 0 --llm_mutate_weight 0 --llm_gen_random_weight 0 \
+#     --num_iterations 10 --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+#     --start_idx 0 --end_idx 11
+
+# [INFO] LaSR Feynman experiments
 
 # [INFO] LaSR llama3.2 feynman
-# python -m experiments.main --llm_recorder_dir "lasr_runs_llama3.2_feynman" \
+# python -m experiments.main --llm_recorder_dir "lasr_runs_feynman" \
 #     --use_llm --use_prompt_evol \
 #     --model "llama3.2" --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
 #     --exp_idx 1 --dataset_path data/FeynmanEquations.csv  --dataset "Feynman" \
@@ -48,15 +113,6 @@ python -m experiments.main --llm_recorder_dir "lasr_runs_llama3.2_synthetic" \
 #     --hints_path data/feynman_hints.json --prompts_path prompts/ \
 #     --llm_crossover_weight 0 --llm_mutate_weight 0 --llm_gen_random_weight 0 \
 #     --num_iterations 10 --early_stopping_condition 1e-5 --max_tokens 4096 --num_samples 5
-
-# [INFO] PySR Baseline Synthetic
-# python -m experiments.main --llm_recorder_dir "pysr_runs_baseline_synthetic" \
-#     --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
-#     --exp_idx 0 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
-#     --hints_path data/synthetic_hints.json --prompts_path prompts/ \
-#     --llm_crossover_weight 0 --llm_mutate_weight 0 --llm_gen_random_weight 0 \
-#     --num_iterations 10 --num_samples 5 --early_stopping_condition 1e-5 \
-#     --start_idx 0
 
 # [INFO] PySR Baseline Feynman
 # python -m experiments.main --llm_recorder_dir "pysr_baseline_feynman" \
