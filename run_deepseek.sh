@@ -37,14 +37,14 @@ python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
 #     --start_idx 0 --end_idx 11 --use_hints
 
 # [INFO] Synthetic Datasets for DeepSeek V3
-# python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
-#     --use_llm --use_prompt_evol \
-#     --model $DEEPSEEK_MODEL --api_key $DEEPSEEK_API_KEY --model_url $DEEPSEEK_MODEL_URL \
-#     --exp_idx 6 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
-#     --hints_path data/synthetic_hints.json --prompts_path prompts/llama32_prompts/ \
-#     --llm_crossover_weight 1e-4 --llm_mutate_weight 1e-4 --llm_gen_random_weight 1e-4 \
-#     --num_iterations 10  --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
-#     --start_idx 0 --end_idx 11 --use_hints
+python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \
+    --use_llm --use_prompt_evol \
+    --model $DEEPSEEK_MODEL --api_key $DEEPSEEK_API_KEY --model_url $DEEPSEEK_MODEL_URL \
+    --exp_idx 6 --dataset_path data/synthetic_equations.csv  --dataset "Synthetic" \
+    --hints_path data/synthetic_hints.json --prompts_path prompts/llama32_prompts/ \
+    --llm_crossover_weight 1e-4 --llm_mutate_weight 1e-4 --llm_gen_random_weight 1e-4 \
+    --num_iterations 10  --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+    --start_idx 0 --end_idx 11 --use_hints
 
 # [INFO] Synthetic Datasets for DeepSeek R1
 # python -m experiments.main --llm_recorder_dir "lasr_runs_synthetic_llama32" \

@@ -35,6 +35,7 @@ using ..LLMFunctionsModule:
 
 using ..ConstantOptimizationModule: optimize_constants
 using ..RecorderModule: @recorder
+using ..SafeSimplificationModule: conservative_combine_operators
 
 function check_constant(tree::AbstractExpressionNode)::Bool
     (tree.degree == 0) && tree.constant
@@ -146,7 +147,7 @@ function next_generation(
         end
         tree = llm_mutate_op(tree, options, idea_database)
         tree = simplify_tree!(tree, options.operators)
-        tree = combine_operators(tree, options.operators)
+        tree = conservative_combine_operators(tree, options.operators)
         @recorder tmp_recorder["type"] = "llm_mutate"
 
         successful_mutation = (!check_constant(tree)) && check_constraints(tree, options, curmaxsize)
@@ -198,7 +199,7 @@ function next_generation(
         elseif mutation_choice == :simplify
             @assert options.should_simplify
             simplify_tree!(tree, options.operators)
-            tree = combine_operators(tree, options.operators)
+            tree = conservative_combine_operators(tree, options.operators)
             @recorder tmp_recorder["type"] = "partial_simplify"
             mutation_accepted = true
             is_success_always_possible = true
@@ -223,7 +224,7 @@ function next_generation(
             if options.llm_options.active && (rand() < options.llm_options.weights.llm_gen_random)
                 tree = with_contents(
                     tree,
-                    combine_operators(simplify_tree!(gen_llm_random_tree(tree_size_to_generate, options, nfeatures, T, idea_database), options.operators), options.operators)
+                    conservative_combine_operators(simplify_tree!(gen_llm_random_tree(tree_size_to_generate, options, nfeatures, T, idea_database), options.operators), options.operators)
                 )
                 @recorder tmp_recorder["type"] = "regenerate_llm"
                 
@@ -425,9 +426,9 @@ function crossover_generation(
 
     # add simplification for crossover
     tree1 = simplify_tree!(tree1, options.operators)
-    tree1 = combine_operators(tree1, options.operators)
+    tree1 = conservative_combine_operators(tree1, options.operators)
     tree2 = simplify_tree!(tree2, options.operators)
-    tree2 = combine_operators(tree2, options.operators)
+    tree2 = conservative_combine_operators(tree2, options.operators)
 
     crossover_accepted = false
     nfeatures = dataset.nfeatures
@@ -452,9 +453,9 @@ function crossover_generation(
         child_tree1, child_tree2 = llm_crossover_trees(tree1, tree2, options, idea_database)
 
         child_tree1 = simplify_tree!(child_tree1, options.operators)
-        child_tree1 = combine_operators(child_tree1, options.operators)
+        child_tree1 = conservative_combine_operators(child_tree1, options.operators)
         child_tree2 = simplify_tree!(child_tree2, options.operators)
-        child_tree2 = combine_operators(child_tree2, options.operators)
+        child_tree2 = conservative_combine_operators(child_tree2, options.operators)
 
         afterSize1 = compute_complexity(child_tree1, options)
         afterSize2 = compute_complexity(child_tree2, options)

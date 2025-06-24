@@ -13,6 +13,7 @@ using ..RegularizedEvolutionModule: reg_evol_cycle
 using ..LossFunctionsModule: score_func_batched, batch_sample
 using ..ConstantOptimizationModule: optimize_constants
 using ..RecorderModule: @recorder
+using ..SafeSimplificationModule: conservative_combine_operators
 
 # Cycle through regularized evolution many times,
 # printing the fittest equation every 10% through
@@ -113,7 +114,7 @@ function optimize_and_simplify_population(
         if options.should_simplify
             tree = pop.members[j].tree
             tree = simplify_tree!(tree, options.operators)
-            tree = combine_operators(tree, options.operators)
+            tree = conservative_combine_operators(tree, options.operators)
             pop.members[j].tree = tree
         end
         if options.should_optimize_constants && do_optimization[j]
