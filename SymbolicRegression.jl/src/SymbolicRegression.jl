@@ -194,7 +194,6 @@ using DispatchDoctor: @stable
     include("ConstantOptimization.jl")
     include("Population.jl")
     include("HallOfFame.jl")
-    include("SafeSimplificationModule.jl")
     include("Mutate.jl")
     include("RegularizedEvolution.jl")
     include("SingleIteration.jl")

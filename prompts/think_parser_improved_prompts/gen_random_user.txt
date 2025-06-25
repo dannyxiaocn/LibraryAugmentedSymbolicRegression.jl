@@ -1,0 +1,42 @@
+Suggestion 1: {{assump1}}
+Suggestion 2: {{assump2}}
+Suggestion 3: {{assump3}}
+
+Propose {{N}} expressions that would be appropriate given the suggestions. Provide short commentary for each of your decisions. End with a JSON list that enumerates the proposed expressions following this format:
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr{{N}}"
+]
+```
+
+Please note: 
+(1): You should NOT ONLY write expr1, expr2, ... which are useless!! You should only cover the content of each expressions in each position in the json format.
+(2): Please keep the format correctness and completeness or it will fail to be recognized, your whole work will be useless!
+(3): If you would propose "C" as constant value in your expression, please replace it with actual numbers that you believe is correct, otherwise it will be automatically replaced by 1.0 to degrade performance. 
+(4): If you would propose "xy" to represent the multiplication of x and y, please replace it with "x * y" to avoid the confusion. 
+(5): FORBIDDEN nested operations (will fail immediately):
+    - exp(exp(...)), exp(log(...)), log(exp(...)), log(log(...))
+    - sin(sin(...)), sin(cos(...)), cos(sin(...)), cos(cos(...))
+    - sqrt(sqrt(...))
+(6): AVOID expressions that cause numerical instability:
+    - a^v where a > 2 (e.g., 3.0^v, 4.0^v)
+    - (...)^exp(...) 
+    - Pure constants like 1.0, 2.0, or simple operations like C-C
+(7): Expression MUST contain at least one variable (x,y,z,w,v)
+ 
+
+Please DO NOT over-think! Keep your thinking process strong but concise!
+
+Please keep the format clean:
+
+```json
+["expr1",
+ "expr2",
+ ...
+ "expr{{N}}"
+]
+```
+
+The json format should only contain the content of the expressions, no other text or comments. Please put other text outside the json format.

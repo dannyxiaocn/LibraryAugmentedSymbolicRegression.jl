@@ -30,4 +30,6 @@ outputs
 lasr_thinking_runs
 pysr_baseline
 lasr_runs*
+lasr_syn2
 pysr_runs*
+pysr_syn2

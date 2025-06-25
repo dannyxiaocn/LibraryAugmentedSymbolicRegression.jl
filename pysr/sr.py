@@ -78,7 +78,7 @@ def _process_constraints(binary_operators, unary_operators, constraints):
                     "a constant or variable (1). "
                     "For more tips, please see https://astroautomata.com/PySR/tuning/"
                 )
-            constraints[op] = (-1, -1)
+            constraints[op] = (-2, -2)
         if op in ["plus", "sub", "+", "-"]:
             if constraints[op][0] != constraints[op][1]:
                 raise NotImplementedError(

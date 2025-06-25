@@ -1,0 +1,28 @@
+Idea 1: {{idea1}}
+Idea 2: {{idea2}}
+Idea 3: {{idea3}}
+Idea 4: {{idea4}}
+Idea 5: {{idea5}}
+
+Based on these ideas, deduce {{N}} logical conclusions or hypotheses that directly follow from them. Provide a brief explanation for each conclusion, highlighting the logical connections between the ideas. Avoid discussing topics related to the simplicity or complexity of the expressions. Conclude with a JSON list that enumerates the proposed conclusions in the following format:
+```json
+["Conclusion 1",
+ "Conclusion 2",
+ ...
+ "Conclusion {{N}}"
+]
+```
+
+Please note: 
+(1): You should NOT ONLY write "Conclusion 1", "Conclusion 2", ... which are useless!! You should only cover the content of each conclusions/hypotheses in each position in the json format.
+(2): Please keep the format correctness and completeness or it will fail to be recognized, your whole work will be useless!
+(3): Please DO NOT over-think! Keep your thinking process strong but concise!
+(4): FORBIDDEN nested operations (will fail immediately):
+    - exp(exp(...)), exp(log(...)), log(exp(...)), log(log(...))
+    - sin(sin(...)), sin(cos(...)), cos(sin(...)), cos(cos(...))
+    - sqrt(sqrt(...))
+(5): AVOID expressions that cause numerical instability:
+    - a^v where a > 2 (e.g., 3.0^v, 4.0^v)
+    - (...)^exp(...) 
+    - Pure constants like 1.0, 2.0, or simple operations like C-C
+(6): Expression MUST contain at least one variable (x,y,z,w,v)

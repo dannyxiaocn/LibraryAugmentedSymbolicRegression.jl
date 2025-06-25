@@ -1,0 +1,34 @@
+Input:
+Good Expression 1: {{gexpr1}}
+Good Expression 2: {{gexpr2}}
+Good Expression 3: {{gexpr3}}
+Good Expression 4: {{gexpr4}}
+Good Expression 5: {{gexpr5}}
+
+Bad Expression 1: {{bexpr1}}
+Bad Expression 2: {{bexpr2}}
+Bad Expression 3: {{bexpr3}}
+Bad Expression 4: {{bexpr4}}
+Bad Expression 5: {{bexpr5}}
+
+Comment on the patterns and trends of each equations and end with a JSON list that enumerates the ideas following this format:
+```json
+["Idea1",
+ "Idea2",
+ ...
+ "IdeaN"
+]
+```
+
+Please note: 
+(1): You should NOT ONLY write Idea1, Idea2, ... which are useless!! You should only cover the content of each idea in each position in the json format.
+(2): Please keep the format correctness and completeness or it will fail to be recognized, your whole work will be useless!
+(3): FORBIDDEN nested operations (will fail immediately):
+    - exp(exp(...)), exp(log(...)), log(exp(...)), log(log(...))
+    - sin(sin(...)), sin(cos(...)), cos(sin(...)), cos(cos(...))
+    - sqrt(sqrt(...))
+(4): AVOID expressions that cause numerical instability:
+    - a^v where a > 2 (e.g., 3.0^v, 4.0^v)
+    - (...)^exp(...) 
+    - Pure constants like 1.0, 2.0, or simple operations like C-C
+(5): Expression MUST contain at least one variable (x,y,z,w,v)

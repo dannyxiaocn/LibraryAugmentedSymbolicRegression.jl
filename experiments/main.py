@@ -1,7 +1,7 @@
 from time import sleep
 import json
 from experiments.config import parse_args, setup_logging, setup_api_key
-from experiments.dataset import feynman_dataset, synthetic_dataset, srsd_dataset
+from experiments.dataset import feynman_dataset, synthetic_dataset, srsd_dataset, syn2_dataset
 from experiments.model import eval_dataset
 
 
@@ -83,6 +83,27 @@ def main():
                 hints_path=args.hints_path,
             )
             end_idx = args.end_idx if args.end_idx else 100
+        case "Syn2":
+            end_idx = args.end_idx if args.end_idx else len(dataset) + 1
+            print(f"Running {end_idx - 1} Syn2 equations")
+            dataset, all_hints = syn2_dataset(
+                dataset_path=args.dataset_path,
+                num_samples=args.num_samples,
+                noise=args.noise,
+                use_hints=args.use_hints,
+                hints_path=args.hints_path,
+            )
+        case "Syn2D":
+            end_idx = args.end_idx if args.end_idx else len(dataset) + 1
+            equations_to_keep = set(range(1, 11)) - {1, 9}
+            dataset, all_hints = syn2_dataset(
+                dataset_path=args.dataset_path,
+                equations_to_keep=equations_to_keep,
+                num_samples=args.num_samples,
+                noise=args.noise,
+                use_hints=args.use_hints,
+                hints_path=args.hints_path,
+            )
         case "Bigbench":
             raise NotImplementedError("Bigbench dataset is not implemented yet")
         case _:
@@ -118,7 +139,7 @@ def main():
             ),
             http_kwargs=dict(
                 retries=5,
-                readtimeout=360,
+                readtimeout=1080,
             ),
             llm_recorder_dir=log_file_path,
             idea_threshold=args.idea_threshold,

@@ -56,7 +56,7 @@ Base.@kwdef mutable struct LLMOptions
     api_key::String = ""
     model::String = ""
     api_kwargs::Dict = Dict(
-        "max_tokens" => 4096
+        "max_tokens" => 8192
     )
     http_kwargs::Dict = Dict("retries" => 3, "readtimeout" => 10800)
     llm_recorder_dir::String = "lasr_runs/"

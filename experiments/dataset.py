@@ -91,6 +91,39 @@ def synthetic_dataset(num_samples, noise, dataset_path="data/synthetic_equations
     return dataset, all_hints
 
 
+def syn2_equations(dataset_path):
+    dataset = []
+    with open(dataset_path) as file_obj:
+        heading = next(file_obj)
+        reader_obj = csv.reader(file_obj)
+        for row in reader_obj:
+            if row[1] == "":
+                break
+            id = int(row[1])
+            output = row[2]
+            formula = row[3]
+            num_vars = (row.index("") - 5) // 3
+            bounds = {output: None}
+            for i in range(num_vars):
+                var_name = row[5 + (3 * i)]
+                var_bounds = (float(row[6 + (3 * i)]), float(row[7 + (3 * i)]))
+                var_sample = "uniform"
+                bounds[var_name] = (var_sample, var_bounds)
+            dataset.append((id, (output + " = " + formula, bounds)))
+    dataset.sort()
+    return dataset
+
+
+def syn2_dataset(num_samples, noise, dataset_path="data/syn2_equations.csv", hints_path="data/syn2_hints.json", use_hints=True, equations_to_keep=None):
+    equations = syn2_equations(dataset_path)
+    if equations_to_keep:
+        equations = [eq for eq in equations if eq[0] in equations_to_keep]
+    all_hints = load_json(hints_path) if use_hints else None
+    add_extra_vars = False
+    dataset = sample_dataset(equations, num_samples, noise, add_extra_vars)
+    return dataset, all_hints
+
+
 def srsd_equations():
     datasets = {
         "Easy SRSD": (dataset_easy, hints_easy),
