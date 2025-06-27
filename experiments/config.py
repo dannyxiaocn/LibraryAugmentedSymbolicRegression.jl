@@ -27,7 +27,7 @@ def parse_args():
     parser.add_argument("--prompts_path", type=str, required=False,  help="Path to the directory containing the prompts.")
     parser.add_argument("--start_idx", type=int, required=False, default=0, help="Index to start the evaluation")
     parser.add_argument("--end_idx", type=int, required=False, default=None, help="Index to end the evaluation")
-    parser.add_argument("--dataset", type=str, required=True, help="Dataset to use", choices=["Feynman", "Synthetic", "Synthetic_Difficult", "SRSD", "Bigbench", "Syn2", "Syn2D"])
+    parser.add_argument("--dataset", type=str, required=True, help="Dataset to use", choices=["Feynman", "Synthetic", "Synthetic_Difficult", "SRSD", "Bigbench", "Syn2", "Syn2D", "Syn2D2", "Syn2I", "Syn2S"])
     parser.add_argument("--dataset_order", type=str, required=False, choices=["Easy SRSD", "Medium SRSD", "Hard SRSD"], help="Order of the SRSD dataset")
     parser.add_argument("--noise", type=float, required=False, default=0.0001, help="Noise to add to the dataset")
     parser.add_argument("--num_samples", type=int, required=False, default=2000, help="Number of samples to generate")

@@ -33,3 +33,6 @@ lasr_runs*
 lasr_syn2
 pysr_runs*
 pysr_syn2
+*.log
+pysr_feynman
+lasr_feynman

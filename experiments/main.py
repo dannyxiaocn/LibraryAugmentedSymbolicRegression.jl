@@ -32,7 +32,7 @@ def main():
             # if args.resume_from is not None:
             #     equations_to_keep -= set(processed_equations)
 
-            # end_idx = args.end_idx if args.end_idx else 100
+            end_idx = args.end_idx if args.end_idx else 11
             # equations_to_keep = set(filter(lambda x: args.start_idx <= x < end_idx, equations_to_keep))
             # # Limit to first 10 equations for consistency across different settings
             # equations_to_keep = set(sorted(equations_to_keep)[:10])
@@ -96,6 +96,39 @@ def main():
         case "Syn2D":
             end_idx = args.end_idx if args.end_idx else len(dataset) + 1
             equations_to_keep = set(range(1, 11)) - {1, 9}
+            dataset, all_hints = syn2_dataset(
+                dataset_path=args.dataset_path,
+                equations_to_keep=equations_to_keep,
+                num_samples=args.num_samples,
+                noise=args.noise,
+                use_hints=args.use_hints,
+                hints_path=args.hints_path,
+            )
+        case "Syn2D2":
+            end_idx = args.end_idx if args.end_idx else len(dataset) + 1
+            equations_to_keep = {3, 4, 6, 7, 10}
+            dataset, all_hints = syn2_dataset(
+                dataset_path=args.dataset_path,
+                equations_to_keep=equations_to_keep,
+                num_samples=args.num_samples,
+                noise=args.noise,
+                use_hints=args.use_hints,
+                hints_path=args.hints_path,
+            )
+        case "Syn2I":
+            end_idx = args.end_idx if args.end_idx else len(dataset) + 1
+            equations_to_keep = {2, 4, 10}
+            dataset, all_hints = syn2_dataset(
+                dataset_path=args.dataset_path,
+                equations_to_keep=equations_to_keep,
+                num_samples=args.num_samples,
+                noise=args.noise,
+                use_hints=args.use_hints,
+                hints_path=args.hints_path,
+            )
+        case "Syn2S":
+            end_idx = args.end_idx if args.end_idx else len(dataset) + 1
+            equations_to_keep = {6, 7}
             dataset, all_hints = syn2_dataset(
                 dataset_path=args.dataset_path,
                 equations_to_keep=equations_to_keep,
