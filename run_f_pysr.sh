@@ -13,3 +13,33 @@ python -m experiments.main --llm_recorder_dir "pysr_feynman" \
     --llm_crossover_weight 0 --llm_mutate_weight 0 --llm_gen_random_weight 0 \
     --num_iterations 10 --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
     --start_idx 0 --end_idx 11
+
+# [INFO] PySR Baseline feynman: 1 - 40
+python -m experiments.main --llm_recorder_dir "pysr_feynman" \
+    --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+    --exp_idx 1 --dataset_path data/FeynmanEquations.csv \
+    --dataset "Feynman" \
+    --hints_path data/feynman_hints.json --prompts_path prompts/ \
+    --llm_crossover_weight 0 --llm_mutate_weight 0 --llm_gen_random_weight 0 \
+    --num_iterations 40 --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+    --start_idx 0 --end_idx 11
+
+# [INFO] PySR Baseline feynman: 2 - 400
+python -m experiments.main --llm_recorder_dir "pysr_feynman" \
+    --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+    --exp_idx 2 --dataset_path data/FeynmanEquations.csv \
+    --dataset "Feynman" \
+    --hints_path data/feynman_hints.json --prompts_path prompts/ \
+    --llm_crossover_weight 0 --llm_mutate_weight 0 --llm_gen_random_weight 0 \
+    --num_iterations 400 --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+    --start_idx 0 --end_idx 11
+
+# [INFO] PySR Baseline feynman: 3 - 100
+python -m experiments.main --llm_recorder_dir "pysr_feynman" \
+    --model $OLLAMA_MODEL --api_key $OLLAMA_API_KEY --model_url $OLLAMA_MODEL_URL \
+    --exp_idx 3 --dataset_path data/FeynmanEquations.csv \
+    --dataset "Feynman" \
+    --hints_path data/feynman_hints.json --prompts_path prompts/ \
+    --llm_crossover_weight 0 --llm_mutate_weight 0 --llm_gen_random_weight 0 \
+    --num_iterations 100 --num_samples $NUM_SAMPLES --early_stopping_condition 1e-5 \
+    --start_idx 0 --end_idx 11

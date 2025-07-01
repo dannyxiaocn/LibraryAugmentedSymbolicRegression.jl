@@ -21,3 +21,18 @@ python -m experiments.main --llm_recorder_dir "lasr_feynman" \
     --num_iterations 10  --num_samples $NUM_SAMPLES \
     --early_stopping_condition 1e-5 \
     --start_idx 0 --end_idx 11 --use_hints
+
+# [INFO] Feynman Datasets for DeepSeek V3 1e-3 parser_improved_prompts
+python -m experiments.main --llm_recorder_dir "lasr_feynman" \
+    --use_llm --use_prompt_evol \
+    --model $DEEPSEEK_MODEL --api_key $DEEPSEEK_API_KEY \
+    --model_url $DEEPSEEK_MODEL_URL \
+    --exp_idx 1 --dataset_path data/FeynmanEquations.csv  \
+    --dataset "Feynman" \
+    --hints_path data/feynman_hints.json \
+    --prompts_path prompts/parser_improved_prompts/ \
+    --llm_crossover_weight 3e-3 --llm_mutate_weight 3e-3 \
+    --llm_gen_random_weight 3e-3 \
+    --num_iterations 40  --num_samples $NUM_SAMPLES \
+    --early_stopping_condition 1e-5 \
+    --start_idx 0 --end_idx 11 --use_hints
